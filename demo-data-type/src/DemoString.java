@@ -21,7 +21,50 @@ public class DemoString {
     t4 = t1 + t4;
     System.out.println(t4); // "$2001000.01"
 
-    // String + int
+    // String + int -> String (Step 1)
+    // Assign String value to String variable (Step 2)
+    String s3 = "hello" + 13;
+    System.out.println(s3);
+
+    // Strinng + boolean -> String
+    s3 += s3 + true;
+    System.out.println(s3);
+
+    // equals() -> tools
+    // ! String Method 1: equals()
+    // ! Primitive has no tools (value storage ONLY)
+    // String is not a primitive. So String can store value and has tools. It means that equals to excel "If..."
+    String s4 = "hello";
+    System.out.println(s4.equals("hello")); // ture, asking if s4 equals to "hello"
+    System.out.println(s4.equals("male")); // false, asking if s4 equals to "male"
+
+    System.out.println(1 + 1); //2
+    int r2 = 1 + 1;
+
+    boolean result = s4.equals("hello");
+    System.out.println(result); // true
+
+    System.out.println(s4.equals("hello")); // false, case sesentive
+
+    // ! String Method 2: length ()
+    // Reference = parameter
+    // length() has no parameters
+    System.out.println(s4.length());  // 5  (Where house)
+    System.out.println(s4); // hello
+
+    // Ans:
+    int s4Length = s4.length();
+    System.out.println(s4Length); // 5
+
+    // Try double
+    double d1 = s4.length(); // ! why OK?
+    // short s10 = s4.length(); // ! why NOT OK?
+
+
+    // ! String Method 3: charAt()
+    // 1 is an index, which always start with 0,1,2,3 to court ()words/figures
+     System.out.println(s4.charAt(1)); // e  "Hello", 2 digial
+     System.out.println(s4.charAt(0)); // h  "Hello", 1 digial
     
     
   }
