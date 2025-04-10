@@ -8,8 +8,8 @@ public class DemoIf3 {
     // ! For loop     
     // 3 statement : for ( ; ; ) {}
     // i) for (initialization) only run first times; can't accept '1' for 'i' for first.
-    // ii) continue condition 'if middle continue is true';
-    // iii) 
+    // ii) continue conditional 'if middle continue is true, will loop again';  
+    // iii) i + 1 or i++ or i--  for (+, -, *, /, %)
     
     // Method 1:
     for (int i = 0; i < 3; i = i + 1) { // i=0,1,2  (Ans: Hello, Run 3 times and stop)
