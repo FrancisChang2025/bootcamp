@@ -26,15 +26,15 @@ public class ExeciseGuessingGame {
     Scanner scanner = new Scanner(System.in);
     int round = 0;
     char user = 'A';
-    int userCount = 0;  // Counter for users
-    int maxUsers = 3;   // Maximum number of users
+    //int userCount = 0;  // Counter for users
+    //int maxUsers = 3;   // Maximum number of users
 
     while (input != bomb) {
-      if (round % 2 == 0) {
+      if (round % 3 == 0) {
         user = 'A';
-      } else if (round % 2 == 1){
+      } else if (round % 3 == 1){
         user = 'B';
-      } else {
+      } else if (round % 3 == 2){
         user = 'C';
       }
       System.out.println("User " + user + ", Please input a number between " + min + "-" + max);
@@ -46,14 +46,15 @@ public class ExeciseGuessingGame {
           continue;
         }
       }
-        round++;
+      round++;
       }
-    }
     // User A, round 1, lose
-    if (round % 2 == 1) {
-      user = 'B';
-    } else {
+    if (round % 3 == 0) {
       user = 'A';
+    } else if (round % 3 == 1) {
+      user = 'B';
+    } else if (round % 3 == 2) {
+      user = 'C';
     }
     System.out.println("Game end. User " + user + " Loser.");
     scanner.close();

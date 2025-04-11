@@ -77,7 +77,7 @@ public class DemoForLoop {
 
         // ! break & continue, same result
 
-        // ! for + continue'
+        // ! for + continue
         // Approach 1: break (simple if)  'when touch break will be exit loop'
         // Before filter
         for (int i = 0; i < 3; i++){
@@ -106,6 +106,42 @@ public class DemoForLoop {
             }
             System.out.println(i); // 0,1
         }
+
+     // ! 20250411 after DemoOperator.java, try below
+     // Question: sum up 5 - 15 -> result
+     // the product of 16 - 20 -> result2
+     // Single for loop
+
+     int total = 0;
+     int product = 0;
+     for (int i = 0; i < 21; i++) {
+        if (i >= 5 && i <= 15) {
+            total += i;
+            continue;
+        }
+        if (i >= 16 && i <= 20) {
+            product *= i;
+            continue;
+        }
+     }
+     System.out.println(total);   // 110
+     System.out.println(product);  // 1860480
+
+
+     for (int i = 10; i >= 0; i--) {
+        System.out.println(i);
+     }
+
+     // ! Nested Loop  (Loop 包住 Loop) sample Supermaker
+     // i=0, j=0,1
+     // i=1, j=0,1
+     // i=2, j=0,1
+     for (int i = 0; i < 3; i++){  // run 0,1,2  (3 times)
+        for (int j = 0; j < 2; j++) {   // run 0,1, (2 times)
+            System.out.println("hello");  // 6 times
+            System.out.println("i=" + i + "j=" + j);
+        }
+     }
 
 
     }
