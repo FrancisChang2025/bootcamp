@@ -7,7 +7,7 @@ public class DemoCompile {
     System.out.println(x);
 
     int y = 3;
-    y = 3; //
+    y = 3; // (runtime) JIT compiler remove this line.
   }
 }
 // view file DemoCompile.class & open iturn
