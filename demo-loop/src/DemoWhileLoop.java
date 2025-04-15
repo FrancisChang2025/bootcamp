@@ -17,7 +17,7 @@ public class DemoWhileLoop {
     // Step 2:
 
 
-    // Do while Loop 'upgrade ver.'  (Detail week 2 to learn)
+    // Do while Loop 'upgrade ver.'  (Detail week 2 to learning)
     // ! No entry condition (At least execute once)
     k = 0;
     do {

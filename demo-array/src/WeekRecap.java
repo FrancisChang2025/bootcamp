@@ -1,6 +1,6 @@
 public class WeekRecap {
   public static void main(String[] args) {
-    // Data Type: Primitives
+    // Data Type: Primitives 基本資料型態
     byte b1 = -128;
     byte b2 = 127;
     // byte b3 = 128;

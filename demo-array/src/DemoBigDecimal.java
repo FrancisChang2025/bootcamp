@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class DemoBigDecimal {
   public static void main(String[] args) {
@@ -32,6 +33,41 @@ public class DemoBigDecimal {
 
     // 10 / 3
     // rounding? 3.45 -> 3.4 (HALF_DOWN)?  3.45 -> 3.5 (HALF_UP) 四捨五一?
+    // BigDecimal divide BigDecimal
+    // BigDecimal three = BigDeciaml.valueOf(3.0);
+
+    // Not-terminating deciaml expansion
+    // BigDecimal bd7 = BigDecimal.valueOf(10.0).divide(3.0);  // Error
+    BigDecimal bd7 = BigDecimal.valueOf(10.0).divide(BigDecimal.valueOf(3.0), 2, RoundingMode.HALF_UP);
+    System.out.println(bd7);  // 3.33  '2個小數位，一定要放整數，不能是小數位'
+
+    // 8.5 / 2 -> 4.25 (half up) -> 4.3
+    BigDecimal bd9 = BigDecimal.valueOf(8.5).divide(BigDecimal.valueOf(2.0), 1, RoundingMode.HALF_UP);
+    System.out.println(bd9);    // 4.3
+
+    // 8.5 / 2 -> 4.25 (half down) -> 4.2
+    BigDecimal bd10 = BigDecimal.valueOf(8.5).divide(BigDecimal.valueOf(2.0), 1, RoundingMode.HALF_DOWN);
+    System.out.println(bd10);    // 4.2
+    
+    BigDecimal bd11 = new BigDecimal("5").divide(BigDecimal.valueOf(2));
+    System.out.println(bd11);    // 2.5
+
+    // BigDecimal bd8 = new BigDecimal("10.0").divide(BigDecimal.valueOf(3.0));
+
+    System.out.println(BigDecimal.valueOf(-2).abs());  // 2
+    System.out.println(BigDecimal.valueOf(2).pow(3));   // 8
+    // double result = BigDecimal.valueOf(2).doubleValue();
+    BigDecimal source = BigDecimal.valueOf(2);
+    double result1 = source.doubleValue();
+    long result2 = source.longValue();
+    int result3 = source.intValue();
+    float result4 = source.floatValue();  //  float -> double 
+    String result5 = source.toString();   // "2"
+    System.out.println(source);  // 2
+
+
+    String lan = "Java";
+    System.out.println("Java".equals(lan)); // true
 
 
   }

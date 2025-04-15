@@ -1,3 +1,4 @@
+import javax.swing.plaf.synth.SynthScrollBarUI;
 import javax.swing.plaf.synth.SynthSplitPaneUI;
 
 public class DemoArray {
@@ -205,7 +206,8 @@ public class DemoArray {
     System.out.println("w2=" + w2);  // 2
 
     // ! Ranking Logical
-    int[] marksix = new int[6];
+    int[] marksix = 
+    new int[6];
     marksix[0] = 5;
     marksix[1] = 20;
     marksix[2] = 47;
@@ -216,6 +218,7 @@ public class DemoArray {
       System.out.println(marksix[i]);
     }
     // 5 20 47 43 39 2
+    // !i = 0, j = 0,1,2,3,4,5
     // round 1:5 vs 20 (20 > 5, no swap)   -> 5 20 47 43 39 2 (run 6)
     // round 2:20 vs 47 (20 > 47, no swap) -> 5 20 47 43 39 2
     // round 3:47 vs 43 (47 > 43, swap)    -> 5 20 43 47 39 2
@@ -225,6 +228,9 @@ public class DemoArray {
     // ! i = 1, j = 0,1,2,3,4 (marksix[4+1] > marksix[4])
     // round 1: 5 vs 20 (20 > 5, no swap)  -> 5 20 43 39 2 47 (run 5,skip last 47)
     // ....
+    // round 4:  5 vs 20 (20 > 5, no swap)  ->  5, 20, 38, 3, 43, 47
+
+
     
     // Finally -> 2 5 20 39 43 47
     // ! Sorting  (把最大數字，搬到最尾) (5 x 5) -> Bubble sort
@@ -259,16 +265,15 @@ public class DemoArray {
 
 
 
-    // ! 最優勝方法比起Loop for Loop,n+n, -> n * n 次，亂序
+    // ! 最優勝方法比起Loop for Loop,n+n, -> n * n 次，亂序;  可數數
     char[] chs2 = new char[] {'o','p','a','p','o'};
     // Unknown how many character, which Qty > 1 -> o and p
     // 2
     int[] counts = new int[26];  // 0-25 先開26個箱，每個箱default '0' = a - a
     for (int i = 0; i < chs2.length; i++){
-
       int index = chs2[i] - 'a';
       counts[index]++;  // or counts(index) = counts[index] + 1;
-      // counts[chs2[i] - 'a']++; equals to above 2 rows into 1
+      // counts[chs2[i] - 'a']++; -> equals to above 2 rows into 1
     }
 
     int result = 0;
@@ -282,9 +287,21 @@ public class DemoArray {
 
      // Homework:
      // 0 9 1 9 2 0 9 9
-     // is there any number appear 3 times or more?
+     // is there any number appear 3 times or more? 出現3次或以上
      // true
-     // int[] countNum = new int[] {0,9,1,9,2,0,9,9};
+     int[] countNum = new int[] {0,9,1,9,2,0,9,9};
+     result = 0;
+     count = 0;
+     for (int i = 0; i < countNum.length; i++) {
+      if (countNum[i] >= 3){
+        count++;
+      }
+     }
+     System.out.println(count); // 4
+     //System.out.println(count.charAt(2));
+
+     //System.out.println("the number of " + maxNum + " was appear 3 times or more");
+     
 
 
 
