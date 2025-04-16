@@ -166,7 +166,7 @@ public class DemoArray {
     for (int i = 0; i < nums.length; i++){
       if (nums[i] % 2 == 0){
         firstEven = nums[i];  // without 'break', Ans should be 10 (array lenght -> 4)
-        break; // exit for loop
+        break; //  ** Exit for loop
       }
     }
     System.out.println("First even number=" + firstEven); // 8

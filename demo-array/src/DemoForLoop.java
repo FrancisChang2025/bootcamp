@@ -64,6 +64,7 @@ public class DemoForLoop {
           .add(BigDecimal.valueOf(0.1))  //
           .doubleValue();
     }
+    // ! 'Arrays.toString' means that Answer show arrays value in String 變成字串列出
     System.out.println(Arrays.toString(values));  // [0.3, 0.6, 2.0]
 
 
@@ -75,12 +76,12 @@ public class DemoForLoop {
     System.out.println(Arrays.toString(bigDecimals));  // [10.3, 2.4, 9.9]
 
 
-    float[] fArr = new float[bigDecimals.length]
-        // for loop: bigDecimals -> fArr  to showing [10.3, 2.4, 9.9]
-        for (int i = 0; i < fArr.length; i++){
-          fArr[i] = BigDecimal.valueOf(fArr[i]).floatValue();  
+    float[] fArr = new float[bigDecimals.length];
+        // for loop: bigDecimals -> fArr     to show Arrays value -> [10.3, 2.4, 9.9]
+        for (int i = 0; i < bigDecimals.length; i++){   // 小心字串，名稱，功能字眼，通常有's'尾都加，就是Arrays名稱
+          fArr[i] = bigDecimals[i].floatValue(); 
         }
-        System.out.println(Arrays.toString(fArr[i]));
+        System.out.println(Arrays.toString(fArr));  // [10.3, 2.4, 9.9]
 
 
 
