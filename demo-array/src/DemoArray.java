@@ -261,7 +261,7 @@ public class DemoArray {
         count++;
       }
     }
-    System.out.println(count + "=count the number of P");  // 2
+    System.out.println(count + "=count the number of P");  // 2 = count the number of P
 
 
 

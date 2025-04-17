@@ -3,9 +3,10 @@ import java.math.RoundingMode;
 
 public class DemoBigDecimal {
   public static void main(String[] args) {
-    System.out.println(0.1 + 0.2);  // 0.30000000000004  // 運算+,-,*,/
+    System.out.println(0.1 + 0.2);  // 0.30000000000004  
+    // ! 運算 +, -, *, /
 
-    // Solution
+    // Solution 
     BigDecimal bd1 = new BigDecimal("0.1");   // 0.1 -> approach 1
     BigDecimal bd2 = BigDecimal.valueOf(0.2);   // 0.2 -> approach 2 (prefer use this)
 
@@ -36,7 +37,7 @@ public class DemoBigDecimal {
     // BigDecimal divide BigDecimal
     // BigDecimal three = BigDeciaml.valueOf(3.0);
 
-    // Not-terminating deciaml expansion
+    // ! Not-terminating deciaml expansion
     // BigDecimal bd7 = BigDecimal.valueOf(10.0).divide(3.0);  // Error
     BigDecimal bd7 = BigDecimal.valueOf(10.0).divide(BigDecimal.valueOf(3.0), 2, RoundingMode.HALF_UP);
     System.out.println(bd7);  // 3.33  '2個小數位，一定要放整數，不能是小數位'

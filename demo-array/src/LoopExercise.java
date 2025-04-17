@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Arrays;
 
 public class LoopExercise {
@@ -140,19 +142,12 @@ public class LoopExercise {
     // *****
     int rows = 3;
     int columns = 5;
-    int Count1 = 0;
-    int Count2 = 0;
     for (int i = 0; i < rows; i++) {  // run 0,1,2
       for (int j = 0; j < columns; j++) {   // run 0,1,2,3,4
-        if (Count1 < columns) {
-        System.out.println("*");
-        
-        Count1++;
-        break;
+        System.out.print("*");
         }
-
+        System.out.println();
       }
-     }
       
 
 
@@ -166,23 +161,69 @@ public class LoopExercise {
     // u -> 4 score
     // for other character, -1 score
     String s13 = "lrlaudbucp";
+    int l = 1;
+    int r = 3;
+    int d = 2;
+    int u = 4;
+    char[] chs = new char[] {'l','r','l'};
+    int[] counts = new int[26];
+    for (int i = 0; i < s13.length(); i++) {
+      int index = s13.charAt(i) - 'a';
+      counts[index]++;
+    }
+    System.out.println(counts);
+
+
+
     
     // 14. Assign the long values of 1, 4, 9, -4 to the given array arr14
     long[] arr14 = new long[4];
+    arr14[0] = 1L;
+    arr14[1] = 4L;
+    arr14[2] = 9L;
+    arr14[3] = -4L;
+
+    System.out.println("Ans 14: long values= " + Arrays.toString(arr14));
 
     // 15. Find the max value and min value in arr14
     // Use One Loop + if
+    long maxNum = Long.MIN_VALUE;
+    long minNum = Long.MAX_VALUE;
+    for (int i = 0; i < arr14.length; i++) {
+      if (arr14[i] < maxNum) {
+        maxNum = arr14[i];
+      }
+      if (arr14[i] > minNum) {
+        minNum = arr14[i];
+      }
+    }
+    System.out.println("Ans 15: the max value=" + maxNum + "and min value=" + minNum);
 
     // 16. Declare a float value (arr16) array with value 0.2, 0.3, 0.6
+    float[] arr16 = new float[] {0.2f, 0.3f, 0.6f};
+
 
     // 17. Add value 0.1 to each of value in array arr16
     // Print: [0.3, 0.4, 0.7]
     // Use: BigDecimal
+    for (int i = 0; i < arr16.length; i++) {
+      arr16[i] = BigDecimal.valueOf(arr16[i])  //
+      .add(BigDecimal.valueOf(0.1))  //
+      .floatValue();
+    }
+    System.out.println(Arrays.toString(arr16));
+
 
     // 18. Count the number of target strings in the String[]
     String[] arr18 = new String[] {"Steve", "Tommy", "Katie", "Tommy", "Lydia"};
     String target = "Tommy";
     // Print "count name=2"
+    int count2 = 0;
+    for (int i = 0; i < arr18.length; i++) {
+      if (arr18[i] == target);
+        count2++;
+    }
+    System.out.println("Ans 18: count name=" + count);
 
     // 19. swap the max digit and min digit
     // Assumption: each digit value appear once in the String
@@ -195,6 +236,6 @@ public class LoopExercise {
 
 
 
-      
+  
   }
 }
