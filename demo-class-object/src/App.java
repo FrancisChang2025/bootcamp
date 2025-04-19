@@ -6,7 +6,7 @@ public class App {
         String maryName = "Mary";
         String maryEmail = "mary@gmail.com";
 
-        // Why do we need OOP?
+        // Why do we need OOP?  
         // ! Problem (Data Grouping)
 
     

@@ -24,16 +24,17 @@ public class DemoString {
     // String + int -> String (Step 1)
     // Assign String value to String variable (Step 2)
     String s3 = "hello" + 13;
-    System.out.println(s3);
+    System.out.println(s3);   // hello13
 
-    // Strinng + boolean -> String
+    // String + boolean -> String
     s3 += s3 + true;
-    System.out.println(s3);
+    System.out.println(s3);   // hello13hello13true   ('+=' 等如加2次)
 
-    // equals() -> tools
+    // equals() -> tools  （)內放參數
     // ! String Method 1: equals()
     // ! Primitive has no tools (value storage ONLY)
-    // String is not a primitive. So String can store value and has tools. It means that equals to excel "If..."
+    // String is not a primitive. So String can store value and has tools. 
+    //   It means that equals to excel "If..."
     String s4 = "hello";
     System.out.println(s4.equals("hello")); // ture, asking if s4 equals to "hello"
     System.out.println(s4.equals("male")); // false, asking if s4 equals to "male"
@@ -44,11 +45,11 @@ public class DemoString {
     boolean result = s4.equals("hello");
     System.out.println(result); // true
 
-    System.out.println(s4.equals("hello")); // false, case sesentive
+    System.out.println(s4.equals("hello")); // true, case same with above boolean, it's 快速版本
 
     // ! String Method 2: length ()
-    // Reference = parameter
-    // length() has no parameters
+    // Reference = parameter 參數
+    // length() has no parameters, ()沒有參數
     System.out.println(s4.length());  // 5  (Where house)
     System.out.println(s4); // hello
 
@@ -63,8 +64,8 @@ public class DemoString {
 
     // ! String Method 3: charAt()
     // 1 is an index, which always start with 0,1,2,3 to court ()words/figures
-     System.out.println(s4.charAt(1)); // e  "Hello", 2 digial
-     System.out.println(s4.charAt(0)); // h  "Hello", 1 digial
+     System.out.println(s4.charAt(1)); // e    "Hello", 2 digial
+     System.out.println(s4.charAt(0)); // h    "Hello", 1 digial
     
     
   }

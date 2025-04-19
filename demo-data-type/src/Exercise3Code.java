@@ -22,9 +22,9 @@ public class Exercise3Code {
     System.out.println(threeChar); // n
 
     // char threeChar = a1.charAt(10);
-    // System.out.println(threeChar); // Exception (System Error), 10 is over-value, space
+    // System.out.println(threeChar); // Exception (System Error), 10 is over-value, space 爆炸
 
-    // Naming Convention - Java
+    // ! Naming Convention - Java 名明方式，唔用 underscore, 用這證明唔專業 😛
     // Camel case
     String studentName = "John";
     System.out.println(studentName); // John

@@ -3,7 +3,7 @@ public abstract class DemoDouble {
     int x = 9;
     System.out.println(x);
 
-    // Store a number with decimal place
+    // Store a number with decimal place (d.p.)
     // Type: double
     
     double y = 9.9;

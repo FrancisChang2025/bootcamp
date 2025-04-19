@@ -2,8 +2,14 @@ public class DemoIf3 {
   public static void main(String[] args) {
     // Question: Counting
     String s5 = "hello";   // index=0,1,2,3,4
-    // Count how many character '0' in s5.
+    // Count how many character 'o' in s5.
     int counter = 0;
+    for (int i = 0; i < s5.length(); i++) {
+      if (s5.charAt(i) == 'o') {
+        counter++;   // equal to -> counter = i + 1; 
+      }
+    }
+    System.out.println(counter);  // 1
 
     // ! For loop     
     // 3 statement : for ( ; ; ) {}
@@ -12,8 +18,8 @@ public class DemoIf3 {
     // iii) i + 1 or i++ or i--  for (+, -, *, /, %)
     
     // Method 1:
-    for (int i = 0; i < 3; i = i + 1) { // i=0,1,2  (Ans: Hello, Run 3 times and stop)
-      System.out.println("Hello");
+    for (int i = 0; i < 3; i = i + 1) { // i=0,1,2  (Ans: Hello Baby !!, Run 3 times and stop)
+      System.out.println("Hello Baby !!");
     }
     // Method 1 (Steps):
     // Step 1: int i = 0
@@ -36,22 +42,22 @@ public class DemoIf3 {
     }
 
   // ! Normal, repect action unlimit without for Loop
-    // if (s5.charAt(0)== '0'){
+    // if (s5.charAt(0) == 'o'){
     // counter = counter + 1;
     // }
     // Ans: 2
 
     s5 = "hello world";
-    count= 0;
-    for (int i = 0; i < s5.length(); i = i + 1){  // 0,1,2,3,4
-      System.out.println("i=" + 1);
-      if (s5.charAt(i) == '0'){
+    counter = 0;
+    for (int i = 0; i < s5.length(); i = i + 1){  // 0,1,2,3,4,5,6,7,8,9,10
+      System.out.println("i=" + i);
+      if (s5.charAt(i) == 'o') {
+        System.out.println("hello");
         counter = counter + 1;
+        }
       }
-    }
-    System.out.println("Number of 0=:" + counter);
+     System.out.println("Number of o = " + counter);  // 2
 
-    // 2
 
   }
 }

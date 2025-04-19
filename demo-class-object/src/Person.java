@@ -30,12 +30,15 @@ public class Person {
 
   // getBMI  (weight / height^2)
   public double getBMI() {
-    // or type -> Math.pow(this.height,0.2);
+    // or type -> Math.pow(this.height,0.2);  to replace below
     return BigDecimal.valueOf(this.weight)
        .divide(BigDecimal.valueOf(Math.pow(this.height, 2.0)),2,
           RoundingMode.HALF_UP)
         .doubleValue();
   } 
+
+  // ! Normal set rounding in result, because not me to decide, 
+  // ! Java generate 原汁原味 提供給問者，問者自己決定用 double/byte/...how many decimal，不同人，有不同要求
 
   // getWeightStatus  (Determine BMI category)
   public String getWeightStatus() {
