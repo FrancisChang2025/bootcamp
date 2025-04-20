@@ -3,14 +3,16 @@ public class DemoMathOperator {
     // + 1
     int x = 3;
 
-    // 4 methods to count + 1, below run 4 differents equals to 4 times, so "3+4"
+    // ! ->（ +, -, *, / ) 進行運算時，各有不同寫法，最終效果是一樣
+    // 4 methods to count + 1, below run 4 differents equals to 4 times, so "3+4"1
+    // +1   （有4種寫法）
     x = x + 1;
     x += 1;
     x++; // Normally use
     ++x;
     System.out.println("x=" + x); // 7
 
-    // -1
+    // -1 （有4種寫法）
     int y = 5;
     y = y - 1;
     y -=1;
@@ -19,7 +21,7 @@ public class DemoMathOperator {
     System.out.println("y=" + y);  // 1
 
 
-    // + or  - non 1 number
+    //   + or - non 1 number 即如果不是以'1'作起跳，y-- / y++ 就不能用，只餘2種寫法
     int z = 10;
     z = z + 2;
     z += 2;
@@ -28,26 +30,26 @@ public class DemoMathOperator {
     System.out.println("z=" + z);  // 8
 
 
-    // * or /
+    //   * or /  （各有2種寫法）
     int a = 6;
 
-    a = a * 5;
-    a *= 5;
+    a = a * 2;
+    a *= 2;
 
-    a = a /3;
-    a /= 3;
+    a = a /2;
+    a /= 2;
 
-    System.out.println("a=" + a); // 2
+    System.out.println("a=" + a); // 6   (6 x 2 x 2 / 2 / 2)
 
-    
-    // Count number of even number between 0 - 9  (Avoid odd number)
+    // For Loop + Counting
+    // Count number of even number between 0 - 9  (Avoid odd number 避開 單數)
     int evenCounter = 0;
     for (int i = 0; i < 10; i++){ // 0,1,2,3,4,5,6,7,8,9
       if (i % 2 == 0) {
         evenCounter++;
         }
       }
-      System.out.println("No. of Even Number: " + evenCounter);
+      System.out.println("No. of Even Number: " + evenCounter); // 5  (0,2,4,6,8)
 
       // Ans: 5, using Loop to identify Odd or Even, then counter number
       // if ()
@@ -64,7 +66,7 @@ public class DemoMathOperator {
       } else {
         max = num2;
       }
-      System.out.println(max);
+      System.out.println(max);   // 12
 
 
       // Larger Number between 3 numbers
@@ -73,7 +75,7 @@ public class DemoMathOperator {
       if (max < num3){
         max = num3;
       }
-      System.out.println(max);
+      System.out.println(max);   // 13
 
       // ! Method 2 to num3, using for Loop, run 3 steps & confirm duplicate
 
@@ -90,7 +92,7 @@ public class DemoMathOperator {
       }
       System.out.println("The Min. number is: " + min);  // 32
 
-      if (min != num6){
+      if (min != num6 && min > num6){
         min = num6;
       }
       System.out.println("The Min. number is: " + min);  // -19

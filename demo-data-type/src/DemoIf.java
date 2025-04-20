@@ -119,11 +119,11 @@ public class DemoIf {
   // Step 2: 8 - 1 -> 7
   // Step 3: charAt(7) -> 'p'
   // Step 4: 'p' == 'a' -> false, go to Step 5
-  // Step 5: print no
+  // Step 5: print "no"
 
   // s2 = "";  // String is no limit
 
-  if (s2.charAt(s2.length() - 1) == 'a') {
+  if (s2.charAt(s2.length() - 1) == 'a') {   // 由內至外睇 8-1=7,所以 position: 0,1,2,3,4,5,6,7
     System.out.println("yes");
   } else {
     System.out.println("no");  // no
@@ -131,6 +131,7 @@ public class DemoIf {
 
   // 但 charAt() 不可以 over 字的長度 或 長度是0 -> OK, 但運算 0 - 1 ＝ 結果是 -1， 因為變成 false, 會💥 爆炸
   s2 = "abcd";
+  // 如果 charAt(4) 會爆炸💥，因為 position: 0,1,2,3 🙅‍♂️ 冇第4個位出現，所以 Index < 4 才可行 / (4-1=3)
   if (s2.charAt(s2.length() - 1) == 'a') {
     System.out.println("yes");
   } else {
@@ -138,21 +139,5 @@ public class DemoIf {
   }
   
 
-
-  // Question: Find the middle char of the string
-  // abcde -> c (5 / 2 -> 2)
-  // abcd -> b (4 / 2 -> 2)
-
-  // ab -> a (2 / 2 -> 1)
-  // a -> a (1 / 2 -> 0)
-  
-  s3 = "abcd";
-     if (s3.length() % 2 == 1) { // odd length
-       System.out.println(s3.charAt(s3.length() / 2));  // false  (4/2=2)冇餘數，所以是雙數 go to step row 16
-     } else { // even length
-       System.out.println(s3.charAt(s3.length() / 2 - 1)); // true (4/2 -1 = 1),Ans is '1',所以 print
-     }
-     // b    符合 else condition is true, Ane is '1', means that position 0,1
-
-  }
+ }
 }
