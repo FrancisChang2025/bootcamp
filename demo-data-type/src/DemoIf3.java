@@ -11,7 +11,7 @@ public class DemoIf3 {
     }
     System.out.println(counter);  // 1
 
-    // ! For loop     
+    // ! For loop        -> For xxxx condition, then run (Loop)
     // 3 statement : for ( ; ; ) {}
     // i) for (initialization) only run first times; can't accept '1' for 'i' for first.
     // ii) continue conditional 'if middle continue is true, will loop again';  
