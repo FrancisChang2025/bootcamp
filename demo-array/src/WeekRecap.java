@@ -20,16 +20,17 @@ public class WeekRecap {
     double d1 = 1.9;
 
     char c1 = 'a';
-    // int - int
+    // int - int      (死記 char -> store character 儲存字元, auto-convert to int - int)
     System.out.println('a' - 'a'); // 0
     System.out.println('a' - 'b'); // -1
 
-    boolean isEldery = false;
+     // ! 🥸 用 boolean 去定義咗字眼，如 isEldery 是老人，以後用這字就定義為老人, 不用再 age >= 65)
+    boolean isEldery = false;  
     // isEldery -> formula / definition
     int age = 65;
     isEldery = age >= 65;
 
-    if (!isEldery) {
+    if (!isEldery) {     // 不是長者，即 < 65
       System.out.println("I am not an elderly.");
     }
     if (age < 65) {
@@ -40,7 +41,7 @@ public class WeekRecap {
     boolean result = b > 1 || b > 10;
     boolean result2 = true || false;
 
-    System.out.println(result2);
+    System.out.println(result2);  // true
     System.out.println(true && false); // false
 
     // true && true
