@@ -111,14 +111,13 @@ public class DemoArray {
     numbers[3] = 25;
     numbers[4] = 0;
     numbers[5] = 30;
-    int maxNumber = 0;  // int maxNumber = Integer.MIN_Value;
+    int maxNumber = 0;  // int maxNumber = Integer.MIN_VALUE;
     for (int i = 0; i < numbers.length; i++) {
-      if (numbers[i] <= 20) {
-        maxNumber += numbers[i];
-        System.out.println("Max value=" + maxNumber);  // 3, 13, 8, 8
+      if (numbers[i] > maxNumber) {
+        maxNumber = numbers[i];
       }
     }
-
+    System.out.println("Max.value=" + maxNumber);  // 30
  
 
     // find min. salary
@@ -131,10 +130,9 @@ public class DemoArray {
     for (int i = 0; i < salaries.length; i++){
       if (salaries[i] < minBox){
         minBox = salaries[i];
-        System.out.println("Min. vale=" + minBox);
-      }
-  
+      } 
     }
+    System.out.println("Min.value=" + minBox); // 14000
 
     //  John, Steven, Eric
     String[] names = new String[3];
@@ -142,20 +140,19 @@ public class DemoArray {
     names[1] = "Steven";
     names[2] = "Eric";
     for (int i = 0; i < names.length; i++) {
-      
       System.out.println(names[i]);
     }
 
-    // Find the longest name in the array
-    String longestName = "";  // empty String
-    for (int i = 0; i < names.length; i++){
-      if (names[i].length() > longestName.length()){ // String str
+    // Find the longest name in the array      // String length
+    String longestName = "";   // ⭐️ empty String 容許暫時無內容   有機會人名字數相同，所以 "" 
+    for (int i = 0; i < names.length; i++){  // int Vs String 不可以❌，names 是String,要把右邊轉 int
+      if (names[i].length() > longestName.length()){ // String str 字串
         longestName = names[i];
       }
     }
-    System.out.println("Longest name=" + longestName);
+    System.out.println("Longest name = " + longestName);  // Steven
     
-    // nums is an array, a set of int values
+    // nums is an array, a set of int values  一堆數字
     // Print out the first even number -> break
     int[] nums = new int[4];
     nums[0] = 9;
@@ -163,17 +160,17 @@ public class DemoArray {
     nums[2] = 7;
     nums[3] = 10;
     int firstEven = 0;
-    for (int i = 0; i < nums.length; i++){
+    for (int i = 0; i < nums.length; i++){    // array length,  index=0,1,2,3
       if (nums[i] % 2 == 0){
         firstEven = nums[i];  // without 'break', Ans should be 10 (array lenght -> 4)
         break; //  ** Exit for loop
       }
     }
-    System.out.println("First even number=" + firstEven); // 8
+    System.out.println("First even number=" + firstEven); // 8   唔加 break, result is 10
 
 
     // String directions = 
-    char [] directions = new char[5];
+    char [] directions = new char[5];     // char = character 英文字母/符號
     // l -> left
     // r -> right
     directions[0] = 'l';
@@ -183,6 +180,7 @@ public class DemoArray {
     directions[4] = 'r';
     // l -> score + 3
     // r -> score - 2
+    // find the final score ?
 
     int scoreAmt = 0;
     for (int i = 0; i < directions.length; i++){
@@ -191,9 +189,8 @@ public class DemoArray {
       } else {
         scoreAmt -= 2;
       }
-
     }
-    System.out.println("Score amount=" + scoreAmt);
+    System.out.println("Score amount=" + scoreAmt);  // 5  (3+3-2+3-2)
 
     // ! Swapping 交換位置
     int w1 = 2;
@@ -205,9 +202,8 @@ public class DemoArray {
     System.out.println("w1=" + w1);  // 3
     System.out.println("w2=" + w2);  // 2
 
-    // ! Ranking Logical
-    int[] marksix = 
-    new int[6];
+    // ! Ranking Logical  排序
+    int[] marksix = new int[6];
     marksix[0] = 5;
     marksix[1] = 20;
     marksix[2] = 47;
@@ -218,27 +214,28 @@ public class DemoArray {
       System.out.println(marksix[i]);
     }
     // 5 20 47 43 39 2
+
     // !i = 0, j = 0,1,2,3,4,5
-    // round 1:5 vs 20 (20 > 5, no swap)   -> 5 20 47 43 39 2 (run 6)
-    // round 2:20 vs 47 (20 > 47, no swap) -> 5 20 47 43 39 2
-    // round 3:47 vs 43 (47 > 43, swap)    -> 5 20 43 47 39 2
-    // round 4:47 vs 39 (47 > 39, swap)    -> 5 20 43 39 47 2
-    // round 5:47 vs 2 (47 > 2, swap)      -> 5 20 43 39 2 47
+    // round 1: 5 vs 20 (20 > 5, no swap)   -> 5 20 47 43 39 2 (run 6)
+    // round 2: 20 vs 47 (20 > 47, no swap) -> 5 20 47 43 39 2
+    // round 3: 47 vs 43 (47 > 43, swap)    -> 5 20 43 47 39 2
+    // round 4: 47 vs 39 (47 > 39, swap)    -> 5 20 43 39 47 2
+    // round 5: 47 vs 2 (47 > 2, swap)      -> 5 20 43 39 2 47
  
     // ! i = 1, j = 0,1,2,3,4 (marksix[4+1] > marksix[4])
-    // round 1: 5 vs 20 (20 > 5, no swap)  -> 5 20 43 39 2 47 (run 5,skip last 47)
-    // ....
-    // round 4:  5 vs 20 (20 > 5, no swap)  ->  5, 20, 38, 3, 43, 47
-
+    // round 1: 5 vs 20 (20 > 5, no swap)   -> 5 20 43 39 2 47 (run 5,skip last 47)
+    // round 2: 20 vs 43 (43 > 20, no swap) -> 5 20 43 39 2 47
+    // round 3: 43 vs 39 (43 > 39, swap)    -> 5 20 39 43 2 47
+    // round 4: 43 vs 2  (43 > 2, swap)     -> 5 20 39 2 43 47
 
     
     // Finally -> 2 5 20 39 43 47
     // ! Sorting  (把最大數字，搬到最尾) (5 x 5) -> Bubble sort
-    // Swapping
-    int temp = -1;
+    // Swapping   (與 if 無關)
+    int temp = -1;   // -1 是有問題，但這題暫時可用
     for (int i = 0; i < marksix.length - 1; i++){  // i = 0(how many numbers I need to swap)
       for (int j = 0; j < marksix.length - i - 1; j++){  // j = 0,1,2,3,4 | 0,1,2,3
-        if (marksix[j + 1] < marksix[j]) {
+        if (marksix[j + 1] < marksix[j]) {    // 👈🏻 這個不是比較大小，而是決定是否做 swapping
           temp = marksix[j + 1];
           marksix[j + 1] = marksix[j];
           marksix[j] = temp;
@@ -253,7 +250,7 @@ public class DemoArray {
 
 
     // ! counting
-    char[] chs = new char[] {'o','p','a','p'};
+    char[] chs = new char[] {'o','p','a','p'};    // char array
     // count the number of 'p'
     int count = 0;
     for (int i = 0; i < chs.length; i++) {
@@ -265,7 +262,7 @@ public class DemoArray {
 
 
 
-    // ! 最優勝方法比起Loop for Loop,n+n, -> n * n 次，亂序;  可數數
+    // ! 最優勝方法比起Loop for Loop, n+n, -> n * n 次，亂序;  可數數
     char[] chs2 = new char[] {'o','p','a','p','o'};
     // Unknown how many character, which Qty > 1 -> o and p
     // 2
@@ -287,7 +284,7 @@ public class DemoArray {
 
      // Homework:
      // 0 9 1 9 2 0 9 9
-     // is there any number appear 3 times or more? 出現3次或以上
+     // is there any number appear 3 times or more? 出現3次或以上?
      // true
      int[] countNum = new int[] {0,9,1,9,2,0,9,9};
      result = 0;
@@ -298,6 +295,8 @@ public class DemoArray {
       }
      }
      System.out.println(count); // 4
+
+
      //System.out.println(count.charAt(2));
 
      //System.out.println("the number of " + maxNum + " was appear 3 times or more");
