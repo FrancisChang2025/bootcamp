@@ -6,10 +6,14 @@ public class JavaQuest4 {
    * 
    * Expected Output: 6 12 18 24 30 36 42 48 54 60
    */
-   for (int i=0; i >= 10 i++) {
-    if (i % 2 == 0 && i > 0 && i % 2 == 1 && i % 3 == 1){
-    System.out.println(i);
-    continue;
+   int counter = 10;
+   for (int i=0; i < 10; i++) {
+    for (int j=0; j < 100; i++) {
+      if (i % 2 == 0 && i > 0 && i % 2 == 1 && i % 3 == 1){
+        System.out.println(i);
+        
+       }
+       
     }
    }
 

@@ -12,6 +12,7 @@ public class JavaQuest3 {
       System.out.println("a < 0");
     }
 
+    
     String str = "I love Java. I love coding";
     int strLength = str.length();
     System.out.println("No. of Words: " + strLength);

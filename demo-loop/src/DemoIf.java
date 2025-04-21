@@ -8,7 +8,7 @@ public class DemoIf {
       System.out.println("x < 10");  // ! print
 
     } else if (x < 15) {
-      System.out.println("x < 15");  // not print      
+      System.out.println("x < 15");  // not print
 
     } else if (x >= 20) {
       System.out.println("x >= 20");  // not print
@@ -22,7 +22,7 @@ public class DemoIf {
 
     // 3. if + else
 
-    // 4. if + else if    (Sample: different type 'hello or Hello', ans accept)
+    // 4. if + else if    (Sample: different type 'hello or Hello', Ans accept too.)
     String s = "hello";
     if (s.equals("hello")) {
       System.out.println("this is hello");
@@ -51,7 +51,7 @@ public class DemoIf {
     // 2. Female 40 S -> 8 + 7
     // 3. Male 16 NS -> 3
     // 4. Male 16 S -> 3 + 7
-    // .....
+    // .....many case
 
     double premium = 120.0;
     double extraRate = 0.0;
@@ -61,12 +61,14 @@ public class DemoIf {
       } else if (age >= 40) {
           extraRate += 0.08;
       } else    // male
+
       if (age >= 70) {
         extraRate += 0.02;
       } else if (age >= 16) {
         extraRate += 0.03;
       }
     }
+    
     if (isSmoker) {
       extraRate += 0.07;
     }

@@ -49,12 +49,12 @@ public class JavaQuest2 {
          number_Of_DaysInMonth = 31;
       case 2:
         if (year % 4 == 0){
-           if (year % 100 == 0){
+          if (year % 100 == 0){
             if (year % 400 == 0) {  // 2000
               number_Of_DaysInMonth = 29;
             } else {  // 2100
               number_Of_DaysInMonth = 28;
-            }
+          }
          } else {  // 2024
           number_Of_DaysInMonth = 29;
          }

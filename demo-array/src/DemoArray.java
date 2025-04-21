@@ -9,7 +9,7 @@ public class DemoArray {
     int x3 = -7;
 
     // ! array []
-    // right hand side -> creating an array with size 3.
+    // right hand side -> creating an array with size 3. (values)
     // left hand side -> assign int array object to int array (varibale)
     int[] arr = new int[3];   // now, we got 3 int boxes able to store 3 int values.
 
@@ -61,7 +61,7 @@ public class DemoArray {
     System.out.println(arr4[0]); // hello
 
 
-    // double array, for loop + sysout printi out values
+    // double array, for loop + sysout print out values
 
     double[] arr8 = new double[6];
     arr8[0] = 10.9;

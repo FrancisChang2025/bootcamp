@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ExeciseGuessingGame {
+public class ExeciseGuessingGame {      //GAME： 開口中 （3人玩家）
   public static void main(String[] args) {
     // ! How about 3 Users?
     // 1 - 100

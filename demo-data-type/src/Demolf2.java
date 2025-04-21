@@ -117,6 +117,5 @@ public class Demolf2 {
     System.out.println("The no. of 'o' character= " + numCount);  // 2
    
 
-
  }
 }
