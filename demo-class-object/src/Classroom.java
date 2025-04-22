@@ -1,6 +1,6 @@
 // ! One to One: One Person has one height and one weight
 
-// ! One to Many
+// ! One to Many Sample:
 
 import java.util.Arrays;
 
