@@ -161,6 +161,7 @@ public class LoopExercise {
     // u -> 4 score
     // for other character, -1 score
     String s13 = "lrlaudbucp";
+
     int l = 1;
     int r = 3;
     int d = 2;
@@ -168,7 +169,7 @@ public class LoopExercise {
     char[] chs = new char[] {'l','r','l'};
     int[] counts = new int[26];
     for (int i = 0; i < s13.length(); i++) {
-      int index = s13.charAt(i) - 'a';
+      int index = chs[i] - 'a';
       counts[index]++;
     }
     System.out.println(counts);
@@ -192,12 +193,14 @@ public class LoopExercise {
     for (int i = 0; i < arr14.length; i++) {
       if (arr14[i] < maxNum) {
         maxNum = arr14[i];
+        continue;
       }
       if (arr14[i] > minNum) {
         minNum = arr14[i];
+        continue;
       }
     }
-    System.out.println("Ans 15: the max value=" + maxNum + "and min value=" + minNum);
+    System.out.println("Ans 15: max value=" + maxNum + "and min value=" + minNum);
 
     // 16. Declare a float value (arr16) array with value 0.2, 0.3, 0.6
     float[] arr16 = new float[] {0.2f, 0.3f, 0.6f};
@@ -228,11 +231,39 @@ public class LoopExercise {
     // 19. swap the max digit and min digit
     // Assumption: each digit value appear once in the String
     // Print: "49280"
-    String s19 = "40289";
+    int[] s19 = new int[] {4, 9, 2, 8, 9};
+    int maxDigit = Integer.MIN_VALUE;
+    int minDigit = Integer.MAX_VALUE;
+    int temp = -1;
+    for (int i = 0; i < s19.length; i++) {
+      for (int k = 0; k < s19.length - i; k++) {
+        if (s19[k + 1] < s19[k]);
+          temp = s19[k + 1];
+          s19[k + 1] = s19[k];
+          s19[k] = temp; 
+      }
+    }
+    for (int i = 0; i < s19.length; i++){
+      System.out.println("The max digit = " + s19);
+    }
 
     // 20. Find the longest String in the String array
     // Print "longest=programming"
+    int longest = 0;
     String[] arr20 = new String[] {"python", "array", "programming", "java", "bootcamp"};
+    for (int k = 0; k < arr20.length; k++) {
+      System.out.println(arr20[k]);
+    }
+
+
+     for (int i = 0; i < arr20.length; i++) {
+       if (arr20[i + 1].length() > arr20[i].length()) {
+         longest = arr20[i + 1].length();
+        } else {
+          longest = arr20[i].length();
+        }
+      }
+      System.out.println("Ans 20: longest=" + longest);
 
 
 

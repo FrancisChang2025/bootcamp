@@ -4,7 +4,7 @@ import java.math.RoundingMode;
 public class DemoBigDecimal {
   public static void main(String[] args) {
     System.out.println(0.1 + 0.2);  // 0.30000000000004  
-    // ! 運算 +, -, *, /
+    // ! 運算 +, -, *, / 
 
     // Solution 
     BigDecimal bd1 = new BigDecimal("0.1");   // 0.1 -> approach 1
