@@ -1,17 +1,54 @@
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class Cart {
-  private Item[] items;
+  private Item[] items;  // empty no object, ".length()" 就爆炸💣, not array
 
   // Item.java -> price, quantity
 
-  public void add(Item item) {
+  public Cart() {     // for R13 not Bomb!
+    this.items = new Item[0];  // 0長度
+  }
+
+  public Item[] getItems() {
+    return this.items;
+  }
+
+  public int size() {
+    return this.items.length;
+  }
+
+  // this.item -> 19
+  // for 0-9
+  // newItems[10]
+  public void add(Item abc) {  // (Item item) replace
+    Item[] newItems = new Item[this.items.length + 1];
+    for (int i = 0; i < this.items.length; i++){
+      newItems[i] = this.items[i];
+    } 
+    newItems[newItems.length - 1] = abc;  // 找回原先自己的資料copy 去 replace memory
+    this.items = newItems;
 
   }
 
   public double checkoutAmount() {
-    return -1.0;
+    BigDecimal amount = BigDecimal.valueOf(0.0);
+    for (int i = 0; i < this.items.length; i++){
+      amount = BigDecimal.valueOf(this.items[i].amount()).add(amount);  //前amount 拿走，即漏1步，指針不到
+    }
+    return amount.doubleValue();
   }
+
+  // Old Method: below steps same with above R35 to R39 直接把 BigDecimal 搬到 R35
+  // double amount = 0.0;
+  // for (int i = 0; i < this.items.length; i++){
+  //   amount = BigDecimal.valueOf(this.items[i].amount()).add(BigDecimal.valueOf(amount))
+  //    .doubleValue();
+  //  return amount;
+
+
+
+
 
   public static void main(String[] args) {
     int[] arr = new int[3]; // fixed length
@@ -23,21 +60,29 @@ public class Cart {
 
     arr = new int[4];
     System.out.println(Arrays.toString(arr)); // [0, 0, 0, 0]
-    System.out.println(Arrays.toString(arr2));
+    System.out.println(Arrays.toString(arr2));  // [10, 100, -2] 先保留原本 arr 資料，否則
+                                                  // 直接new 會被 replace memory 替代，消失舊
 
     String s = "hello";
-    System.out.println(s); // printing the value in the address of object
+    System.out.println(s); // hello    (printing the value in the address of object)
     s = "hello1"; // new String object
-    System.out.println(s); // different address
+    System.out.println(s); // hello1    (different address)
 
     //
     Cart cart = new Cart();
-    Item rice = new Item();
-    Item water = new Item();
-    Item fish = new Item();
+    Item rice = new Item(99.9, 2);
+    Item water = new Item(4.5, 7);
+    Item fish = new Item(30.0, 4);
+    System.out.println(cart.size()); // 0
     cart.add(rice);
     cart.add(water);
     cart.add(fish);
+    System.out.println(cart.size()); // 3
+    System.out.println(cart.getItems()[2].getQuantity()); // 4    (Item array 加長咗)
 
+    System.out.println(cart.checkoutAmount());   // 351.3
+
+
+ 
   }
 }

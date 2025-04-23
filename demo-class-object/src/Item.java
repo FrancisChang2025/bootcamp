@@ -4,6 +4,15 @@ public class Item {
   private double price;
   private int quantity;
 
+  public Item() {
+
+  }
+
+  public Item(double price, int quantity) {
+    this.price = price;
+    this.quantity = quantity;
+  }
+  
   public void setPrice(double price) {
     this.price = price;
   }
