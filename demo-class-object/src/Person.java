@@ -6,6 +6,16 @@ public class Person {
   private double height;
   private double weight;
 
+  // ! constructor
+  public Person (){
+
+  }
+  // ! all arugment constructor  不可單一加這個，要加埋 Row 9 constructor,else print out problem
+  public Person(double height, double weight){
+    this.height = height;
+    this.weight = weight;
+  }
+
   // getter
   public double getHeight() {
     return this.height;
@@ -46,7 +56,7 @@ public class Person {
   }
 
   public static void main(String[] args) {
-    Person p1 = new Person();
+    Person p1 = new Person();  // new object
     System.out.println(p1.getHeight()); // 0.0
     System.out.println(p1.getWeight()); // 0.0
 
@@ -54,6 +64,14 @@ public class Person {
     p1.setWeight(79);
     System.out.println(p1.getBMI()); // 24.54
     System.out.println(p1.getWeightStatus()); // Overweight
+
+    Person p2 = new Person(1.76, 76);
+    System.out.println(p2.getHeight());  // 1.76
+    System.out.println(p2.getWeight());  // 76.0
+    System.out.println(p2.getBMI());  // 24.54
+    
+
+
 
   }
 }
