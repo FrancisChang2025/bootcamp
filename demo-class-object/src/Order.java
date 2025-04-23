@@ -12,8 +12,9 @@ public class Order {
   // ! Constructors
   public Order() {
     this.items = new Item[0];
-    ++counter;
-    this.id = counter;  // this.id = ++counter;   (to replace R13-14 into one)
+    this.id = ++counter;
+    // ++counter;
+    // this.id = counter;  // (R15 = replace R13-14 into one)
    } 
 
   // Once we have static variable design, id is not requird inputted by user.
@@ -32,7 +33,7 @@ public class Order {
     for (int i = 0; i < this.items.length; i++) {
       newItems[i] = this.items[i];
     }
-    newItems[this.items.length - 1] = item;
+    newItems[newItems.length - 1] = item;
     this.items = newItems;
   }
   // Order o1 = new Order()

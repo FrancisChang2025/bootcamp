@@ -9,8 +9,6 @@ public class Customer { // Blueprint 藍圖(沒有生命) -> HardDisk to 去生�
   private String name;
   private String email;
   // .... etc...
-  private String customer;
-
   private Order[] orders;  // One customer has many orders, One order has many items.
 
   // VIP -> if the total amount of all orders >= 10000 (boolean method is VIP())
@@ -23,7 +21,7 @@ public class Customer { // Blueprint 藍圖(沒有生命) -> HardDisk to 去生�
   // 1 second -> 1000 ms
   // 0-1 ms 千分1秒
   // human being -> 0.1 s 0.2 s
-  public boolean isVIP(){
+  public boolean isVIP() {
     // for loop to orders
     BigDecimal total = BigDecimal.valueOf(0.0);
     for (int i = 0; i < this.orders.length; i++){
@@ -32,13 +30,13 @@ public class Customer { // Blueprint 藍圖(沒有生命) -> HardDisk to 去生�
     return total.doubleValue() >= 10000;
    }
 
-  public void add(Order order){
-    Order[] newOrder = new Order[this.orders.length + 1];
+  public void add(Order order) {
+    Order[] newOrders = new Order[this.orders.length + 1];
     for (int i = 0; i < this.orders.length; i++){
-      newOrder[i] = this.orders[i];
+      newOrders[i] = this.orders[i];
     } 
-    newOrder[newOrder.length - 1] = order;
-    this.orders = newOrder;
+    newOrders[newOrders.length - 1] = order;
+    this.orders = newOrders;
 
   }
 
@@ -51,10 +49,6 @@ public class Customer { // Blueprint 藍圖(沒有生命) -> HardDisk to 去生�
     this.email = email;
   }
 
-  public void setCustomer(String customer) {
-    this.customer = customer;
-  }
-
   // Getter  獲取方法
   public String getName() {
     return this.name;
@@ -64,9 +58,6 @@ public class Customer { // Blueprint 藍圖(沒有生命) -> HardDisk to 去生�
     return this.email;
   }
 
-  public String getCustomer() {
-    return this.customer;
-  }
 
 
 
@@ -92,8 +83,8 @@ public class Customer { // Blueprint 藍圖(沒有生命) -> HardDisk to 去生�
     System.out.println(name);   // John Chan   if 'null' 即冇嘢顯示，不答你 because is a private R9
     System.out.println(email);  // john@gmail.com
 
-    System.out.println(mary.getName());
-    System.out.println(mary.getEmail());
+    System.out.println(mary.getName());  // Mary Wong
+    System.out.println(mary.getEmail());   // mary@gmail.com
 
     Order order1 = new Order();
     order1.add(new Item(15.3, 9));
