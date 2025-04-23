@@ -1,5 +1,5 @@
 public class Name {
-  // attributes
+  // attributes 特徵
   private String firstName;
   private String lastName;
 
@@ -11,7 +11,7 @@ public class Name {
     this.lastName = lastName;
   }
   
-  // Similar to getBMI
+  // Similar to 'getBMI', view 'Person.java'
   public String getFullName() {
     return this.firstName + " " + this.lastName;
   }

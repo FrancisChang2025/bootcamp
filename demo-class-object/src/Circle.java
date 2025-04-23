@@ -3,13 +3,13 @@ import java.math.BigDecimal;
 // ! array -> int[] + String[]
 // 1. Finite length
 
-// ! Class is going to solve a problem of "set of different values"
+// ! Class is going to solve a problem of "set of different values", Array做唔到，改用 Class解決
 public class Circle {
   private double radius; // 7
-  private String color; // Yellow
+  private String color; // Yellow       (新特徴 入 class)
 
   public void setColor(String color) {
-    this.color = color;
+    this.color = color;    // this 代表第一人稱
   }
 
   // c1.setColor("RED");
@@ -20,7 +20,7 @@ public class Circle {
   }
 
   public char getColor2() {
-    return this.color.charAt(0);
+    return this.color.charAt(0);  // 取 color 的第一個字母
   }
 
   public int getColor3() {
@@ -50,8 +50,9 @@ public class Circle {
 
 
   // return "BIG" (>= 5.0) or "SMALL"
-  public String getSizeStatus() {
-    return this.area() >= 5.0 ? "BIG" : "SMALL";
+  public String getSizeStatus() {  //唔好用🚫 isSize (Boolean),雖則這問是否大過，公司有系統才考慮用
+    return this.area() >= 5.0 ? "BIG" : "SMALL";  // 新寫法，如果>5，print'BIG',else'SMALL'
+                         // ! 👆🏻'?' = else
   }
 
   public static void main(String[] args) {
@@ -61,7 +62,7 @@ public class Circle {
     System.out.println(c1.getRadius());
     System.out.println(c1.area());
 
-    System.out.println(c1.getSizeStatus()); // BIG
+    System.out.println(c1.getSizeStatus()); // BIG   （See R52 class)
 
     Circle c2 = new Circle();
     c2.setRadius(1.0);
@@ -70,7 +71,7 @@ public class Circle {
     Circle c3 = new Circle();
     c3.setColor("YELLOW");
     System.out.println(c3.getColor()); // YELLOW
-    System.out.println(c3.getColor2()); // Y
+    System.out.println(c3.getColor2()); // Y     (See R22 class)
 
     c2.setColor("RED");
     System.out.println(c2.getColor()); // RED
