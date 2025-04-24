@@ -44,6 +44,14 @@ public class Person {
         .doubleValue();
   }
 
+  // static getBMI  (Ref to 20250423 afternoon notes of R47-53, 68-96 & 112)
+  public static double getBMI2(double height, double weight){
+    return BigDecimal.valueOf(weight)
+        .divide(BigDecimal.valueOf(Math.pow(height, 2.0)), 2,
+            RoundingMode.HALF_UP)
+        .doubleValue();
+  }
+
   // getWeightStatus (presentation)
   public String getWeightStatus() {
     double bmi = this.getBMI();
@@ -56,6 +64,35 @@ public class Person {
     }
     return "Obese";
   }
+
+  // Assume, this is a calculator, no 'this.' word here,add 'static' to saving memory in Method 2
+  // Method 1:
+  public static String getWeightStatus(double height, double weight){
+    double bmi = BigDecimal.valueOf(weight)
+      .divide(BigDecimal.valueOf(Math.pow(height, 2.0)), 2,
+        RoundingMode.HALF_UP)
+      .doubleValue();
+      if (bmi < 18.5) {
+        return "Underweight"; // "return" -> exit method
+      } else if (bmi >= 18.5 && bmi < 25.0) {
+        return "Normal";
+      } else if (bmi >= 25.0 && bmi < 30.0) {
+        return "Overweight";
+      }
+      return "Obese";
+  }
+  // Method 2:
+      public static String getWeightStatus2(double height, double weight) {  // 要問人取嘢，所以()內要有指引
+      double bmi = getBMI2(height, weight);  // 括弧內要有嘢，因為 static,冇得問 object, 要係 R85取，即他人取。
+      if (bmi < 18.5) {
+        return "Underweight"; // "return" -> exit method
+      } else if (bmi >= 18.5 && bmi < 25.0) {
+        return "Normal";
+      } else if (bmi >= 25.0 && bmi < 30.0) {
+        return "Overweight";
+      }
+      return "Obese";
+     }
 
   public static void main(String[] args) {
     Person p1 = new Person();  // new object
@@ -71,6 +108,10 @@ public class Person {
     System.out.println(p2.getHeight());  // 1.76
     System.out.println(p2.getWeight());  // 76.0
     System.out.println(p2.getBMI());  // 24.54
+
+    System.out.println(Person.getBMI2(1.76, 76));  // 24.54   👈 static 情況下，得出結果 Go to R47
+    System.out.println(Person.getWeightStatus(1.76, 79));  // Overweight 👈 Go to R68
+    System.out.println(Person.getWeightStatus2(1.76, 76));  // Normal 👈 Go to R68
     
 
 
