@@ -5,7 +5,7 @@ public class Queue {
     return this.persons;
   }
 
-  public Person getPerson(int index) {
+  public Person getPerson(int index) {   // this line for test class file 'Person.java'
     return this.persons[index];
   }
 
@@ -13,7 +13,7 @@ public class Queue {
     this.persons = persons;
   }
 
-  public Person getHead() {
+  public Person getHead() {    // 誰人排頭位 Head, Array Head is [0], Tail 最尾
     return this.persons[0];
   }
   
@@ -40,14 +40,14 @@ public class Queue {
     p3.setWeight(77);
     System.out.println(p3.getBMI());  // 23.77
 
-    Person[] persons = new Person[3];
+    Person[] persons = new Person[3];  // person array
     persons[0] = p1;
     persons[1] = p2;
     persons[2] = p3;
 
     q1.setPerson(persons);
     
-    System.out.println(q1.getHead().getBMI());  // 24.44
+    System.out.println(q1.getHead().getBMI());  // 24.44    Go to R16 run & class Person ".getBMI()"
 
     for (int i = 0; i < q1.getPersons().length; i++){
       System.out.println(q1.getPerson(i).getWeightStatus());
@@ -56,7 +56,7 @@ public class Queue {
     // Overweight
     // Normal
 
-
+    // ! R50 - R53 全部都係即時做，即時運算，no any value/string keep in the memory, all call class file to do.
 
   }
 }

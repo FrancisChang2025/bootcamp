@@ -21,7 +21,7 @@ public class Cart {
   // this.item -> 19
   // for 0-9
   // newItems[10]
-  public void add(Item abc) {  // (Item item) replace
+  public void add(Item abc) {  // (Item item) replace by ab  
     Item[] newItems = new Item[this.items.length + 1];
     for (int i = 0; i < this.items.length; i++){
       newItems[i] = this.items[i];
