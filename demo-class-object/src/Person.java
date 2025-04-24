@@ -3,6 +3,8 @@ import java.math.RoundingMode;
 
 public class Person {
   // height weight
+  // ! Attributes (Instance Variable)
+  // Instance means Object
   private double height;
   private double weight;
 
