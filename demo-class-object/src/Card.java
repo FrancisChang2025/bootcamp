@@ -19,8 +19,8 @@ public class Card {
   public static final char SEVEN = '7';   // constant
   public static final char EIGHT = '8';   // constant
   public static final char NINE = '9';   // constant
-  public static final char TEN = 'A';   // constant
-  public static final char JACK = 'J';   // constant
+  public static final char TEN = 'V';   // constant
+  public static final char JACK = 'W';   // constant
   public static final char QUEEN = 'X';   // constant
   public static final char KING = 'Y';   // constant
   // rank 數字(number)
@@ -112,10 +112,10 @@ public class Card {
     System.out.println(c5.compareTo(c6));  // -1
 
     System.out.println(c6.toString());  // Z, D       'ACE DIAMOND'   //  只打(c6)都接受，JAVA 默認 toString
-    System.out.println(c1);
-    System.out.println(c2);
-    System.out.println(c3);
-    System.out.println(c4);
-    System.out.println(c5);
+    System.out.println(c1);  // 2, C
+    System.out.println(c2);  // 2, C
+    System.out.println(c3);  // 3, C
+    System.out.println(c4);  // 2, H
+    System.out.println(c5);  // Z, C
   }
 }

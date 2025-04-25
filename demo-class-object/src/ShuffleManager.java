@@ -1,9 +1,10 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class ShuffleManager {
 
   // shuffle once 洗牌一次
-  public Card[] shuffle(Card[] cards) {
+  public static Card[] shuffle(Card[] cards) {
     if (cards.length <= 2)
       return cards;
       // random (1-50), skip 0 and 51
@@ -26,8 +27,19 @@ public class ShuffleManager {
     // [5, 6, 1, 2, 3, 4, 7]
 
     // Case 1: 3 Cards
-    Card[] cards = new Card[]{new Card(Card.ACE, Card.CLUB)};
-      new Card(Card.TEN, Card.CLUB), new Card(Card.ACE, Card.HEART);
+     Card[] cards = new Card[] {new Card(Card.ACE, Card.CLUB),
+        new Card(Card.TEN, Card.CLUB), new Card(Card.ACE, Card.HEART)};
+     Card[] newCards = ShuffleManager.shuffle(cards);
+     System.out.println(Arrays.toString(newCards));
+
+     // Case 2: 52 Cards
+     Deck deck = new Deck();
+
+     Card[] newCards2 = deck.getCards();
+     for (int i = 0; i < 1000; i++) {
+       newCards2 = ShuffleManager.shuffle(newCards2);
+     }
+     System.out.println(Arrays.toString(newCards2));
     
   }
 }

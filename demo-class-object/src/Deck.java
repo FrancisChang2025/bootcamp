@@ -12,10 +12,10 @@ public class Deck {
   // constructor
   public Deck(){
     this.cards = new Card[SUITS.length * RANKS.length];
-    int index = 0;
+    int idx = 0;
     for (int i = 0; i < SUITS.length; i++){
       for (int k = 0; k < RANKS.length; k++){
-        this.cards[index++] = new Card(RANKS[k], SUITS[k]);
+        this.cards[idx++] = new Card(RANKS[k], SUITS[k]);
       }
     }
   }
