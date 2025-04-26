@@ -19,7 +19,7 @@ public class Customer { // Blueprint 藍圖(沒有生命) -> HardDisk to 去生�
   }
 
   // 1 second -> 1000 ms
-  // 0-1 ms 千分1秒
+  // 0-1 ms 千分1秒 in Java
   // human being -> 0.1 s 0.2 s
   public boolean isVIP() {
     // for loop to orders
