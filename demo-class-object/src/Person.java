@@ -12,13 +12,13 @@ public class Person {
   public Person (){
 
   }
-  // ! all arugment constructor  不可單一加這個，要加埋 Row 9 constructor,else print out problem
-  public Person(double height, double weight){
+  // ! all arugment constructor  不可單一加這個，要加埋 Row 11 constructor,else print out problem
+  public Person(double height, double weight){    // 👈 這個寫法，意即開 new時，即時 Input 寫埋身高，體重。
     this.height = height;
     this.weight = weight;
   }
 
-  // getter
+  // getter   (Java call this 'METHOD (工具)', setter and getter)
   public double getHeight() {
     return this.height;
   }
@@ -95,16 +95,16 @@ public class Person {
      }
 
   public static void main(String[] args) {
-    Person p1 = new Person();  // new object
+    Person p1 = new Person();  // new object 👈 1️⃣ execute R12 constructor 
     System.out.println(p1.getHeight()); // 0.0
     System.out.println(p1.getWeight()); // 0.0
 
-    p1.setHeight(1.76);
-    p1.setWeight(79);
+    p1.setHeight(1.76);  // 取 height 參數 👈 2️⃣ execute R31
+    p1.setWeight(79);    // 取 weight 參數 👈 3️⃣ execute R35
     System.out.println(p1.getBMI()); // 24.54
     System.out.println(p1.getWeightStatus()); // Overweight
 
-    Person p2 = new Person(1.76, 76);
+    Person p2 = new Person(1.76, 76);   // 👈 execute R16 constructor 一次過做晒3個參數動作 (new,height,weight)
     System.out.println(p2.getHeight());  // 1.76
     System.out.println(p2.getWeight());  // 76.0
     System.out.println(p2.getBMI());  // 24.54

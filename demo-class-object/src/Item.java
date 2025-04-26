@@ -30,9 +30,9 @@ public class Item {
   }
 
   public double amount() {
-    return BigDecimal.valueOf(this.price)
-        .multiply(BigDecimal.valueOf(this.quantity)) //
-        .doubleValue();
+    return BigDecimal.valueOf(this.price)//
+      .multiply(BigDecimal.valueOf(this.quantity))//
+      .doubleValue();
   }
 
   public static void main(String[] args) {

@@ -2,12 +2,12 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class Cart {
-  private Item[] items;  // empty no object, ".length()" 就爆炸💣, not array
+  private Item[] items;  // empty no object, ".length()" 就爆炸💣, not array, add item constructor R9
 
   // Item.java -> price, quantity
 
   public Cart() {     // for R13 not Bomb!
-    this.items = new Item[0];  // 0長度
+    this.items = new Item[0];  // 0長度，no this will be error 'null' nothing, will 💣
   }
 
   public Item[] getItems() {
@@ -18,19 +18,19 @@ public class Cart {
     return this.items.length;
   }
 
-  // this.item -> 19
-  // for 0-9
+  // this.item -> 10
+  // for loop -> 0-9
   // newItems[10]
-  public void add(Item abc) {  // (Item item) replace by ab  
-    Item[] newItems = new Item[this.items.length + 1];
+  public void add(Item abc) {  // (Item item) replace by abc  
+    Item[] newItems = new Item[this.items.length + 1];  // '+1'就是自己毎位，自己的長度
     for (int i = 0; i < this.items.length; i++){
       newItems[i] = this.items[i];
     } 
     newItems[newItems.length - 1] = abc;  // 找回原先自己的資料copy 去 replace memory
     this.items = newItems;
-
   }
 
+  // ! 涉及 +,-,*,/ and 小數點位運算，都要用 BigDecimal method in the Loop
   public double checkoutAmount() {
     BigDecimal amount = BigDecimal.valueOf(0.0);
     for (int i = 0; i < this.items.length; i++){
@@ -70,15 +70,16 @@ public class Cart {
 
     //
     Cart cart = new Cart();
-    Item rice = new Item(99.9, 2);
-    Item water = new Item(4.5, 7);
-    Item fish = new Item(30.0, 4);
+    Item rice = new Item(99.9, 2);        // array[0]
+    Item water = new Item(4.5, 7);        // array[1]
+    Item fish = new Item(30.0, 4);        // array[2]
     System.out.println(cart.size()); // 0
-    cart.add(rice);
+    cart.add(rice); 
     cart.add(water);
     cart.add(fish);
     System.out.println(cart.size()); // 3
     System.out.println(cart.getItems()[2].getQuantity()); // 4    (Item array 加長咗)
+                          //    R13 👆 fish     👆view class 'item.java'
 
     System.out.println(cart.checkoutAmount());   // 351.3
 

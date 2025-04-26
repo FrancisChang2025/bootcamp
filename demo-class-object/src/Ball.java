@@ -4,10 +4,10 @@ public class Ball {
   private String colour;
 
   // constructor
-  // ! by default, implicityly empty constructor exists
-  // ! but once you define a new constructor, the empty constructor will dismiss (disappear)
-  public Ball() {
-    // this.size = 3;  
+  // ! by default, implicityly empty constructor exists 
+  // ! but once you define a new constructor, the empty constructor will dismiss (disappear) 不能回頭
+  public Ball() {          // this no return type, java 預設暗地裡幫我們做咗，背後有資料
+    // this.size = 3;        // 每次開 new, constructor 都要路過, 一起步就是3
   }
 
   // Can be more than one constructor
@@ -51,11 +51,11 @@ public class Ball {
 
   public static void main(String[] args) {
     // "new" associate with constructor
-    Ball b1 = new Ball(); // call empty constructor
+    Ball b1 = new Ball(); // call empty constructor    有 new 字眼會 excute constructor 指令
     b1.setSize(4);
     System.out.println(b1.getSizeDesc());  // SMALL
 
-    Ball b2 = new Ball(10); // call the another constructor
+    Ball b2 = new Ball(10); // call the another 有參數的 constructor 
     System.out.println(b2.getSize()); // 10.0
 
     
