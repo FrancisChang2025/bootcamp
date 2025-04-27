@@ -11,7 +11,7 @@ public class Name {
     this.lastName = lastName;
   }
   
-  // Similar to 'getBMI', view 'Person.java'
+  // Similar to 'getBMI',  Visit class file 'Person.java'
   public String getFullName() {
     return this.firstName + " " + this.lastName;
   }

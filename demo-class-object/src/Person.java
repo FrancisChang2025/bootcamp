@@ -8,12 +8,12 @@ public class Person {
   private double height;
   private double weight;
 
-  // ! constructor
+  // ! constructor       Purpose: create object
   public Person (){
 
   }
   // ! all arugment constructor  不可單一加這個，要加埋 Row 11 constructor,else print out problem
-  public Person(double height, double weight){    // 👈 這個寫法，意即開 new時，即時 Input 寫埋身高，體重。
+  public Person(double height, double weight){    // 👈 這個寫法，意即開 new，即時 Input 寫埋身高，體重。
     this.height = height;
     this.weight = weight;
   }
@@ -95,7 +95,7 @@ public class Person {
      }
 
   public static void main(String[] args) {
-    Person p1 = new Person();  // new object 👈 1️⃣ execute R12 constructor 
+    Person p1 = new Person();  // new object 👈 1️⃣ execute R12 constructor -> create 'Person' object
     System.out.println(p1.getHeight()); // 0.0
     System.out.println(p1.getWeight()); // 0.0
 
@@ -113,8 +113,6 @@ public class Person {
     System.out.println(Person.getWeightStatus(1.76, 79));  // Overweight 👈 Go to R68
     System.out.println(Person.getWeightStatus2(1.76, 76));  // Normal 👈 Go to R68
     
-
-
 
   }
 }
