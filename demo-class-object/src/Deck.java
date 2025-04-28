@@ -15,7 +15,7 @@ public class Deck {
     int idx = 0;
     for (int i = 0; i < SUITS.length; i++){
       for (int k = 0; k < RANKS.length; k++){
-        this.cards[idx++] = new Card(RANKS[k], SUITS[k]);
+        this.cards[idx++] = new Card(RANKS[k], SUITS[i]);
       }
     }
   }

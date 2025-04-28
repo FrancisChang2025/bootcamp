@@ -65,6 +65,19 @@ public class Person {
     return "Obese";
   }
 
+  public boolean equals(Person person) {
+    return this.height == person.getHeight()
+    && this.weight == person.getWeight();
+  }
+
+  public String toString(){
+    return "Person(" //
+     + "height=" + this.height //
+     + ",weight=" + this.weight //
+     + ")";
+  }
+
+
   // Assume, this is a calculator, no 'this.' word here,add 'static' to saving memory in Method 2
   // Method 1:
   public static String getWeightStatus(double height, double weight){
@@ -113,6 +126,16 @@ public class Person {
     System.out.println(Person.getWeightStatus(1.76, 79));  // Overweight 👈 Go to R68
     System.out.println(Person.getWeightStatus2(1.76, 76));  // Normal 👈 Go to R68
     
+    // You prepared the toString() method, System.out.println() calls the object toSsting() method.
+    System.out.println(p2.toString());  // Person(height=1.76,weight=76.0)  R73 巳講咗自己是 toString
+    System.out.println(p1);  // Person(height=1.76,weight=79.0)
 
+    System.out.println("hello".toString());  // hello
+
+    // You prepared the equals() method. p2 is able to call equals().
+    Person p3 = new Person(1.76, 76);
+    System.out.println(p2.equals(p3));  // true
+    System.err.println(p1.equals(p3));  // false
+ 
   }
 }
