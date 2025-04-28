@@ -1,14 +1,15 @@
 public class Card {
   // ! static -> common values for all objects (Not belongs to objects)
   // ! static -> Cannot modify the value after initialization
-  // Non-static and Non-Final
-  // Static and Non-Final
-  // Non-static and Final
-  // Static and Final
-  public static final char DIAMOND = 'D';   // constant 全大寫      static = dictionery
-  public static final char CLUB = 'C';   // constant 
-  public static final char HEART = 'H';   // constant 
-  public static final char SPADE = 'S';   // constant 
+  // Non-static and Non-Final   (it means that is to describe it as an object)
+  // Static and Non-Final    (static -> 公家共用, and non-final 可以改，如id#. unique, counter+1)
+  // Non-static and Final    (e.g. slogan, company name...etc)
+  // Static and Final    (static -> dictionery) (final -> fixed, can't any change value in future)
+
+  public static final char DIAMOND = '1';   // constant -> 全大寫'DIAMOND'
+  public static final char CLUB = '2';   // constant 
+  public static final char HEART = '3';   // constant 
+  public static final char SPADE = '4';   // constant 
 
   public static final char TWO = '2';   // constant
   public static final char ACE = 'Z';   // constant     'ACE' 是最大
@@ -19,7 +20,7 @@ public class Card {
   public static final char SEVEN = '7';   // constant
   public static final char EIGHT = '8';   // constant
   public static final char NINE = '9';   // constant
-  public static final char TEN = 'V';   // constant
+  public static final char TEN = 'T';   // constant
   public static final char JACK = 'W';   // constant
   public static final char QUEEN = 'X';   // constant
   public static final char KING = 'Y';   // constant
@@ -48,15 +49,12 @@ public class Card {
     this.suit = suit;
   }
 
-
   public char getRank() {
     return this.rank;
   }
   public char getSuit() {
     return this.suit;
   }
-
-
 
   // color
   public boolean isRed() {
@@ -65,13 +63,13 @@ public class Card {
     return false;
   }
 
-  // this (self 自己)    👇 代表 input
+  // this (self 自己)    👇 代表 input   問下自己張牌是否等如抽出的牌 equal()
   public boolean equals(Card card) {
     return this.rank == card.getRank() && this.suit == card.getSuit();
   }
 
-  // 10.compareTo(3) -> 1
-  // 3.compare(10) -> -1   // 可以唔用 to 不正統寫法
+  // 10.compareTo(3) -> 1  // JAVA 正統寫法
+  // 3.compare(10) -> -1   // 可以唔用 to 但不正統寫法
 
   // 0, -1, 1
   public int compareTo(Card card) {
@@ -94,9 +92,9 @@ public class Card {
   }
 
   public static void main(String[] args) {
-    Card c1 = new Card(TWO, CLUB);
+    Card c1 = new Card(TWO, CLUB);  // saw 'new', go to R38 run constructor
     Card c2 = new Card(TWO, CLUB);
-    System.out.println(c1.equals(c2));   // true   Go to R68 run
+    System.out.println(c1.equals(c2));   // true   Go to R75 run
     Card c3 = new Card(THREE, CLUB);
     System.out.println(c1.equals(c3));  // false
     Card c4 = new Card(TWO, HEART);
@@ -104,18 +102,18 @@ public class Card {
     Card c5 = new Card(ACE, CLUB);
     System.out.println(c1.equals(c5));  // false   (把所有可能發生 case to test)
 
-    System.out.println(c1.compareTo(c2));  // 0
+    System.out.println(c1.compareTo(c2));  // 0    Go to R75 run
     System.out.println(c1.compareTo(c3));  // -1
     System.out.println(c5.compareTo(c1));  // 1
 
     Card c6 = new Card(ACE, DIAMOND);
-    System.out.println(c5.compareTo(c6));  // -1
+    System.out.println(c5.compareTo(c6));  // 1
 
-    System.out.println(c6.toString());  // Z, D       'ACE DIAMOND'   //  只打(c6)都接受，JAVA 默認 toString
-    System.out.println(c1);  // 2, C
-    System.out.println(c2);  // 2, C
-    System.out.println(c3);  // 3, C
-    System.out.println(c4);  // 2, H
-    System.out.println(c5);  // Z, C
+    System.out.println(c6.toString());  // Z, 1       'ACE DIAMOND'   //  只打(c6)都接受，JAVA 默認 toString
+    System.out.println(c1);  // 2, 1
+    System.out.println(c2);  // 2, 2
+    System.out.println(c3);  // 3, 2
+    System.out.println(c4);  // 2, 3
+    System.out.println(c5);  // Z, 2
   }
 }
