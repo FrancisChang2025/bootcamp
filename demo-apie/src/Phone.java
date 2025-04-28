@@ -11,11 +11,11 @@ public class Phone extends Machine {  // Phone has Camera (Student has College)
     this.idx = 0;
   }
 
-  public Camera getCamera(){
+  public Camera getCamera() {
     return this.camera;
   }
 
-  public boolean takePhoto(){
+  public boolean takePhoto() {
     if (this.idx >= photos.length) {
       return false;
     }
@@ -29,10 +29,15 @@ public class Phone extends Machine {  // Phone has Camera (Student has College)
     Phone iphone4 = new Phone("IPHONE4");
     Phone iphone5 = new Phone("IPHONE5");
 
-    System.out.println(iphone4.getStatus());  // OFF
+    System.out.println(iphone4.getStatus()); // OFF
     iphone4.turnOn();
-    System.out.println(iphone4.getStatus());  // ON
+    System.out.println(iphone4.getStatus()); // ON
 
     System.out.println(iphone4.takePhoto());
+    System.out.println(iphone4.takePhoto());
+    System.out.println(iphone4.takePhoto());
+    System.out.println(iphone4.takePhoto());
+    System.out.println(iphone4.takePhoto());
+
   }
 }

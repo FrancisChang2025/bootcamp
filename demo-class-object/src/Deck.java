@@ -29,9 +29,8 @@ public class Deck {
 
 
   public static void main(String[] args) {
-    Deck d1 = new Deck();
+    Deck d1 = new Deck();      // saw 'new' go to constructor R13 to R21 For Loop to filter diff card
     System.out.println(Arrays.toString(d1.getCards()));
-  
-  
+
   }
 }

@@ -1,17 +1,5 @@
 public class Ball {
-  private Ball() balls;
+  private String color;
+  private int number;
 
-  public Bag(){
-    this.balls = new Ball();
-  }
-
-
-
-
-
-
-
-  public static void main(String[] args) {
-    
-  }
 }

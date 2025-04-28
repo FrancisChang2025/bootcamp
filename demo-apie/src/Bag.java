@@ -5,9 +5,9 @@ public class Bag {
     this.balls = new Ball[5];
   }
 
-  public int getSize()
-
-
+  public int getSize() {
+    return this.balls.length;
+  }
 
   // ! Presentation & Checking isEmpty() & isFull()
   public boolean isEmpty() {
@@ -21,18 +21,14 @@ public class Bag {
 
   public boolean isFull() {
     for (int i = 0; i < this.balls.length; i++){
-      if (this.balls[i] == null) {   // 
+      if (this.balls[i] == null) {         // 👈 'null'
         return false;
       }
     }
     return true;
   }
-  }
 
-  public boolean add(Ball ball) {
-  //  if (isFull()) {
-  //     return false;
-  //  }
+  public boolean add(Ball newBall) {
     for (int i = 0; i < this.balls.length; i++) {
       if (this.balls[i] == null) {
         this.balls[i] = newBall;

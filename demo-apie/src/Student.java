@@ -22,6 +22,10 @@ public class Student {
     return this.bag.add(ball);
   }
 
+  public Bag getBag() {
+    return this.bag;
+  }
+
   public String randomPick(){   // Difficult
     if (this.bag.isEmpty()){
       return "Empty Bag!!!";
@@ -41,7 +45,12 @@ public class Student {
 
   public static void main(String[] args) {
     Student john = new Student();  // Create Student Object, Bag Object, Ball Array Object
-    john.place(new ball());
-    john.place(new ball());
+    john.place(new Ball());
+    john.place(new Ball());
+    john.place(new Ball());
+    john.place(new Ball());
+    john.place(new Ball());
+    john.randomPick();
+    System.out.println(john.getBag().getSize()); // 5
   }
 }

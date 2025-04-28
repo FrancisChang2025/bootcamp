@@ -28,7 +28,8 @@ public class Card {
   // Don't use "String", "1", "J", "Q"
   // 1. Readability 閲讀性
   // 2. Data Type Range ()
-  private char rank;  // 1,2,3,4,5,6,7,8,9,T,J,Q,K     '10'replace by 'T',char only accept 1個位
+  private char rank;  // 1,2,3,4,5,6,7,8,9,T,J,Q,K     
+  //                          '10'replace by 'T', char only accept 1個位
 
   // suit 花式圖型 (DIAMOND, CLUB, HEART, SPADE)
   private char suit;  // D,C,H,S
@@ -39,7 +40,6 @@ public class Card {
     this.rank = rank;
     this.suit = suit;
   }
-
 
   // Setter, Getter
   public void setRank(char rank){
@@ -71,7 +71,7 @@ public class Card {
   // 10.compareTo(3) -> 1  // JAVA 正統寫法
   // 3.compare(10) -> -1   // 可以唔用 to 但不正統寫法
 
-  // 0, -1, 1
+  // 0, -1, 1   (Equal ranks)
   public int compareTo(Card card) {
     if (this.rank == card.getRank()) {
       if (this.suit > card.getSuit()) {
@@ -81,7 +81,6 @@ public class Card {
       }
       return 0;
     }
-
 
     // different ranks
     return this.rank > card.getRank() ? 1 : -1;
@@ -109,7 +108,7 @@ public class Card {
     Card c6 = new Card(ACE, DIAMOND);
     System.out.println(c5.compareTo(c6));  // 1
 
-    System.out.println(c6.toString());  // Z, 1       'ACE DIAMOND'   //  只打(c6)都接受，JAVA 默認 toString
+    System.out.println(c6.toString());  // Z, 1 -> 'ACE DIAMOND'  只打(c6)都接受，JAVA 默認 toString
     System.out.println(c1);  // 2, 1
     System.out.println(c2);  // 2, 2
     System.out.println(c3);  // 3, 2

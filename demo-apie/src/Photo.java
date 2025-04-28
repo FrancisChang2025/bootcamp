@@ -10,15 +10,11 @@ public class Photo {
     return this.id;
   }
 
-  // equals()
-  public boolean equals(Photo phone) {
+   // equals()
+   public boolean equals(Photo photo) {
     return this.id == photo.getId();
   }
-
-  // toString
-  public long toString() {
-    return "Photo(" + "name=" + this.id  + ")";
-  }
+  // toString()
 
   public static void main(String[] args) {
     Photo photo1 = new Photo();
