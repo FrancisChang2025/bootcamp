@@ -5,6 +5,6 @@ public class Child {
   
   // Print out the color of candy per child
 
-
+private int child; 
 
 }

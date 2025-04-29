@@ -11,19 +11,19 @@ public class Card {
   public static final char HEART = '3';   // constant 
   public static final char SPADE = '4';   // constant 
 
-  public static final char TWO = '2';   // constant
-  public static final char ACE = 'Z';   // constant     'ACE' 是最大
-  public static final char THREE = '3';   // constant
-  public static final char FOUR = '4';   // constant
-  public static final char FIVE = '5';   // constant
-  public static final char SIX = '6';   // constant
-  public static final char SEVEN = '7';   // constant
-  public static final char EIGHT = '8';   // constant
-  public static final char NINE = '9';   // constant
-  public static final char TEN = 'T';   // constant
-  public static final char JACK = 'W';   // constant
-  public static final char QUEEN = 'X';   // constant
-  public static final char KING = 'Y';   // constant
+  public static final char ACE = 'M';   // constant     'ACE' 是最大
+  public static final char TWO = 'A';   // constant
+  public static final char THREE = 'B';   // constant
+  public static final char FOUR = 'C';   // constant
+  public static final char FIVE = 'D';   // constant
+  public static final char SIX = 'E';   // constant
+  public static final char SEVEN = 'F';   // constant
+  public static final char EIGHT = 'G';   // constant
+  public static final char NINE = 'H';   // constant
+  public static final char TEN = 'I';   // constant
+  public static final char JACK = 'J';   // constant
+  public static final char QUEEN = 'K';   // constant
+  public static final char KING = 'L';   // constant
   // rank 數字(number)
   // Don't use "String", "1", "J", "Q"
   // 1. Readability 閲讀性
