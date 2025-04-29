@@ -1,7 +1,6 @@
 public class Camera extends Machine {
 
-  public void takePhoto() {
-    // create Photo object
+  public Photo takePhoto() {      // 自己制做 create Photo object 
     return new Photo();
   }
 }

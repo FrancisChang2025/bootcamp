@@ -33,11 +33,11 @@ public class Phone extends Machine {  // Phone has Camera (Student has College)
     iphone4.turnOn();
     System.out.println(iphone4.getStatus()); // ON
 
-    System.out.println(iphone4.takePhoto());
-    System.out.println(iphone4.takePhoto());
-    System.out.println(iphone4.takePhoto());
-    System.out.println(iphone4.takePhoto());
-    System.out.println(iphone4.takePhoto());
+    System.out.println(iphone4.takePhoto()); // true
+    System.out.println(iphone4.takePhoto()); // true
+    System.out.println(iphone4.takePhoto()); // true
+    System.out.println(iphone4.takePhoto()); // true
+    System.out.println(iphone4.takePhoto()); // true
 
   }
 }
