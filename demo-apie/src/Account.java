@@ -45,7 +45,7 @@ public abstract class Account {
     Cat cat = new Cat("Jenny", 10);
 
     // Parent Class Array
-    // Zoo.java 
+    // Zoo.java have Animal[]
     Animal[] animals = new Animal[] {new Cat("John", 12), new Dog("Peter")};
 
     // Bag -> Ball, Phone
