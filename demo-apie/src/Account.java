@@ -35,10 +35,23 @@ public abstract class Account {
 
 
   public static void main(String[] args) {
+    // Polymorphism
     Animal animal = new Cat("John", 12);
-    animal = new Dog("Susan");
+    animal = new Dog("Susan"); // Dog is a child class of Animal class
+    // animal = new Circle(3.0, "RED");
 
-    Animal[] animals = new Animal[] {new Cat("John", 12), new Dog("Peter")};
+    // Cat dog = new Dog("Peter");   // NOT OK
     // Cat cat = new Animal("Peter"); // NOT OK
+    Cat cat = new Cat("Jenny", 10);
+
+    // Parent Class Array
+    // Zoo.java 
+    Animal[] animals = new Animal[] {new Cat("John", 12), new Dog("Peter")};
+
+    // Bag -> Ball, Phone
+    // Ball extends Gift
+    // Phone extends Gift
+    // Bag -> Gift[], Gift is a Parent/Super
+
   }
 }

@@ -7,7 +7,7 @@ public class Warrior extends Hero {
       new int[] {240, 50, 10, 5, 8, 4, 20, 40, 5};
 
   public Warrior() {
-    super(1, level1[0], level1[0]); 
+    super(1, level1[0], level1[1]); // All objects should start with level 1
   }
 
   public int getMaxHp() {

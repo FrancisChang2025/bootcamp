@@ -20,4 +20,10 @@ public class Cat extends Animal {
   public String getName() {
     return super.getName();
   }
+
+  // Child Class can override the parent class method
+  @Override
+  public void sound(){
+    System.out.println("Meow ....");
+  }
 }

@@ -29,6 +29,10 @@ public class Animal {  // more sbstract -> Parent Class
     return this.cat;
   }
 
+  public void sound() {
+    System.out.println("default sound....");
+  }
+
   public static void main(String[] args) {
     Animal a1 = new Animal("John");
     System.out.println(a1.getName()); // John
