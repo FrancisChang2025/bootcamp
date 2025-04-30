@@ -4,6 +4,9 @@ public class Dog extends Animal {
     super(name);
   }
 
+  @Override
+  
+
   public static void main(String[] args) {
     Dog d1 = new Dog("Steven");
     System.out.println(d1.toString()); // Dog@6d06d69c
