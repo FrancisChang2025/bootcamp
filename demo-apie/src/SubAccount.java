@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public abstract class SubAccount {
+public abstract class SubAccount {   // cannot be "new"
   private double balance;
 
   public SubAccount() {
@@ -19,8 +19,8 @@ public abstract class SubAccount {
   public boolean debit(double amount) {  // withdrawal
     if(this.balance < amount)
       return false;
-      this.balance = BigDecimal.valueOf(this.balance)  //
+    this.balance = BigDecimal.valueOf(this.balance)  //
         .subtract(BigDecimal.valueOf(amount)).doubleValue();
-      return true;
+    return true;
   }
 }
