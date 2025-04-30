@@ -17,6 +17,10 @@ public abstract class Hero {
     return this.hp;
   }
 
+  public boolean isAlive() {
+    return this.hp >= 0;
+  }
+
   public void levelUp() {
     this.level++;
     if (this.level == 2) {

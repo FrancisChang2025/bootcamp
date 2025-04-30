@@ -7,13 +7,13 @@ public class ShuffleManager {
   public static Card[] shuffle(Card[] cards) {
     if (cards.length <= 2)
       return cards;
-      // random (1-50), skip 0 and 51
+      // random (1-50), skip 0 and 51 扣起最面及最底2張牌，中間抽出放上面洗牌
       // int index = new Random().nextInt();  // 0 - 51
       int idx = new Random().nextInt(cards.length - 2) + 1;   // (0 - 49) + 1 -> 50
       Card backup1 = cards[idx];
       Card backup2 = cards[idx + 1];
       for (int i = idx - 1; i >= 0; i--){
-        cards[i +2] = cards[i];
+        cards[i + 2] = cards[i];
       }
       cards[0] = backup1;
       cards[1] = backup2;

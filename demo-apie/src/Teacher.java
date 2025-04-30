@@ -27,7 +27,7 @@ public class Teacher {
           isEmpty = true;
           break;
         }
-        idx++;
+        idx++;  // 順序派糖
       }
       if (isEmpty) {
         break;
