@@ -41,6 +41,7 @@ public class Animal {  // more sbstract -> Parent Class
 
     Cat c1 = new Cat("Peter", 20);
     System.out.println(c1.getName()); // Peter
+    System.out.println(c1.getAge());  // 20
     c1.setAge(18);
     System.out.println(c1.getAge()); // 18
 
@@ -49,13 +50,17 @@ public class Animal {  // more sbstract -> Parent Class
     d1.setName("Tommy");
     System.out.println(d1.getName()); // Tommy
 
-    Animal a2 = new Animal("Vincent", new Cat("Steven", 2));
-    a2.getCat().getName();
+    Animal a2 = new Animal("Vincent", new Cat("Steven", 3));
+    System.out.println(a2.getCat().getName()); // Steven
+    System.out.println(a2.getCat().getAge()); // 3
+    System.out.println(a2.getName());  // Vincent
 
     Cat c2 = new Cat("Steven", 2);
+    System.out.println(c2.getName()); // Steven
+
     Animal a3 = new Animal("Vincent", c2);
-    a3.getCat().getName();
-    c2.getName();
+    System.out.println(a3.getCat().getAge());  // 2
+    System.out.println(a3.getName()); // Vincent
 
   }
 }

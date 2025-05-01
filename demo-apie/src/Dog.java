@@ -1,11 +1,15 @@
 public class Dog extends Animal {
+  // private String name;
+  // private int age;
   
   public Dog(String name) {
     super(name);
   }
 
   @Override
-  
+  public void sound(){
+    System.out.println("wow wow...");
+  }
 
   public static void main(String[] args) {
     Dog d1 = new Dog("Steven");

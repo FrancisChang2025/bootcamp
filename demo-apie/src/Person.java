@@ -65,9 +65,9 @@ public class Person {
       }
       if (found) {
         System.out.println("The cat name " + input + " already exists.");
-        continue;
+        continue;    // Go to R57 repeat
       } else {
-        catNames[idx++] = input;
+        catNames[idx++] = input;  // can't use [i],because exist Loop R60-65, add idx R55
       }
       if (idx >= catNames.length) {
         break;
@@ -75,7 +75,5 @@ public class Person {
     }
     scanner.close();
     System.out.println(Arrays.toString(catNames));
-
-
   }
 }
