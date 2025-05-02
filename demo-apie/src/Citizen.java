@@ -1,15 +1,26 @@
-public class Citizen {
+// Citizen -> find Library -> find BookShelf -> find Books (one way relatioship)
+// book.getBorrower()
+public class Citizen implements Borrowable {   // 借書的動作
+  // private int borrowId;
   private String name;
+  private Library library; // Citizen "has" Library
+  private Book[] books;
 
-  public Borrow(String name){
+  public Citizen(String name) {  // membership
     this.name = name;
   }
 
-  public String getName(){
-    return this.name;
+  public void setLibrary(Library library) {
+    this.library = library;
+  }
 
-  public void setName(String name){
-    this.name = name;
+  @Override
+  public boolean borrow(Book book) {
+    return this.library.remove(book);
+  }
+
+  public boolean search(String bookName) {
+    return this.library.search(bookName) != null;
   }
 
 
