@@ -5,6 +5,7 @@ public class Student {
   // A bag has many Balls (5)
 
   // A ball has a color and number
+
   // 3 different colors (RED, YELLOW, BLUE)
   // number 1-9
 
@@ -31,7 +32,7 @@ public class Student {
       return "Empty Bag!!!";
     }
 
-    Ball ball = null;  //  風狂抽
+    Ball ball = null;  //  瘋狂抽波動作
     while (ball == null) {
       int random = new Random().nextInt(this.bag.getSize()); // 0-4
       ball = this.bag.pick(random);
@@ -45,7 +46,7 @@ public class Student {
 
   public static void main(String[] args) {
     Student john = new Student();  // Create Student Object, Bag Object, Ball Array Object
-    john.place(new Ball());
+    john.place(new Ball());   // place ball 放波入去, place 是1個動詞，諗下如何放入去possing
     john.place(new Ball());
     john.place(new Ball());
     john.place(new Ball());

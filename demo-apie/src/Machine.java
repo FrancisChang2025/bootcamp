@@ -23,5 +23,4 @@ public class Machine {
     m1.turnOn();
     System.out.println(m1.getStatus());  // ON
   }
-
 }
