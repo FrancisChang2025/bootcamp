@@ -16,7 +16,7 @@ public abstract class SubAccount {   // cannot be "new"
       .add(BigDecimal.valueOf(amount)).doubleValue();
   }
 
-  public boolean debit(double amount) {  // withdrawal
+  public boolean debit(double amount) {    // withdrawal
     if(this.balance < amount)
       return false;
     this.balance = BigDecimal.valueOf(this.balance)  //

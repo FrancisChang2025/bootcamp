@@ -11,7 +11,7 @@ public abstract class Account {
 
   // super()
   public Account() {
-    this.subAccounts = new SubAccount[2];
+    this.subAccounts = new SubAccount[2];  // SubAccount new 唔到，但可以放阿仔入去[]
     this.subAccounts[0] = new SavingAccout();  // ! New Concept
     this.subAccounts[1] = new CurrentAccount();
   }

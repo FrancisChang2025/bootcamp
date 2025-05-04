@@ -1,5 +1,4 @@
 import java.math.BigDecimal;
-import java.util.function.BiConsumer;
 
 public class Rectangular extends Shape {
   private double length;
@@ -8,7 +7,7 @@ public class Rectangular extends Shape {
   public Rectangular(String color, double length, double width) {
     super(color);
     this.length = length;
-    this. width = width;
+    this.width = width;
   }
 
   public double getLength() {
@@ -21,8 +20,7 @@ public class Rectangular extends Shape {
 
   @Override
   public double area() {
-    return BigDecimal.valueOf(this.length)  //
-      .multiply(BigDecimal.valueOf(this.width)).doubleValue();
+    return BigDecimal.valueOf(this.length)
+        .multiply(BigDecimal.valueOf(this.width)).doubleValue();
   }
-  
 }

@@ -7,6 +7,7 @@ public abstract class Shape {
   // 2. abstract class - cannot be "new"
 
   // Abstract Class:
+  // 1. May contain abstract method
 
   // Parent Class Attributes:
   private String color;
@@ -30,7 +31,7 @@ public abstract class Shape {
     this.color = color;
   }
 
-  public abstract double area();  // 虚構 -> Circle.java R19-24 write formula
+  public abstract double area();  // 虚構 -> Circle.java R19-24 write area formula
 
 
   public static void main(String[] args) {
@@ -49,7 +50,7 @@ public abstract class Shape {
 
 
     // calculate the total area of all shapes.
-    // Shape (Parent class) ensures child clas has area()
+    // Shape (Parent class) ensures child class has area()
     BigDecimal sum = new BigDecimal(0.0);
     for (int i = 0; i < shapes.length; i++) {
       sum = sum.add(BigDecimal.valueOf(shapes[i].area()));

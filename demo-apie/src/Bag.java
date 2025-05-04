@@ -37,13 +37,13 @@ public class Bag {
       return false;
   }
 
-  public Ball pick(int index) { // student thinking // 要清空，否則有問題 R46-48  "remove(int index)"
+  public Ball pick(int index) { // student thinking // 要清空，否則有問題 R44-R46 "remove(int index)"
     if (index < 0 || index >= this.balls.length)
      return null;
     // return this.balls[index];
     Ball target = this.balls[index];
     this.balls[index] = null;
-    return target;      // R49-51 抄底 & 清空變回 null
+    return target;      // R44-46 抄底 & 清空變回 null
   }
 
   public static void main(String[] args) {
