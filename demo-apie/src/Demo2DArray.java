@@ -6,8 +6,8 @@ public class Demo2DArray {
     arr[0] = s.length();
 
     // 2D array
-    // level 1,2,3
-    // MAX_HP, MAX_MP, PA, PD, MA, MD
+    // level 1,2,3,......
+    // MAX_HP, MAX_MP, PA, PD, MA, MD  (6 attributes)
 
     // new int[row][column]
     // 3 roles
@@ -17,14 +17,12 @@ public class Demo2DArray {
     int[][] mage_values = new int[10][6];
     int[][] archer_values = new int[10][6];
 
-
-
     // write
     warrior_values[0] = new int[] {200, 80, 10, 8, 5, 3};
     warrior_values[9] = new int[] {500, 200, 80, 50, 40, 20};
 
     int[][] arr2d = new int[][] {{10,20,30}, {100,90,-100}};
-        
+    
     // read
     System.out.println(arr2d[0][0]);  // 10
     System.out.println(arr2d[1][2]);  // -100

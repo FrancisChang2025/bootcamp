@@ -33,7 +33,6 @@ public abstract class Account {
     return bd.doubleValue();
   }
 
-
   public static void main(String[] args) {
     // Polymorphism
     Animal animal = new Cat("John", 12);

@@ -20,6 +20,7 @@ public class Citizen implements Borrowable {   // 借書的動作
   }
 
   public boolean search(String bookName) {
+    Book book = this.library.search(bookName);
     return this.library.search(bookName) != null;
   }
 
