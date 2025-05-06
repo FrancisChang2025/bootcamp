@@ -1,3 +1,9 @@
+// weapon +PA MA
+// weapon level
+// warrior -> SWORD (limit weapon qty and control them)
+// archer -> BOW
+// mage -> STAVE
+
 public class Warrior extends Hero {
   // revise to 2D array
   public static final int[] level1 =
