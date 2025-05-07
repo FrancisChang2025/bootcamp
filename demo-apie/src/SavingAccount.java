@@ -1,18 +1,22 @@
-public class SavingAccout extends SubAccount {
+public class SavingAccount extends SubAccount {
   private Currency currency;  // HKD, USD, CNY...
   // ! read, write & compare
 
   // 
-  public static SavingAccout ofHKD () {
-    return new SavingAccout(Currency.HKD);
+  public static SavingAccount ofUSD() {
+    return new SavingAccount(Currency.USD);
   }
 
-  private SavingAccout(Currency currency){
+  public static SavingAccount ofHKD () {
+    return new SavingAccount(Currency.HKD);
+  }
+
+  private SavingAccount(Currency currency){
     this.currency = currency;
   }
 
   public static void main(String[] args) {
-    SavingAccout sa = new SavingAccout(Currency.USD);
+    SavingAccount sa = new SavingAccount(Currency.HKD);
     System.out.println(sa.getBalance());  //0.0
     sa.credit(150);
     System.out.println(sa.debit(100)); // true
@@ -39,7 +43,7 @@ public class SavingAccout extends SubAccount {
     System.out.println(pa.getCurrentAccount().getBalance());  // 270.0
     System.out.println(pa.balance());  // 290.0
 
-    SavingAccout sa2 = SavingAccout.ofHKD();
+    SavingAccount sa2 = SavingAccount.ofHKD();
 
   }
 }

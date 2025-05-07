@@ -44,13 +44,9 @@ public class DemoObject {
     Citizen c12 = new Citizen("John", "B1234");
     System.out.println(c10.equals(c12));  // false
 
-    System.out.println(c10.hashCode());
-    System.out.println(c11.hashCode());
+    System.out.println(c10.hashCode()); // 61538338
+    System.out.println(c11.hashCode()); // 61538338
 
-    System.out.println(c12.hashCode());
-    
-
-
-
+    System.out.println(c12.hashCode()); // 62461859
   }
 }

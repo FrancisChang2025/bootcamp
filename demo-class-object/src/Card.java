@@ -129,7 +129,7 @@ public class Card {
     System.out.println(c5);  // Z, 2
 
     System.out.println(c6.equals(new Cat("John", 3)));  // false
-    System.out.println(c6.equals(c6));   // true
+    System.out.println(c6.equals(c6));                 // true
     System.out.println(c6.equals(new Card(ACE, DIAMOND)));   // true
   }
 }

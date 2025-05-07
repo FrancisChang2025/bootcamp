@@ -15,11 +15,12 @@ public class Dog extends Animal {
       System.out.println("barking!!!");
   }
 
+  // ! equal
   @Override
-  public boolean equals(Object Obj) {
+  public boolean equals(Object obj) {
     if (this == obj)
       return true;
-    if (!(obj instanceof Dog));
+    if (!(obj instanceof Dog))
       return false;
     Dog dog = (Dog) obj;
       return dog.getName().equals(super.getName());

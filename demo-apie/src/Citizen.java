@@ -26,7 +26,7 @@ public class Citizen implements Borrowable {   // 借書的動作
   public String getHKID() {
     return this.hkid;
   }
-
+  // equals()
   @Override  // hkid
   public boolean equals(Object obj) {
     if (this == obj)

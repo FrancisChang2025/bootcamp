@@ -11,10 +11,10 @@ public class Animal {  // more sbstract -> Parent Class
     this.name = name;
   }
 
-//  public Animal(String name, Cat cat) {
-//    this.cat = cat;
-//    this.name = name;
-//  }
+  public Animal(String name, Cat cat) {
+    this.cat = cat;
+    this.name = name;
+   }
 
   // method (can be inheirted)
   public String getName(){
@@ -25,9 +25,9 @@ public class Animal {  // more sbstract -> Parent Class
     this.name = name;
   }
 
-  public Cat getCat() {
-    return this.cat;
-  }
+   public Cat getCat() {
+     return this.cat;
+   }
 
   public void sound() {
     System.out.println("default sound....");
