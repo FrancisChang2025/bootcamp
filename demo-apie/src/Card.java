@@ -1,4 +1,4 @@
-public enum Card {
+public class Card {
   private Color color;
 
   public Card(Color color){
@@ -22,7 +22,5 @@ public enum Card {
     // c1 and c2 they are sing same Color object
     System.out.println(c1.getColor() == c2.getColor());  // true
 
-
   }
-
 }

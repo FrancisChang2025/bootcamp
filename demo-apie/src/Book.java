@@ -36,6 +36,8 @@ public class Book extends Library {
     return Objects.equals(this.id, book.getId());
     }
 
+    // to String()
+
   public static void main(String[] args) {
     // ! In Java, all class implicitly extends Object
     Human h1 = new Superman("John");  // upgrade

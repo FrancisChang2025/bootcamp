@@ -1,5 +1,4 @@
 import java.security.PrivateKey;
-
 // ! someone help you call Direction(int value) to create Direction Object
 
 public enum Direction {
