@@ -63,6 +63,19 @@ public class Card {
     return false;
   }
 
+  @Override
+  public boolean equals(Object obj) {
+    // this -> card
+    // rank, suit
+    if (this == obj) 
+      return true;
+    if (!(obj instanceof Card))
+      return false;
+    Card card = (Card) obj;
+      return this.rank == card.getRank() && this.suit == card.getSuit();
+  }
+  
+
   // this (self 自己)    👇 代表 input   問下自己張牌是否等如抽出的牌 equal()
   public boolean equals(Card card) {
     return this.rank == card.getRank() && this.suit == card.getSuit();
@@ -114,5 +127,9 @@ public class Card {
     System.out.println(c3);  // 3, 2
     System.out.println(c4);  // 2, 3
     System.out.println(c5);  // Z, 2
+
+    System.out.println(c6.equals(new Cat("John", 3)));  // false
+    System.out.println(c6.equals(c6));   // true
+    System.out.println(c6.equals(new Card(ACE, DIAMOND)));   // true
   }
 }

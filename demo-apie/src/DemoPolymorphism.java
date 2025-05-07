@@ -45,7 +45,7 @@ public class DemoPolymorphism {
     acc2.getSavingAccount().credit(400.0);
     System.out.println(acc2.getSavingAccount().getBalance());
     
-    SubAccount subAcc1 = new SavingAccout();
+    SubAccount subAcc1 = new SavingAccout.ofHKD();
     SubAccount subAcc2 = new CurrentAccount();
     subAcc1.credit(900.0);
     subAcc2.credit(100.0);

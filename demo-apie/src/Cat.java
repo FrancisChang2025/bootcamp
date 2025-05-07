@@ -26,4 +26,14 @@ public class Cat extends Animal {
   public void sound(){
     System.out.println("Meow ....");
   }
+
+  // equals()
+
+  @Override
+  public String toString() {
+    return "Cat(" //
+        + "name=" + super.getName() //
+        + ",age=" + this.age //
+        + ")";
+  }
 }

@@ -11,10 +11,10 @@ public class Animal {  // more sbstract -> Parent Class
     this.name = name;
   }
 
-  public Animal(String name, Cat cat) {
-    this.cat = cat;
-    this.name = name;
-  }
+//  public Animal(String name, Cat cat) {
+//    this.cat = cat;
+//    this.name = name;
+//  }
 
   // method (can be inheirted)
   public String getName(){
