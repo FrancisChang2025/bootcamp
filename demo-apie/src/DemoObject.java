@@ -28,13 +28,13 @@ public class DemoObject {
     
     // ! Dog.java didn't override toString()
     Dog d1 = new Dog("Tommy");
-    System.out.println(d1.toString());  // Dog@639...(Object Reference)  change toString address, not d1 address
+    System.out.println(d1.toString());  // Dog@63947c6b (Object Reference)  change toString address, not d1 address
 
     // hashCode() , Similar to equals() concept
     Object d3 = new Dog("Jacker");
-    System.out.println(d3.hashCode());  // 
+    System.out.println(d3.hashCode());  // 723074861
     Object d4 = new Dog("Jacker");
-    System.out.println(d4.hashCode());  //     different to d3, because different Object 
+    System.out.println(d4.hashCode());  // 895328852    different to d3, because different Object 
 
     // ! The definition of hashCode() MUST BE same as equals()
     Citizen c10 = new Citizen("John", "A1234");

@@ -16,7 +16,7 @@ public class DemoArrayList {
       System.out.println(numbers[i]);
     }
 
-    Object[] objects = new Object[]{new Cat("Peter"), 4L, (byte) 10 };
+    Object[] objects = new Object[] {new Cat("Peter"), 4L, (byte) 10};
 
     // ! Disadvantages of int[]
     // 1. fixed length
@@ -31,7 +31,7 @@ public class DemoArrayList {
     integers.add(10); // auto-box from int to Integer
     integers.add(100);
     integers.add(-3);
-    System.out.println(integers.size());  //3
+    System.out.println(integers.size());  // 3
 
     // add() vs size()
     // add() -> new array process, copy array
@@ -60,13 +60,15 @@ public class DemoArrayList {
 
     // ! so, at this moment, you should understand why equals() is important for every class
 
-    // 
+    // Cat's equals
     ArrayList<Cat> cats = new ArrayList<Cat>();
+    cats.add(new Cat("John")); // John
     cats.add(new Cat("John")); // John
     cats.add(new Cat("Jacky")); // Jacky
 
-    cats.remove(new Cat("John"));  // remove Cat John
-    System.out.println(cats.size());  // 1
+    cats.remove(new Cat("John")); // remove John
+    System.out.println(cats.size()); // 2
+
 
   }
 }

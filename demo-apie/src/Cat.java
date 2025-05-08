@@ -28,7 +28,18 @@ public class Cat extends Animal {
   }
 
   // equals()
+  // if doesn't write R32-40, DemoObject.java R11 // false
+  @Override
+  public boolean equals(Object obj){
+    if (this == obj)
+      return true;
+    if (!(obj instanceof Cat))
+      return false;
+    Cat cat = (Cat) obj;
+      return this.getName().equals(cat.getName());
+  }
 
+  // toString()
   @Override
   public String toString() {
     return "Cat(" //
