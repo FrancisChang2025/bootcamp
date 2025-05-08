@@ -34,6 +34,10 @@ public class DemoHashMap {
     searchEngine.put("3A", class3a);
     searchEngine.put("3B", class3b);
 
+    // Add a new Student "Steven" into class 3A by HashMap
+    // No Loop
+
+
     // ! search students by a String Value
     ArrayList<Student> results = searchEngine.get("3B");
     for (Student s : results) {
@@ -73,7 +77,7 @@ public class DemoHashMap {
     System.out.println(nameMap.get("Jennie"));  // null
     System.out.println(nameMap.get("vincent"));  // orange
     
-    // add '!! ' ->  "orange!!"  (不正統做法，pls view R83 to R86)
+    // add '!! ' ->  "orange!!"  (不正統做法 R77 to R78，pls view R83 to R86)
     // nameMap.put("vincent", "orange!!");
     // System.out.println(nameMap.get("vincent")); // oragne!!
     
@@ -92,26 +96,32 @@ public class DemoHashMap {
     for (Map.Entry<String, String> entry : nameMap.entrySet()) {
       System.out.println(entry.getKey() + ' ' + entry.getValue());
     }
+    // lucas lemon
+    // vincent orange!!
+
+
     
     // Problem Solving
     // counting
-    int[] arr = new int[] {-1, 3, 3, 3, 8};
+    HashMap<Integer, Integer> countMap = new HashMap<>();
+    int[] arr = new int[] {-1, 3, -1, 3, 3, 8};
+    for (int x : arr){
+      if (countMap.get(x) == null) {
+        countMap.put(x, 1);
+      } else {
+        countMap.put(x, countMap.get(x) + 1);
+      }
+    }
 
     // HashMap
     // Output:
+    for (Map.Entry<Integer, Integer> entry : countMap.entrySet()) {
+      System.out.println("there are " + entry.getValue() + " of " + entry.getKey());
+    }
     // there are 2 of -1.
     // there are 3 of 3.
-    // there are 1 of 8.     How to staticts?
-    int countNum = 0;
-    HashMap<Integer, Integer> countNums = new HashMap<>();
-    for (int i = 0; i < arr.length; i++){
-      if (countNums.get(arr[i]) == null)
-        countNums.put(arr[i], i)
-     } else {
-        countNums.put(arr[i], i++)
-     }
+    // there are 1 of 8.     How to staticts?  View R106 to R119
 
-
-
+    
   }
 }

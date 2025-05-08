@@ -74,7 +74,7 @@ public class DemoArrayList {
     System.out.println(cats.contains("Mary"));
     System.out.println(cats.contains("Jacky"));
 
-    //
+    // BigDecimal
     ArrayList<BigDecimal> decimals = new ArrayList<BigDecimal>();
     decimals.add(BigDecimal.valueOf(3.5));
     decimals.add(BigDecimal.valueOf(4.7));
