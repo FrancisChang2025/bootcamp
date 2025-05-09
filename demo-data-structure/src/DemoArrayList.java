@@ -29,7 +29,7 @@ public class DemoArrayList {
     // ! Advantage of ArrayList
     // 1. variale length
     ArrayList<Integer> integers = new ArrayList<Integer>();
-    integers.add(10); // auto-box from int to Integer
+    integers.add(10); // auto-box from 'int' to 'Integer'
     integers.add(100);
     integers.add(-3);
     System.out.println(integers.size());  // 3
@@ -79,7 +79,7 @@ public class DemoArrayList {
     decimals.add(BigDecimal.valueOf(3.5));
     decimals.add(BigDecimal.valueOf(4.7));
     
-    // ! Able to remove -> because BigDecimal equals() is workig...
+    // ! Able to remove -> because BigDecimal equals() is working...
     decimals.remove(new BigDecimal("3.5"));
     System.out.println(decimals.size());  // 1
 
@@ -98,7 +98,7 @@ public class DemoArrayList {
     System.out.println(d1.equals(d2)); // true,  if false, asking 作者點解，equals()定義
     System.out.println(d1.compareTo(d2));  // 0
 
-    // 
+    // 'addAll'
     ArrayList<Double> newDoubles = new ArrayList<>();
     newDoubles.add(10.9);
     newDoubles.add(4.1);
@@ -109,18 +109,19 @@ public class DemoArrayList {
     // for-each loop
     // 1. by default loop through all elements
     for (Double x : d1Doubles)  {
-      System.out.println(x);
+      System.out.println(x);  // 3.5    10.9    4.1   8.8
     }
-    // ArrayList -> underlying structure is array.
+    
+    // ArrayList -> underlying structure is array. 低層架構
     // concept -> index
     for (int i = 0; i < d1Doubles.size(); i++) {
-      System.out.println(d1Doubles.get(i));
+      System.out.println(d1Doubles.get(i));  //  3.5    10.9    4.1   8.8
     }
-
+    
     int[] arr2 = new int[] {3, -1, 100};
-    // Loop all elements of int array
+    // Loop all elements of 'int' array
     for (int x : arr2) {
-      System.out.println(x);
+      System.out.println(x);   //  3    -1   100
     }
 
     // ! for-each loop (Array or ArrayList)
@@ -128,8 +129,8 @@ public class DemoArrayList {
 
     // basic for loop (advantage: Access 2 elements in one iteration)
     for (int i = 0; i < arr2.length; i++){
-      System.out.println(arr2[i]);
-      System.out.println(arr2[i] + 1);  // = R123 "x"
+      System.out.println(arr2[i]);    //  3    -1   100
+      System.out.println(arr2[i] + 1);  //  4    0   101
     }
 
     // ArrayList
@@ -153,7 +154,5 @@ public class DemoArrayList {
     // read -> get(index), contains(), isEmpty()
     // write/modify -> set(), add(), remove(), clear(),
     
-    
-
   }
 }
