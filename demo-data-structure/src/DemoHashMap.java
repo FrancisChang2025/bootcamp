@@ -37,6 +37,37 @@ public class DemoHashMap {
     // HW : 20250508
     // ! Add a new Student "Steven" into class 3A by HashMap
     // No Loop
+    // Method 1: Add new student
+    searchEngine.get("3A").add(new Student("Steven"));
+    System.out.println(searchEngine.get("3A"));
+    // [Student(nameJohn), Student(namePeter), Student(nameJennie),Student(nameSteven)]
+    // [Student(nameSally)]
+
+
+    // Put Sally into class 3C if it exists.
+    // if 3C not exists, create the ArrayList, and then put Sally.
+
+    // if (searchEngine.containsKey("3C")) {
+      
+    ArrayList<Student> class3C = searchEngine.get("3C");
+    if (class3C != null) {
+        class3C.add(new Student("Sally"));
+    } else {
+      class3C = new ArrayList<>();
+      class3C.add(new Student("Sally"));
+      searchEngine.put("3C", class3C);
+    }
+    System.out.println(searchEngine.get("3C"));  // [Student(nameSally)]
+
+
+    // Method 2: Add new student 
+    HashMap<String, String> studentMap = new HashMap<>();
+    studentMap.put("3A", "Eva");
+    for (Map.Entry<String, String> entry : studentMap.entrySet()) {
+      System.out.println("New student : " //
+        + entry.getValue() + " join in " + entry.getKey());
+    }
+    // New student : Eva join in 3A
 
 
     // ! search students by a String Value
