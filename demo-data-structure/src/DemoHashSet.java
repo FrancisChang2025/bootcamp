@@ -79,7 +79,7 @@ public class DemoHashSet {
           orderedCats.add(cat);  // ordering
         }
       }
-    System.out.println(orderedCats);  //[Cat()name=Jennie), Cat()name=Vincent), Cat()name=Luscas)]
+    System.out.println(orderedCats); //[Cat()name=Jennie), Cat()name=Vincent), Cat()name=Luscas)]
 
     
   }

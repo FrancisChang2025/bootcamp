@@ -34,14 +34,15 @@ public class DemoHashMap {
     searchEngine.put("3A", class3a);
     searchEngine.put("3B", class3b);
 
-    // Add a new Student "Steven" into class 3A by HashMap
+    // HW : 20250508
+    // ! Add a new Student "Steven" into class 3A by HashMap
     // No Loop
 
 
     // ! search students by a String Value
     ArrayList<Student> results = searchEngine.get("3B");
     for (Student s : results) {
-      System.out.println(s.getName());
+      System.out.println(s.getName()); // Annie  Joe   Ken
     }
 
     UserProfile up1 = new UserProfile("John", "Chan", "jc@gmail.com");
@@ -57,9 +58,9 @@ public class DemoHashMap {
 
     String userId = "marycheung100";
     UserProfile profile = userMap.get(userId);
-    System.out.println(profile.getFirstName());
-    System.out.println(profile.getLastName());
-    System.out.println(profile.getEmail());
+    System.out.println(profile.getFirstName());  // Mary
+    System.out.println(profile.getLastName());   // Cheung
+    System.out.println(profile.getEmail());   // mc@gmail.com
 
     HashMap<Dog,LocalDate> dobMap = new HashMap<>();
     dobMap.put(new Dog(1), LocalDate.of(2024, 12, 5));
