@@ -19,6 +19,11 @@ public class Bird {
     return this.name;
   }
 
+  @Override
+  public String toString(){
+    return "Bird(" + "name=" + this.name + ")";
+  }
+
   public static void main(String[] args) {
     Bird[] birds = new Bird[3];
 

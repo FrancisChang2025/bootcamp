@@ -35,8 +35,12 @@ public class Team {
 
     // Difference between ArrayList and LinkedList
     // - Underlying Data Structure: ArrayList (array); LinkedList (object links object)
-      // Array -> Fixed length, recreate array to modify -> copy elements (More memory)
-      // LinkedList -> 
+      // Array
+        // 1. Fixed length, recreate array to modify -> copy elements (More memory)
+        // 2. Locate the element by array position
+      // LinkedList
+        // 1. store first and last
+        // 2. Each node contains the "previous" & the "next"
 
   }
 }
