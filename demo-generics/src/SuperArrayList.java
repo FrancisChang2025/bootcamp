@@ -37,12 +37,10 @@ public class SuperArrayList<T> {
     strings.add("abc");
     strings.add("def");
     // ArrayList -> naturally support for-each
-    // for (String s : strings) { }
+    // for (String s : strings) { }    👈 NOT WORKING in Generia
 
     for (int i = 0; i < strings.size(); i++) {
       System.out.println(strings.get(i));
     }
   }
-
-
 }

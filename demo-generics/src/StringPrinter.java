@@ -12,11 +12,11 @@ public class StringPrinter {
 
   public void print() {
     System.out.println("The value is " + this.value);
-  }
+  }   // The value is hello
 
   public void printInteger() {
     System.out.println("The value is " + this.value2);
-  }
+  }  // Goto IntegerPrinter.java to view result
 
   public static void main(String[] args) {
     StringPrinter p1 = new StringPrinter("hello");

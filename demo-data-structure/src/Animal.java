@@ -1,6 +1,3 @@
-public class Animal {
-
-  
-} Animal {
+public abstract class Animal {
   
 }

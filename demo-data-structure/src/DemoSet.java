@@ -71,73 +71,74 @@ public class DemoSet {
     lines.add(p1a);
     lines.add(p1b);
     lines.add(p2a);
-    // Not good for retrieving data
-    lines.get(4);  // we do not know the target data location.
-    // ArrayList is for ordering data.
+    lines.add(p3a);
+    lines.add(p3b);
+    lines.add(p3c);
+    // Not good for retrieving data 不利於檢索數據
+    lines.get(4);  // how to get? we do not know 不知道 the target data location.
+    // ArrayList is for ordering data.  順序
 
     // Dog, Cat
-    ArrayList<Animal> animals = new ArrayList<Aminal>();
-    // animals = new ArrayList<Cat>; // Not OKAY
+    ArrayList<Animal> animals = new ArrayList<Animal>();
+    // animals = new ArrayList<Cat>; // NOT OKAY
 
     animals.add(new Cat("John"));
     animals.add(new Dog(13));
-    for (Animal animal :animals) {
+    for (Animal animal : animals) {
       if (animal instanceof Cat) {
-        System.out.println(((Cat) animal).getName());
+        System.out.println(((Cat) animal).getName());   // John
       } else if (animal instanceof Dog) {
-        System.out.println(((Dog) animal).getAge());
+        System.out.println(((Dog) animal).getAge());   // 13
       }
     }
 
-    // Generics
+    // !! Generics
     // The definition of arrayList can be ArrayList<Cat>, ArrayList<Dog> and ArrayList<Animal>
-    // ! Difference between "ArrayList<? extends Animal>"" and "ArrayList<Animal>"
-    ArrayList<? extends Animal> animal3 = new ArrayList<Cat>();
-    animal3 = new ArrayList<Dog>();
-    animal3 = new ArrayList<Animal>();
-    
-    
+    // ! Difference between "ArrayList <? extends Animal> " and "ArrayList<Animal>"
+    ArrayList<? extends Animal> animals3 = new ArrayList<Cat>();
+    animals3 = new ArrayList<Dog>();
+    animals3 = new ArrayList<Animal>();
 
-    Map<String, ArrayList<Animal>> catMap = new HashMap<>();
-    // Scenario 1:
-    // 2 Cat List ("cat1, "cat2") and 1 Dog List ("dog1")
+    // Map<String, ArrayList<Animal>> catMap = new HashMap<>();  Go to R129 Scenario 2
+
+    // Scenario 1:  Suppose 用家手上有好多 CatList & DogList, Not using Animal class
+    // 2 Cat List ("cat1, "cat2") and 1 Dog List ("dog1"), Using HashMap to stores.
     Map<String, ArrayList<? extends Animal>> map1 = new HashMap<>();
 
-    // Convenient for wite data
+    // Convenient for write data
     ArrayList<Cat> catlist1 = new ArrayList<>();
     catlist1.add(new Cat("Ken"));
     catlist1.add(new Cat("Oscar"));
 
     map1.put("cat1", catlist1);
 
+    ArrayList<Dog> doglist1 = new ArrayList<>();
+    doglist1.add(new Dog(10));
+    doglist1.add(new Dog(99));
+
+    map1.put("dog1", doglist1);
+
+    // Data Retrieval (read -> No obvious advantages 冇著素)
+    for (Animal animal : map1.get("cat1")) {
+
+    }
+
+    // Scenario 2: （Read & Write 都冇著素，只能問 AnimalList, 問唔到 Cat/Dog Lists 取資料，不是父子關係)
+    // many animal list -> every list contains cat and dog. 👈 是父子關係
+    // ! This design indicates many lists of (cat and dog).
+    Map<String, ArrayList<Animal>> catMap2 = new HashMap<>(); 
     
-
-
-
-
-
-    // Data Retrieval (read -> No obvious advantages)
-    for (Animal animal : map1.get("cat1")) {{
-
-    }}
-
-    // Scenario 2:
-    // many animal list -> every list contains cat and dog.
-    
-    
-    ArrayList<Animal> animals1 = new ArrayList<>(); 
+    ArrayList<Animal> animals1 = new ArrayList<>();
     animals1.add(new Cat("Peter"));
     animals1.add(new Dog(100));
     ArrayList<Animal> animals2 = new ArrayList<>();
     animals2.add(new Cat("Sally"));
     animals2.add(new Dog(99));
-
+    catMap2.put("animallist1", animals1);
+    catMap2.put("animallist2", animals1);
 
     // ! Animal is the parent of Cat (OK)
     // ! but ArrayList<Animal> IS NOT the parent of ArrayList<Cat>
-    // catMap2.put("animal")
-    
-
-
+    // catMap2.put("animallist3", catlist1); // error 👉 AnimalList Vs CatList 不是父子關係
   }
 }

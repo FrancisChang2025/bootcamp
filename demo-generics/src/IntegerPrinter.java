@@ -8,7 +8,7 @@ public class IntegerPrinter {
 
   public void print() {
     System.out.println("The value is " + this.value);
-  }
+  }   // The value is -10
 
   public static void main(String[] args) {
     IntegerPrinter p1 = new IntegerPrinter(-10);
