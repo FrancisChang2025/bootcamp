@@ -67,9 +67,76 @@ public class DemoSet {
 
     System.out.println(building.get("FLOOR3").get("PB")); // [OPQ, RST]
 
+    ArrayList<ArrayList<String>> lines = new ArrayList<>();
+    lines.add(p1a);
+    lines.add(p1b);
+    lines.add(p2a);
+    // Not good for retrieving data
+    lines.get(4);  // we do not know the target data location.
+    // ArrayList is for ordering data.
+
+    // Dog, Cat
+    ArrayList<Animal> animals = new ArrayList<Aminal>();
+    // animals = new ArrayList<Cat>; // Not OKAY
+
+    animals.add(new Cat("John"));
+    animals.add(new Dog(13));
+    for (Animal animal :animals) {
+      if (animal instanceof Cat) {
+        System.out.println(((Cat) animal).getName());
+      } else if (animal instanceof Dog) {
+        System.out.println(((Dog) animal).getAge());
+      }
+    }
+
+    // Generics
+    // The definition of arrayList can be ArrayList<Cat>, ArrayList<Dog> and ArrayList<Animal>
+    // ! Difference between "ArrayList<? extends Animal>"" and "ArrayList<Animal>"
+    ArrayList<? extends Animal> animal3 = new ArrayList<Cat>();
+    animal3 = new ArrayList<Dog>();
+    animal3 = new ArrayList<Animal>();
+    
+    
+
+    Map<String, ArrayList<Animal>> catMap = new HashMap<>();
+    // Scenario 1:
+    // 2 Cat List ("cat1, "cat2") and 1 Dog List ("dog1")
+    Map<String, ArrayList<? extends Animal>> map1 = new HashMap<>();
+
+    // Convenient for wite data
+    ArrayList<Cat> catlist1 = new ArrayList<>();
+    catlist1.add(new Cat("Ken"));
+    catlist1.add(new Cat("Oscar"));
+
+    map1.put("cat1", catlist1);
+
+    
 
 
 
+
+
+    // Data Retrieval (read -> No obvious advantages)
+    for (Animal animal : map1.get("cat1")) {{
+
+    }}
+
+    // Scenario 2:
+    // many animal list -> every list contains cat and dog.
+    
+    
+    ArrayList<Animal> animals1 = new ArrayList<>(); 
+    animals1.add(new Cat("Peter"));
+    animals1.add(new Dog(100));
+    ArrayList<Animal> animals2 = new ArrayList<>();
+    animals2.add(new Cat("Sally"));
+    animals2.add(new Dog(99));
+
+
+    // ! Animal is the parent of Cat (OK)
+    // ! but ArrayList<Animal> IS NOT the parent of ArrayList<Cat>
+    // catMap2.put("animal")
+    
 
 
   }

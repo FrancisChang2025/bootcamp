@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Dog {
+public class Dog extends Animal {
   private int age;
 
   public Dog(int age) {

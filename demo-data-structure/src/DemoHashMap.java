@@ -34,15 +34,13 @@ public class DemoHashMap {
     searchEngine.put("3A", class3a);
     searchEngine.put("3B", class3b);
 
-    // HW : 20250508
+    // HW : 20250508    R38 to R70
     // ! Add a new Student "Steven" into class 3A by HashMap
     // No Loop
-    // Method 1: Add new student
+    // Method 1: Add new student  (Simple verison)
     searchEngine.get("3A").add(new Student("Steven"));
     System.out.println(searchEngine.get("3A"));
     // [Student(nameJohn), Student(namePeter), Student(nameJennie),Student(nameSteven)]
-    // [Student(nameSally)]
-
 
     // Put Sally into class 3C if it exists.
     // if 3C not exists, create the ArrayList, and then put Sally.
@@ -59,8 +57,7 @@ public class DemoHashMap {
     }
     System.out.println(searchEngine.get("3C"));  // [Student(nameSally)]
 
-
-    // Method 2: Add new student 
+    // Method 2: Add new student  (Complex verison)
     HashMap<String, String> studentMap = new HashMap<>();
     studentMap.put("3A", "Eva");
     for (Map.Entry<String, String> entry : studentMap.entrySet()) {
@@ -153,7 +150,6 @@ public class DemoHashMap {
     // there are 2 of -1.
     // there are 3 of 3.
     // there are 1 of 8.     How to staticts?  View R106 to R119
-
     
   }
 }

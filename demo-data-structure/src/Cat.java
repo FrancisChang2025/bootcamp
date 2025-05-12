@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 
-public class Cat {
+public class Cat extends Animal {
   private String name;
 
   public Cat(String name) {

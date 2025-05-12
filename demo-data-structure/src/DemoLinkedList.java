@@ -7,11 +7,10 @@ public class DemoLinkedList {
     ArrayList<String> names = new ArrayList<>();
     names.add("John");
 
-    // ! Underlying Data structure -> object links object
+    // ! Underlying 底層 Data structure -> object links object
     // Cat -> attribute name
     // Cat Object -> able to find name (string object)
     // name -> Cat (Doesn't)❌
     
-
   }
 }
