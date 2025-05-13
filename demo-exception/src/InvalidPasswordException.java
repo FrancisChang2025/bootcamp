@@ -1,6 +1,5 @@
 // ! "extends Exception" -> InvalidPasswordException become "Checked Exception"
 public class InvalidPasswordException extends Exception {
-
   // Parent Class Exception by default contain "message" attribute
   public InvalidPasswordException() {
 

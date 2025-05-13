@@ -1,3 +1,3 @@
-public class InvalidPasswordLengthException {
+public class InvalidPasswordLengthException extends Exception {
   
 }
