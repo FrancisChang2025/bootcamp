@@ -1,5 +1,5 @@
 // Generics
-// ! During compile time, you can write less code(StringPrinter.java, IntegerPrinter.java)
+// ! During compile time, you can write less code (StringPrinter.java, IntegerPrinter.java)
 
 import java.util.ArrayList;
 import java.util.HashMap;

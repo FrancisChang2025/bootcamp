@@ -5,7 +5,7 @@ public class Account {
 
   public static void main(String[] args) {
     Account account = new Account();
-    account.add(Stock);
-    account.add(jcrypto);
+    // account.add(Stock);
+    // account.add(crypto);
   }
 }

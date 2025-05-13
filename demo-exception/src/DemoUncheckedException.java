@@ -1,8 +1,10 @@
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DemoUncheckedException {
   public static void main(String[] args) {
-    // avoidable
+    // ! Bug is avoidable by developer
     int[] arr = new int[3];  // 0-2
 
     // Case 1:
@@ -22,7 +24,6 @@ public class DemoUncheckedException {
       System.out.println("hello");
     }
 
-
     // Case 2:
     String s = "hello";
     if (s != null);
@@ -31,14 +32,12 @@ public class DemoUncheckedException {
     // Case 3:
     // ! Math
     int count = 0;
+    int result = 0;
     if (count != 0) {
-    int result = 10 / count;
+      result = 10 / count;
     } else {
       result = 1;
     }
-
-
-
 
     // String -> Integer
     String yearInputedByUser = "2025s";
@@ -55,11 +54,17 @@ public class DemoUncheckedException {
     // ! 1. "Unchecked" exception -> Java won't force you to catch during compile time.
     // year = Integer.valueOf("abc");
 
-    // ! "Checked" exception
-    String input = "2025-05-12"
-    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-
-    Date Date = formatter.parse(input);
-
+    // ! 2. "Checked" exception
+    String input = "2025-05-12";
+    String targetFormat = "dd/MM/yyyy";
+    SimpleDateFormat formatter = new SimpleDateFormat(targetFormat);
+    
+    // Case 1: SimpleDateFormat -> parse() method: checked exception
+    // ! You have to provide error handling during compile time. Force you to "try".
+    try {
+      Date Date = formatter.parse(input);
+   } catch (ParseException e) {
+     //System.out.println("Error. Data: " + input + ". Target format: " + targetFormat);
+   }
   }
 }

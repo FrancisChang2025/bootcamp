@@ -1,11 +1,13 @@
 public class Lion extends Animal {
-  public static <U extends LifeGood> void addTwoThings(Bag<U> bag,U LifeGood1, U LifeGood2) {
+  private int weight;
+
+  public static <U extends LifeGood> void addTwoThings(Bag<U> bag,U lifeGood1,
+     U lifeGood2) {
     bag.add(lifeGood1);
     bag.add(lifeGood2);
   }
 
-
-  // static: input -> output, instance variable is required
+  // static: input -> output, instance variable is not required
   public static int sum(int x, int y) {
     return x + y;
   }
@@ -21,7 +23,7 @@ public class Lion extends Animal {
   }
 
   public static void main(String[] args) {
-    Lion.addTwoThings(null, null, null);
+    // Lion.addTwoThings(null, null, null);
     System.out.println(Lion.sum(1, 2));  // 3
     System.out.println(new Lion().sum2(1, 2));  // 3
   }

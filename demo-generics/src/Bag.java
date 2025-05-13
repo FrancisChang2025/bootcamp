@@ -2,18 +2,19 @@ import java.util.ArrayList;
 
 // ! Write less code (Bag2, Bag3, Bag4)
 public class Bag<T extends LifeGood> {
-  private ArrayList<T> things;   // Water and Food
+  private ArrayList<T> things; // Water and Food
 
+  public Bag() {
+    this.things = new ArrayList<>();
+  }
 
-
-
-
-
-
-
+  public void add(T thing) {
+    this.things.add(thing);
+  }
 
   // ! Generics for static method
-  public static <U extends LifeGood> void addTwoThings(Bag<U> bag,U LifeGood1, U LifeGood2) {
+  public static <U extends LifeGood> void addTwoThings(Bag<U> bag, U lifeGood1,
+      U lifeGood2) {
     bag.add(lifeGood1);
     bag.add(lifeGood2);
   }
@@ -25,7 +26,7 @@ public class Bag<T extends LifeGood> {
 
     // Bag<Object> bag4 = new Bag<>();
 
-    // If we don't have Generics in Java....
+    // If we don't have Generics in Java ....
     Bag2 lifegoodBag = new Bag2();
     lifegoodBag.add(new Water());
     lifegoodBag.add(new Food());
@@ -36,9 +37,5 @@ public class Bag<T extends LifeGood> {
     Bag<LifeGood> newBag = new Bag<>();
     Bag.addTwoThings(newBag, new Food(), new Water());
     System.out.println(newBag);
-
-    Bag<LifeGood> newBag2 = new Bag<>();
-    Bag.addTwoThings(newBag2, new Food(), new Water());
-    System.out.println(newBag2);
   }
 }
