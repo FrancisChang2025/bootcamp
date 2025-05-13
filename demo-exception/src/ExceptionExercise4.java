@@ -24,7 +24,7 @@ public class ExceptionExercise4 {
     // try, catch
     try {
       System.out.println("User Registeration is Fail.");
-    } catch (InvalidAlgorithmParameterException e) {
+    } catch (InvalidPasswordException e) {
       System.out.println("");
     }
   }

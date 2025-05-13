@@ -37,7 +37,7 @@ public class InvalidAgeException extends RuntimeException {
 
     public static int nameLength(String name) {
       if (name.length() > 10)
-        throw new NameTooLongException();
+        throw new NameTooLongException(); // throw an exception error events
       return name.length();
     }
 

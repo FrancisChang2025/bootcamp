@@ -160,22 +160,21 @@ public class LoopExercise {
     // d -> 2 score
     // u -> 4 score
     // for other character, -1 score
+
     String s13 = "lrlaudbucp";
 
     int l = 1;
     int r = 3;
     int d = 2;
     int u = 4;
-    char[] chs = new char[] {'l','r','l'};
+    int result = 0;
+    char[] chs = new char[] {'l', 'r', 'd', 'u'};
     int[] counts = new int[26];
     for (int i = 0; i < s13.length(); i++) {
       int index = chs[i] - 'a';
       counts[index]++;
     }
-    System.out.println(counts);
-
-
-
+    System.out.println("The total score = " + result);
     
     // 14. Assign the long values of 1, 4, 9, -4 to the given array arr14
     long[] arr14 = new long[4];
