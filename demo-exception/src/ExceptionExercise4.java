@@ -1,3 +1,4 @@
+import java.security.InvalidAlgorithmParameterException;
 import java.util.Scanner;
 
 public class ExceptionExercise4 {
@@ -21,6 +22,11 @@ public class ExceptionExercise4 {
     // or "User Registeration is Success."
     
     // try, catch
+    try {
+      System.out.println("User Registeration is Fail.");
+    } catch (InvalidAlgorithmParameterException e) {
+      System.out.println("");
+    }
   }
 
   public static class UserRegistrationException extends RuntimeException {

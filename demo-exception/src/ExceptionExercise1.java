@@ -16,5 +16,13 @@ public class ExceptionExercise1 {
 
     // code here ...
     // try, catch
+    try {    // 因為有危險，所以要 try
+      int result = numerator / denominator;
+      System.out.println("Result: " + result);
+    } catch (ArithmeticException e) {
+      System.out.println("Error: Cannot divide by zero.");
+    } finally {  // comes to "finally" code block no matter "try" or "catch"
+      System.out.println("Division operation completed.");
+    }
   }
 }

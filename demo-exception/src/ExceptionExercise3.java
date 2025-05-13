@@ -18,9 +18,17 @@ public class ExceptionExercise3 {
     scanner.close();
     // code here for the caller...
     // try, catch
+    try {
+      Integer index = Integer.valueOf(input);
+      System.out.println("Age X is accepted");
+    } catch (InvalidAgeException e) {
+      System.out.println("Error: Please enter a valid number");
+    } finally {
+      System.out.println("Age is invalid. Please input again later");
+    }
   }
 
-  // code here for the method
+  // code here for the method  👉 💥Bomb 💣
   public static void checkAge(int age) {
     if (age < 18) {
       throw new InvalidAgeException();

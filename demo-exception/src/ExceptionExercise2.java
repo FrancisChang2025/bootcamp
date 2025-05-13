@@ -17,6 +17,17 @@ public class ExceptionExercise2 {
 
     // code here ...
     // try, catch, finally
+    try {
+      Integer index = Integer.valueOf(input);  // 這句永遠不會出事
+      System.out.println("Element at index " + index + ": " + numbers[index]);   // if error, show here
+    } catch (NumberFormatException e) {
+      System.out.println("Error: Please enter a valid number.");
+    } catch (ArrayIndexOutOfBoundsException e) {
+      System.out.println("Error: Index is out of bounds.");
+    } finally {
+      System.out.println("Array retrieval attempt completed.");
+    }
+
 
   }
 }

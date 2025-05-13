@@ -26,8 +26,9 @@ public class DemoUncheckedException {
 
     // Case 2:
     String s = "hello";
-    if (s != null);
-    System.out.println(s.charAt(3));  // l
+    if (s != null) {
+      System.out.println(s.charAt(3));  // l
+    }
 
     // Case 3:
     // ! Math
@@ -53,6 +54,13 @@ public class DemoUncheckedException {
 
     // ! 1. "Unchecked" exception -> Java won't force you to catch during compile time.
     // year = Integer.valueOf("abc");
+    String s2 = "hello";
+    try {
+      s2.charAt(index);  // java.lang.StringIndexOutofBoundsException
+    } catch (StringIndexOutOfBoundsException e) {
+      System.out.println("it is StringIndexOfBoundsException");
+    }
+    
 
     // ! 2. "Checked" exception
     String input = "2025-05-12";
