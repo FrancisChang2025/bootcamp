@@ -18,7 +18,7 @@ public class InvalidPasswordException extends Exception {
     // } catch (InvalidPasswordLengthException e) {  // add more 'catch' will effected R36
         // send sms or other 1000 lines....
     // }
-    } catch (InvalidPasswordException e) {   // One 'catch' & match R36 sentence is perfect
+    } catch (InvalidPasswordException e) {   // One 'catch' & match R35 sentence is perfect
       System.out.println("this is InvalidPasswardException:" + e.getMessage());
     } 
   }

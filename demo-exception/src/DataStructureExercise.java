@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Objects;
+
 public class DataStructureExercise {
   public static void main(String[] args) {
     // Exercise 1: Array List Basic Operations
@@ -22,6 +26,34 @@ public class DataStructureExercise {
     // 3a. Create an ArrayList with the following numbers: 10, 20, 10, 30, 40, 20, 50.
     // 3b. Remove duplicates from the list using a HashSet.
     // 3c. Print the list after removing duplicates.
+    ArrayList<Integer> integers = new ArrayList<>();
+    integers.add(10);
+    integers.add(20);
+    integers.add(10);
+    integers.add(30);
+    integers.add(40);
+    integers.add(20);
+    integers.add(50);
+    System.out.println(integers.get(6));  // 50
+    System.out.println(integers.size());  // 7
+
+    HashSet<String> uniqueNums = new HashSet<>();
+    uniqueNums.add("10");
+    uniqueNums.add("20");
+    uniqueNums.add("10");
+    uniqueNums.add("30");
+    uniqueNums.add("40");
+    uniqueNums.add("20");
+    uniqueNums.add("50");
+    System.out.println(uniqueNums.size());  // 5
+
+    HashSet<String> uniqueNum = new HashSet<>();
+    for (Number uniqueNum : uniqueNums) {
+      uniqueNum.notifyAll();
+    }
+    System.out.println(uniqueNum.getClass());
+
+
 
 
     // Exercise 4: HashSet Basic Operations

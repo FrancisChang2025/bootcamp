@@ -6,12 +6,12 @@ public class ExceptionExercise2 {
 
   // 1. If NumberFormatException is caught, print "Error: Please enter a valid number."
   // 2. If ArrayIndexOutOfBoundsException is caught, print "Error: Index is out of bounds."
-  // 3. If no exception is caught, print "Element at index X: Y"
+  // 3. If no exception is caught 沒有異常捕捉到, print "Element at index X: Y"
   // 4. No matter if the exception is caught, finally print "Array retrieval attempt completed."
   public static void main(String[] args) {
     int[] numbers = {10, 20, 30, 40, 50};
     Scanner scanner = new Scanner(System.in);
-    System.out.print("Enter the index to retrieve: ");
+    System.out.print("Enter the index to retrieve: ");  // index 0, 1, 2, 3, 4
     String input = scanner.nextLine(); // read String
     scanner.close();
 
@@ -25,7 +25,7 @@ public class ExceptionExercise2 {
     } catch (ArrayIndexOutOfBoundsException e) {
       System.out.println("Error: Index is out of bounds.");
     } finally {
-      System.out.println("Array retrieval attempt completed.");
+      System.out.println("Array retrieval attempt completed.");  // 数组检索尝试已完成
     }
 
 
