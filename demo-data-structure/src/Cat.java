@@ -45,7 +45,10 @@ public class Cat extends Animal {
 
   @Override
   public String toString() {
-    return "Cat()" + "name=" + this.name + ")";
+    return "Cat(" //
+        + "name=" + this.name //
+        + ",dob=" + super.getDob() //
+        + ")";
   }
 
   // toString(), hashCode()
