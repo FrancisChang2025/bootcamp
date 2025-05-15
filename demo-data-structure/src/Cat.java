@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
@@ -8,12 +9,18 @@ public class Cat extends Animal {
   public Cat(String name) {
     this.name = name;
   }
+  
+  public Cat(String name, LocalDate dob) {
+    super(dob);
+    this.name = name;
+  }
 
   public String getName() {
     return this.name;
   }
-
-   // for fun
+ 
+  // ! Method Signature (Override): Return type + Method Name + Arguments ("int compareTo(Cat cat)")
+  // ! Method Signature (Polyorphism): Method Name + Arguments -> "compareTo(Cat cat)"
    public int compareTo(Cat cat) {
     if (this.name.length() == cat.getName().length()) {
       return 0;

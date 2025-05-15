@@ -31,6 +31,10 @@ import java.util.List;
     return "Person(" + "name=" + this.name + ", age=" + this.age + ")";
   }
 
+  // A -> B -> C
+  // Collections.sort(persons) -> loop persons -> each persons.compareTo()
+  // You prepare program C. Java prepared program B (Collections.sor())
+
   public static void main(String[] args) {
     // sorted by age, descending order
     List<Person> persons = new ArrayList<>(

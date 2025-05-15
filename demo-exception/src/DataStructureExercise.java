@@ -11,6 +11,21 @@ public class DataStructureExercise {
     // 1c. Print all the elements in the list.
     // 1d. Remove the number 30 from the list.
     // 1e. Print the size of the list.
+    ArrayList<Integer> int1 = new ArrayList<>();
+    int1.add(10);
+    int1.add(20);
+    int1.add(30);
+    int1.add(40);
+    int1.add(50);
+    for (int i = 0; i < int1.size(); i++) {
+      System.out.println(int1.get(i));
+    }
+    ArrayList<String> stringList = new ArrayList<>();
+    for (Integer numInteger : int1) {
+      stringList.add(String.valueOf(numInteger));
+    }
+    System.out.println(stringList.remove("30"));
+    System.out.println("Ans: 1e: " + int1.size());
 
     // Exercise 2: Search and Update
 
@@ -45,15 +60,12 @@ public class DataStructureExercise {
     uniqueNums.add("40");
     uniqueNums.add("20");
     uniqueNums.add("50");
-    System.out.println(uniqueNums.size());  // 5
-
-    HashSet<String> uniqueNum = new HashSet<>();
-    for (Number uniqueNum : uniqueNums) {
-      uniqueNum.notifyAll();
+    for (String uniqueNum : uniqueNums) {
+      if (!uniqueNums.contains(uniqueNums)){
+        System.out.println("Unique: " + uniqueNum);
+      }
     }
-    System.out.println(uniqueNum.getClass());
-
-
+    System.out.println("Ans: 3c: " + uniqueNums.size());  // 5
 
 
     // Exercise 4: HashSet Basic Operations

@@ -33,16 +33,16 @@ public class Ball implements Comparable<Ball> {
     // return 1;
   }
 
-  @Override
-  public int compareTo(Ball ball) {
+  // @Override
+  // public int compareTo(Ball ball) {
     // -1 -> return this
-    if (this.num > ball.getNum())
-      return -1;
-    return 1;
-    }
+  //   if (this.num > ball.getNum())
+  //  return -1;
+  //   return 1;
+   // }
 
   // getter
-  public int getNum(){
+  public int getNum() {
     return this.num;
   }
 
@@ -50,11 +50,11 @@ public class Ball implements Comparable<Ball> {
     return this.color;
   }
 
-  public void setNum(int num){
+  public void setNum(int num) {
     this.num = num;
   }
 
-  public static enum color {
+  public static enum Color {
     RED, BLUE, YELLOW;
   }
 
