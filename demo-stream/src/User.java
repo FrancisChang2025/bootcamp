@@ -48,6 +48,32 @@ public class User {
     }
   }
 
+  public String getUserid(){
+    return this.userid;
+  }
+
+  public void setUserid(String userid){
+    this.userid = userid;
+  }
+
+  public String getEmail(){
+    return this.email;
+  }
+
+  public void setEmail(String email){
+    this.email = email;
+  }
+
+  public LocalDate getJoinDate(){
+    return this.joinDate;
+  }
+
+  public void setJoinDate(LocalDate joinDate){
+    this.joinDate = joinDate;
+  }
+
+
+
   public static void main(String[] args) {
     // User user = new User(xxx, xxx, xxx);
     User user = User.builder() //

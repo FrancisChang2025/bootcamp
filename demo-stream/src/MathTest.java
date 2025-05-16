@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.function.Consumer;
 
 public class MathTest {
   public static void main(String[] args) {
@@ -32,10 +33,10 @@ public class MathTest {
     
     // ! for-each
     for (Child child : childs) {
-
+      System.out.println("Child: " + child.getName());
     }
     // ! for-each lambda
-    childs.forEach(null);
-
+    Consumer <Child> printName = child -> System.out.println("Child: " + child.getName());
+    childs.forEach(printName);
   }
 }

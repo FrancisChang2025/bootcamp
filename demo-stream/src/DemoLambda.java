@@ -1,6 +1,13 @@
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
+
 
 public class DemoLambda {
   public static void main(String[] args) {
@@ -30,13 +37,58 @@ public class DemoLambda {
     // ! The object created by lambda cannot hold attributes
 
     // 兩入一出
+    // BiFunction
     BiFunction<String, String, String> concatOperation = (s1, s2) -> s1.concat(s2);
     System.out.println(concatOperation.apply("hello", "world"));  // helloword
 
-    Predicate<Integer> elderlyFormula = age -> age > 65;
+    // !
+    Predicate<Integer> elderlyFormula = age -> age > 65;  // formula
     System.out.println(elderlyFormula.test(60));  // false
     System.out.println(elderlyFormula.test(85));  // true
-    
+    System.out.println(elderlyFormula.test(65));  // false
+
+    BiPredicate<String, ArrayList<String>> containString = (targetName, nameList) -> {
+      return nameList.contains(targetName);
+    };
+
+    // ! 有入冇出
+    // Consumer
+    Consumer<Cat> catConsumer = (cat) -> {
+      cat.eat();
+      cat.sleep();
+      System.out.println("hello");
+    };
+
+    // ! 冇入有出
+    // Supplier
+    Supplier<Integer> marksixNumber = () -> {
+      return new Random().nextInt(49) + 1;  // 1 = 49
+    };
+    System.out.println(marksixNumber.get());
+    System.out.println(marksixNumber.get());
+    System.out.println(marksixNumber.get());
+
+    // ! 兩入冇出
+   BiConsumer<Integer, Integer> additional = (a, b) -> {
+    System.out.println(a);  // 3
+    System.out.println(b);  // 7
+    System.out.println(a + b);  // 10
+    System.out.println(a * b);  // 21
+    System.out.println("hello");  // hello
+   };
+   additional.accept(3, 7);  
 
   }
+
+  // ! Shared to other class
+  // DemoLambda.generateMarksix()
+  public static Integer generateMarksix() {
+    return new Random().nextInt(49) + 1;
+  }
+
+    // Procedure
+    public static void eat(Cat cat) {
+      cat.eat();
+      cat.sleep();
+    }
 }
