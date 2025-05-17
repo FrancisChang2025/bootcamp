@@ -72,8 +72,6 @@ public class User {
     this.joinDate = joinDate;
   }
 
-
-
   public static void main(String[] args) {
     // User user = new User(xxx, xxx, xxx);
     User user = User.builder() //

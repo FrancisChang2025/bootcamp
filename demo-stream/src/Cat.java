@@ -18,7 +18,7 @@ public class Cat implements Flyable {
     // new Cat().sleep().eat();
     int x = 3;
     if (x > 2) {
-      System.out.println("hello");
+      System.out.println("hello");  // hello
     } else {
       System.out.println("goodbye");
     }
