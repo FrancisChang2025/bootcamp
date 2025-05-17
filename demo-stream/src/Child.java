@@ -21,6 +21,13 @@ public class Child implements Walkable {
     System.out.println("I am walking ....");
   }
 
+  @Override
+  public String toString() {
+    return "Child("
+      + "name=" + this.name
+      + ")";
+  }
+
   public int play(int x, int y) {
     int a = 10;
     // ! Method Local Inner Class

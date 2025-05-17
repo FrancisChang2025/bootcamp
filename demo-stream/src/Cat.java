@@ -1,5 +1,9 @@
-public class Cat {
-  
+public class Cat implements Flyable {
+  @Override
+  public void fly() {
+    System.out.println("Cat is flying");
+  }
+
   public Cat sleep() {
     System.out.println("Cat is sleeping");
     return this;
