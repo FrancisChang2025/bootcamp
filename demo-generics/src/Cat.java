@@ -1,3 +1,3 @@
-public interface Cat extends Animal {
+public class Cat extends Animal {
   
 }
