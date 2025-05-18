@@ -42,7 +42,7 @@ public class InvalidAgeException extends RuntimeException {
 
   public static int calculate(int age) {
     if (age < 0) {
-      throw new InvalidAgeException();
+      throw new InvalidAgeException(); // 👈 💣 💥
     }
     return age + 10;
   }

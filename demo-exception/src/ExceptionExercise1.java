@@ -16,7 +16,7 @@ public class ExceptionExercise1 {
 
     // code here ...
     // try, catch
-    try {    // 因為有危險，所以要 try
+    try {    //  ! 因為有危險，所以要 try 👉 catch 👉 finally
       int result = numerator / denominator;  // 分子/分母
       System.out.println("Result: " + result);
     } catch (ArithmeticException e) {

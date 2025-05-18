@@ -27,7 +27,5 @@ public class ExceptionExercise2 {
     } finally {
       System.out.println("Array retrieval attempt completed.");  // 数组检索尝试已完成
     }
-
-
   }
 }

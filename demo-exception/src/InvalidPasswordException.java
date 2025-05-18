@@ -15,7 +15,7 @@ public class InvalidPasswordException extends Exception {
     try {
       int result = InvalidPasswordException.isValidPassword("1234abdf$");  // 👈🌟
       System.out.println(result);
-    // } catch (InvalidPasswordLengthException e) {  // add more 'catch' will effected R36
+    // } catch (InvalidPasswordLengthException e) {  // add more 'catch' will effected R35
         // send sms or other 1000 lines....
     // }
     } catch (InvalidPasswordException e) {   // One 'catch' & match R35 sentence is perfect

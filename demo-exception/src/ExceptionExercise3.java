@@ -27,14 +27,12 @@ public class ExceptionExercise3 {
       System.out.println("Age is invalid. Please input again later");
     }
   }
-
   // code here for the method  👉 💥Bomb 💣
   public static void checkAge(int age) {
     if (age < 18) {
       throw new InvalidAgeException();
     }
   }
-
   public static class InvalidAgeException extends RuntimeException {
 
   }

@@ -28,6 +28,7 @@ public class DemoUncheckedException {
     String s = "hello";
     if (s != null) {
       System.out.println(s.charAt(3)); // l
+      System.out.println(s.length()-1);  // 4
     }
 
     // Case 3:  經典個案： 除 ‘0’ Avoidable Case
