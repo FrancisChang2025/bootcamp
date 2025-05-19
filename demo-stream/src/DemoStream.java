@@ -132,6 +132,9 @@ public class DemoStream {
     long countJohn = nameList.stream().filter(e -> e.equals("John")).count();
     System.out.println(countJohn);  // 2
 
+    long countMary = nameList.stream().filter(e -> e.equals("Mary")).count();
+    System.out.println(countMary);  // 0
+
     // distinct -> return a new list, which contains unique elements
     nameList.add("Mary");
     nameList.add("Peter");
@@ -159,7 +162,7 @@ public class DemoStream {
     // [Ball(color=RED,number=1), Ball(color=BLUE,number=2), Ball(color=RED,number=3),
     // Ball(color=BLUE,number=4)]
 
-    // Another Method (For Loop), result same the above R143 - R158
+    // 💕 Another Method (For Loop), result same the above R146 - R161
     List<Ball> combinedBallList2 = new ArrayList<>();
     for (Box box : boxList) {
       combinedBallList2.addAll(box.getBalls());
@@ -184,16 +187,24 @@ public class DemoStream {
     Map<String, Integer> salaryMap =
         staffs.stream().collect(Collectors.groupingBy(s -> s.getDepartment(),
             Collectors.summingInt(s -> s.getSalary())));
-    System.out.println(salaryMap);
+    System.out.println(salaryMap);  // {HR=46000, IT=60000}
 
     // maxBy
     Map<String, Optional<Staff>> salaryMap2 = staffs.stream()
         .collect(Collectors.groupingBy(s -> s.getDepartment(), Collectors
-        .maxBy((s1, s2) -> s1.getSalary() > s2.getSalary() ? 1 : -1)));
-    System.out.println(salaryMap2);   // Staff(department=IT,salary=35000)
+        .maxBy((s1, s2) -> s1.getSalary() > s2.getSalary() ? 1 : -1)));  // 👈 🤩
+    System.out.println("The Max.Salary is= " + salaryMap2);   
+    // The Max.Salary is= {HR=Optional[Staff(department=HR,salary=28000)],
+       //  IT=Optional[Staff(department=IT,salary=35000)]}
+
 
     // minBy
-    
+    Map<String, Optional<Staff>> salaryMap3 = staffs.stream()
+        .collect(Collectors.groupingBy(s -> s.getDepartment(), Collectors
+        .minBy((s1, s2) -> s1.getSalary() < s2.getSalary() ? -1 : 1)));  // 👈 🤩
+    System.out.println("The Min.Salary is= " + salaryMap3); 
+    // The Min.Salary is= {HR=Optional[Staff(department=HR,salary=18000)],
+       // IT=Optional[Staff(department=IT,salary=25000)]}
 
     Optional<Staff> highestSalaryIT = salaryMap2.get("IT");
     System.out.println(highestSalaryIT.get()); // Staff(department=IT,salary=35000)
@@ -201,14 +212,14 @@ public class DemoStream {
     Map<Boolean, List<Staff>> salaryPartition = staffs.stream()
         .collect(Collectors.partitioningBy(s -> s.getSalary() > 20000));
 
-    System.out.println(salaryPartition.get(true));  // [Staff(department=IT,salary=35000), 
-                // Staff(department=IT,salary=25000), Staff(department=HR,salary=28000)]
+    System.out.println(salaryPartition.get(true));  
+         // [Staff(department=IT,salary=35000), Staff(department=IT,salary=25000),
+              //  Staff(department=HR,salary=28000)]
     System.out.println(salaryPartition.get(false));
-            // [Staff(department=HR,salary=18000)]
+         // [Staff(department=HR,salary=18000)]
   }
 
-  
-
+  // Attributes, constructor, getter, toString
   public static class Staff {
     private String department;
     private int salary;

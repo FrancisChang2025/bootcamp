@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DemoTypeInference {
-  // private var age; // ! var is nnot for attribute type. (Not Gurantee)
+  // private var age; // ! var is not for attribute type. (Not Guarantee)
 
   public static void main(String[] args) {
     // Java is Strong type
