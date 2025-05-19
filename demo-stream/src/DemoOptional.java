@@ -30,9 +30,9 @@ public class DemoOptional {
       System.out.println("Target is found: " + target);
     } else {
       System.out.println("Target is not found.");
-    }
+    }  // Target is found: Mary
 
-    // findTarget(null, 'c'); // NPE
+    // findTarget(null, 'c'); // NPE  (canbe Call, but 即💥)
 
     // ! The ways to create Optional Object
     Optional<Ball> ball1 = Optional.of(new Ball(Ball.Color.RED, 13));
@@ -40,12 +40,12 @@ public class DemoOptional {
 
     // Use ofNullable when you don't know if the object is null
     Ball b1 = null;
-    Optional<Ball> ball3 = Optional.ofNullable(b1);
+    Optional<Ball> ball3 = Optional.ofNullable(b1);  // 👈 "Optional.of Null" 不一定找到
 
-    // Optional.of(null);  // ! You ust put on-null object int of()
+    // Optional.of(null);  // ! You must put on-null object int of()
   }
 
-  // ! Optional.class is ONLYY for return type.
+  // ! Optional.class is ONLY for return type.
   public static Optional<String> findTargetString(List<String> strings, String target) {
     if (strings != null && strings.contains(target))
       return Optional.of(target);
