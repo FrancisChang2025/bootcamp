@@ -10,4 +10,12 @@ public class Ball {
   public static enum Color {
     RED, BLUE,;
   }
+
+  @Override
+  public String toString() {
+    return "Ball("
+      + "color=" + this.color.name()
+      + ",number=" + this.number
+      + ")";
+  }
 }

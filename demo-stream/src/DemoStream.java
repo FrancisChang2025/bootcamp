@@ -2,7 +2,9 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -121,7 +123,112 @@ public class DemoStream {
       .collect(Collectors.toList());
     System.out.println(areaList);
       // [38.48451000647496, 63.61725123519331, 7.0685834705770345]
-      
+    
+    // Counting
+    List<String> nameList = new ArrayList<>();
+    nameList.add("John");
+    nameList.add("John");
+    nameList.add("Peter");
+    long countJohn = nameList.stream().filter(e -> e.equals("John")).count();
+    System.out.println(countJohn);  // 2
 
+    // distinct -> return a new list, which contains unique elements
+    nameList.add("Mary");
+    nameList.add("Peter");
+    System.out.println(nameList.stream().distinct().count()); // 3
+    System.out
+        .println(nameList.stream().distinct().collect(Collectors.toList())); // [John, Peter, Mary]
+
+    // flatMap
+    List<Ball> ballList1 = new ArrayList<>(Arrays
+        .asList(new Ball(Ball.Color.RED, 1), new Ball(Ball.Color.BLUE, 2)));
+    Box box1 = new Box(ballList1);
+
+    List<Ball> ballList2 = new ArrayList<>(Arrays
+        .asList(new Ball(Ball.Color.RED, 3), new Ball(Ball.Color.BLUE, 4)));
+    Box box2 = new Box(ballList2);
+
+    List<Box> boxList = new ArrayList<>();
+    boxList.add(box1);
+    boxList.add(box2);
+
+    List<Ball> combinedBallList = boxList.stream()
+        .flatMap(box -> box.getBalls().stream()).collect(Collectors.toList());
+
+    System.out.println(combinedBallList);
+    // [Ball(color=RED,number=1), Ball(color=BLUE,number=2), Ball(color=RED,number=3),
+    // Ball(color=BLUE,number=4)]
+
+    // Another Method (For Loop), result same the above R143 - R158
+    List<Ball> combinedBallList2 = new ArrayList<>();
+    for (Box box : boxList) {
+      combinedBallList2.addAll(box.getBalls());
+    }
+    System.out.println(combinedBallList2);
+    // [Ball(color=RED,number=1), Ball(color=BLUE,number=2), Ball(color=RED,number=3),
+    // Ball(color=BLUE,number=4)]
+
+
+
+    // ! Stream: From ArrayList to Map (count, max, min, sum, average)
+    List<Staff> staffs =
+        new ArrayList<>(List.of(new Staff("IT", 35000), new Staff("HR", 18000),
+            new Staff("IT", 25000), new Staff("HR", 28000)));
+
+    Map<String, List<Staff>> departmentMap =
+        staffs.stream().collect(Collectors.groupingBy(s -> s.getDepartment()));
+    System.out.println(departmentMap);
+    // {HR=[Staff(department=HR,salary=18000), Staff(department=HR,salary=28000)], 
+    // IT=[Staff(department=IT,salary=35000), Staff(department=IT,salary=25000)]}
+
+    Map<String, Integer> salaryMap =
+        staffs.stream().collect(Collectors.groupingBy(s -> s.getDepartment(),
+            Collectors.summingInt(s -> s.getSalary())));
+    System.out.println(salaryMap);
+
+    // maxBy
+    Map<String, Optional<Staff>> salaryMap2 = staffs.stream()
+        .collect(Collectors.groupingBy(s -> s.getDepartment(), Collectors
+        .maxBy((s1, s2) -> s1.getSalary() > s2.getSalary() ? 1 : -1)));
+    System.out.println(salaryMap2);   // Staff(department=IT,salary=35000)
+
+    // minBy
+    
+
+    Optional<Staff> highestSalaryIT = salaryMap2.get("IT");
+    System.out.println(highestSalaryIT.get()); // Staff(department=IT,salary=35000)
+
+    Map<Boolean, List<Staff>> salaryPartition = staffs.stream()
+        .collect(Collectors.partitioningBy(s -> s.getSalary() > 20000));
+
+    System.out.println(salaryPartition.get(true));  // [Staff(department=IT,salary=35000), 
+                // Staff(department=IT,salary=25000), Staff(department=HR,salary=28000)]
+    System.out.println(salaryPartition.get(false));
+            // [Staff(department=HR,salary=18000)]
+  }
+
+  
+
+  public static class Staff {
+    private String department;
+    private int salary;
+
+    public Staff(String department, int salary) {
+      this.department = department;
+      this.salary = salary;
+    }
+    public String getDepartment() {
+      return this.department;
+    }
+
+    public int getSalary() {
+      return this.salary;
+    }
+
+    @Override
+    public String toString() {
+      return "Staff(" + "department=" + this.department + ",salary="
+          + this.salary + ")";
+    }
   }
 } 
