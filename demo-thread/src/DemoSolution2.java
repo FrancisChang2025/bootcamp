@@ -19,9 +19,11 @@ public class DemoSolution2 {
 
     // define the task content
     Runnable task = () -> {
+      System.out.println("Thread Name:" + Thread.currentThread().getName() + " start to work.");
       for (int i = 0; i < 100_000; i++) {
         object.add();
       }
+      System.out.println("Thread Name:" + Thread.currentThread().getName() + " completed.");
     };
 
     Thread worker1 = new Thread(task);
