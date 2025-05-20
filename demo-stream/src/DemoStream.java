@@ -11,7 +11,6 @@ import java.util.OptionalInt;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import javax.swing.plaf.synth.SynthStyle;
 
 public class DemoStream {
   public static void main(String[] args) {
@@ -220,18 +219,18 @@ public class DemoStream {
               //  Staff(department=HR,salary=28000)]
     System.out.println(salaryPartition.get(false));
          // [Staff(department=HR,salary=18000)]
-  }
-
-  // Array -> ArrayList -> Stream
-    String[] strings = new String[] {"abc", "def"};
+    
+    // Array -> ArrayList -> Stream
+    String[] strings = new String[] {"abc", "def","apple","abby"};
     long count = Arrays.asList(strings).stream().filter(e -> e.startsWith("a")).count();
+    System.out.println(count);  // 3
 
     int[] arr = new int[] {3, 6, -1};
     // Arrays.asList(arr) // ! List<int[]>
 
     // IntStream 
     OptionalDouble average = Arrays.stream(arr).average(); 
-    System.out.println(average.getAsDouble());
+    System.out.println(average.getAsDouble());  // 2.6666666666666665 [3+6-1=8 / 3]
 
     OptionalInt maxValue = Arrays.stream(arr).max();
     System.out.println(maxValue.getAsInt()); // 6
