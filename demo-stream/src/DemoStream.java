@@ -124,7 +124,7 @@ public class DemoStream {
     System.out.println(areaList);
       // [38.48451000647496, 63.61725123519331, 7.0685834705770345]
     
-    // Counting
+    // ! Counting
     List<String> nameList = new ArrayList<>();
     nameList.add("John");
     nameList.add("John");
@@ -135,14 +135,14 @@ public class DemoStream {
     long countMary = nameList.stream().filter(e -> e.equals("Mary")).count();
     System.out.println(countMary);  // 0
 
-    // distinct -> return a new list, which contains unique elements
+    // ! distinct -> return a new list, which contains unique elements
     nameList.add("Mary");
     nameList.add("Peter");
     System.out.println(nameList.stream().distinct().count()); // 3
     System.out
         .println(nameList.stream().distinct().collect(Collectors.toList())); // [John, Peter, Mary]
 
-    // flatMap
+    // ! flatMap
     List<Ball> ballList1 = new ArrayList<>(Arrays
         .asList(new Ball(Ball.Color.RED, 1), new Ball(Ball.Color.BLUE, 2)));
     Box box1 = new Box(ballList1);
