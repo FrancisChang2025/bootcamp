@@ -12,8 +12,8 @@ public class StreamExercise {
     // sort the result in descending order.
     List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     // Output: [100, 64, 36, 16, 4]
-    List<Integer> number = numbers.stream() //
-      .filter(number -> numbers % 2 == 0)
+    List<Integer> numbers = number.stream() 
+      .filter(number -> number % 2 == 0)
       .forEach(number -> System.out.println(numbers));
 
     // 2. Filtering and Collecting

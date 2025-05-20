@@ -6,9 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.OptionalDouble;
+import java.util.OptionalInt;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import javax.swing.plaf.synth.SynthStyle;
 
 public class DemoStream {
   public static void main(String[] args) {
@@ -217,6 +220,26 @@ public class DemoStream {
               //  Staff(department=HR,salary=28000)]
     System.out.println(salaryPartition.get(false));
          // [Staff(department=HR,salary=18000)]
+  }
+
+  // Array -> ArrayList -> Stream
+    String[] strings = new String[] {"abc", "def"};
+    long count = Arrays.asList(strings).stream().filter(e -> e.startsWith("a")).count();
+
+    int[] arr = new int[] {3, 6, -1};
+    // Arrays.asList(arr) // ! List<int[]>
+
+    // IntStream 
+    OptionalDouble average = Arrays.stream(arr).average(); 
+    System.out.println(average.getAsDouble());
+
+    OptionalInt maxValue = Arrays.stream(arr).max();
+    System.out.println(maxValue.getAsInt()); // 6
+
+    // List<Integer>
+    // boxed -> auto-box (int -> Integer)
+    List<Integer> resultList = Arrays.stream(arr).boxed().filter(e -> e > 4).collect(Collectors.toList());
+    System.out.println(resultList); // [6]
   }
 
   // Attributes, constructor, getter, toString
