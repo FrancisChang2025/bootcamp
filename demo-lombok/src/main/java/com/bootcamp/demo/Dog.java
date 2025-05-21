@@ -8,7 +8,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 // JDK -> has no lombok
-// pom.xml -> add dependency (lombok framework) -> load into your Java (maver) project
+// pom.xml -> add dependency (lombok framework) -> load into your Java (Maven) project
 // So, your project is able to use JDK + lombok
 
 // ! Compile time: java -> class
@@ -26,8 +26,8 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode(callSuper = true) // 約定   default false
-@ToString
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 public class Dog extends SuperAnimal{
   private String name;
   // @ToString.Exclude
@@ -49,18 +49,17 @@ public class Dog extends SuperAnimal{
     Dog d1 = new Dog();
     d1.setAge(13);
     d1.setName("Peter");
-    System.err.println(d1);
+    System.err.println(d1);  // Dog(name=Peter, weight=0.0, age=13)
     Dog d2 = new Dog("John", 3.76, 10);
-    System.out.println(d2);
+    System.out.println(d2);  // Dog(name=John, weight=3.76, age=10)
     Dog d3 = new Dog("John", 3.76, 10);  // generated
-    System.out.println(d2.equals(d3));  // true
-    System.out.println(d3.getName());
-    System.out.println(d3.getAge());
+    System.out.println(d2.equals(d3));  // false, View R29 add Parent() 👉 default true)
+    System.out.println(d3.getName());  // John
+    System.out.println(d3.getAge());  // 10
 
     Dog d4 = new Dog(9.99, "John", 3.76, 10);
     Dog d5 = new Dog(100, "John", 3.76, 10);
     System.out.println(d4.equals(d5)); // false
-    System.out.println(d4);
+    System.out.println(d4);  // Dog(name=John, weight=3.76, age=10)
   }
-
 }

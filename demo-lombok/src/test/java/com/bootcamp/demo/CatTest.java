@@ -8,6 +8,7 @@ class CatTest {
   public void TestCat() {
     Cat c1 = new Cat("John", 13);
     Assertions.assertEquals(13, c1.getAge());
+    
 
   }
 }
