@@ -43,7 +43,8 @@ public class DemoSwitchExpression {
         System.out.println("I don't know what happen...");
       break;
     }
-WEEKDAY weekday2 = WEEKDAY.MON;
+
+  WEEKDAY weekday2 = WEEKDAY.MON;
     // Java 14: Switch Expression
     switch (weekday2) {
       case MON, TUE -> {   // 可以多過1個 message

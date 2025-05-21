@@ -28,5 +28,4 @@ public record Person(String name, int age) {
     Person p1 = (Person) obj;
     return this.name.equals(p1.name());
   }
-
 }
