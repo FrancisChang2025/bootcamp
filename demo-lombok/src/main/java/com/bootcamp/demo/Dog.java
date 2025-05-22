@@ -53,7 +53,7 @@ public class Dog extends SuperAnimal{
     Dog d2 = new Dog("John", 3.76, 10);
     System.out.println(d2);  // Dog(name=John, weight=3.76, age=10)
     Dog d3 = new Dog("John", 3.76, 10);  // generated
-    System.out.println(d2.equals(d3));  // false, View R29 add Parent() 👉 default true)
+    System.out.println(d2.equals(d3));  // false, View R29 add Parent() 👉 default true
     System.out.println(d3.getName());  // John
     System.out.println(d3.getAge());  // 10
 
@@ -61,5 +61,8 @@ public class Dog extends SuperAnimal{
     Dog d5 = new Dog(100, "John", 3.76, 10);
     System.out.println(d4.equals(d5)); // false
     System.out.println(d4);  // Dog(name=John, weight=3.76, age=10)
+
+    Dog d6 = new Dog(100, "John", 3.76, 10);
+    System.out.println(d5.equals(d6));
   }
 }
