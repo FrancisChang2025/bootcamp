@@ -1,5 +1,7 @@
 package com.bootcamp.demo;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -44,6 +46,10 @@ public class Dog extends SuperAnimal{
 // All args constructor
 // getter, setter
 // equals, toString, hashCode
+
+public static List<Dog> findDogAgeGreaterThan(List<Dog> (superpower, String name, double weight,int age) {
+  return dogs.stream().filter(d -> d.getAge() > age).collector(Collectors.toList());
+}
 
   public static void main(String[] args) {
     Dog d1 = new Dog();
