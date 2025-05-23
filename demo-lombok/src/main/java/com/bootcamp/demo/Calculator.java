@@ -17,6 +17,7 @@ public class Calculator {
 
   public static Optional<Dog> findTargetDog(List<Dog> dogs, double superpower,
       String name, double weight, int age) {
+    // return null;  可以是乜都冇 to replace R21 - R27
     for (Dog dog : dogs) {
       if (dog.equals(new Dog(superpower, name, weight, age))) {
         return Optional.of(dog);

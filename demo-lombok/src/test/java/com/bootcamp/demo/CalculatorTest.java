@@ -1,7 +1,6 @@
 package com.bootcamp.demo;
 
 import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

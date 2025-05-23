@@ -47,9 +47,9 @@ public class Dog extends SuperAnimal{
 // getter, setter
 // equals, toString, hashCode
 
-public static List<Dog> findDogAgeGreaterThan(List<Dog> (superpower, String name, double weight,int age) {
-  return dogs.stream().filter(d -> d.getAge() > age).collector(Collectors.toList());
-}
+ public static List<Dog> findDogAgeGreaterThan(List<Dog> dogs, int age) {
+    return dogs.stream().filter(d -> d.getAge() > age).collect(Collectors.toList());
+  }
 
   public static void main(String[] args) {
     Dog d1 = new Dog();
@@ -59,16 +59,19 @@ public static List<Dog> findDogAgeGreaterThan(List<Dog> (superpower, String name
     Dog d2 = new Dog("John", 3.76, 10);
     System.out.println(d2);  // Dog(name=John, weight=3.76, age=10)
     Dog d3 = new Dog("John", 3.76, 10);  // generated
-    System.out.println(d2.equals(d3));  // false, View R29 add Parent() 👉 default true
+    System.out.println(d2.equals(d3));  // true (Reason is R56 generated)
     System.out.println(d3.getName());  // John
     System.out.println(d3.getAge());  // 10
 
     Dog d4 = new Dog(9.99, "John", 3.76, 10);
     Dog d5 = new Dog(100, "John", 3.76, 10);
-    System.out.println(d4.equals(d5)); // false
+    System.out.println(d4.equals(d5)); // false, View R29 added Parent() 👉 default true
     System.out.println(d4);  // Dog(name=John, weight=3.76, age=10)
+    // R29 & R 30 👉 add (callSuper = Call) 
+    // R63 Ans from true 👉 false (Reason: 跟自己比 d4 = d5 ✅ match name & age ONLY, 加埋 super 比，must false❌)
+    // R64 Ans from 以上👉Dog(super=SuperAnimal(superpower=9.99), name=John, weight=3.76, age=10)
 
     Dog d6 = new Dog(100, "John", 3.76, 10);
-    System.out.println(d5.equals(d6));
+    System.out.println(d5.equals(d6)); // true
   }
 }
