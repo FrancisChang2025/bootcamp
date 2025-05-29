@@ -3,9 +3,9 @@ package com.bootcamp.demo;
 import java.util.List;
 
 // Helper, Owner, Holder, Manager
-public class IntegerOwner {
+public class IntegerOwner {    // (developer A)
   private List<Integer> integers;  // static input
-  private Calculator calculator;   // helper 水泡
+  private Calculator calculator;   // helper 水泡  (developer B)
 
   // Dependency Injection
   public IntegerOwner(Calculator calculator, List<Integer> integers) {

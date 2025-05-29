@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/francischang/github/org/2504/bootcamp/demo-lombok/target/surefire/surefirebooter-20250523102940834_3.jar /Users/francischang/github/org/2504/bootcamp/demo-lombok/target/surefire 2025-05-23T10-29-40_809-jvmRun1 surefire-20250523102940834_1tmp surefire_0-20250523102940834_2tmp"/>
+    <property name="sun.java.command" value="/Users/francischang/github/org/2504/bootcamp/demo-lombok/target/surefire/surefirebooter-20250525100334219_3.jar /Users/francischang/github/org/2504/bootcamp/demo-lombok/target/surefire 2025-05-25T10-03-34_191-jvmRun1 surefire-20250525100334219_1tmp surefire_0-20250525100334219_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/francischang/github/org/2504/bootcamp/demo-lombok/target/test-classes:/Users/francischang/github/org/2504/bootcamp/demo-lombok/target/classes:/Users/francischang/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/francischang/.m2/repository/org/mockito/mockito-junit-jupiter/5.5.0/mockito-junit-jupiter-5.5.0.jar:/Users/francischang/.m2/repository/org/mockito/mockito-core/5.5.0/mockito-core-5.5.0.jar:/Users/francischang/.m2/repository/net/bytebuddy/byte-buddy/1.14.6/byte-buddy-1.14.6.jar:/Users/francischang/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.6/byte-buddy-agent-1.14.6.jar:/Users/francischang/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/francischang/.m2/repository/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar:/Users/francischang/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/Users/francischang/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/francischang/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/francischang/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/Users/francischang/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/Users/francischang/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/francischang/github/org/2504/bootcamp/demo-lombok/target/surefire/surefirebooter-20250523102940834_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/francischang/github/org/2504/bootcamp/demo-lombok/target/surefire/surefirebooter-20250525100334219_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="21.0.6+7-LTS"/>

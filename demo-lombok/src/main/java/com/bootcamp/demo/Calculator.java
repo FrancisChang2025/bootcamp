@@ -10,10 +10,15 @@ public class Calculator {
 
   }
 
+  // Developer B
   // Method A 👉 Method B 👉 C 👉 D 👉 E 👉 F
   public int sum(int x, int y) {
     return x + y;
   }
+
+  // public boolean sendEmail(String userId, String , email) {
+  //   return false;
+  // }
 
   public static Optional<Dog> findTargetDog(List<Dog> dogs, double superpower,
       String name, double weight, int age) {
