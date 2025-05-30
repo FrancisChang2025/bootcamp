@@ -27,9 +27,10 @@ public class DemoPostgreSQLJDBC {
 
     // select
 
-
     // update (similar to insert)
 
     // delete (similar to insert)
+    
+    }
   }
 }

@@ -45,14 +45,14 @@ public class DemoMySQLJDBC {
       Connection conn =
           DriverManager.getConnection(databaseUrl, userId, password);
 
-      // ! 1. create table
+      // ! 1. create table  // 死背 Java connect SQL
       Statement stmt = conn.createStatement();
       String createTableStmt =
           "create table if not exists JDBC_MYSQL_TABLE (id bigint primary key, name varchar(50))";
       stmt.executeUpdate(createTableStmt);
 
       // ! 2. insert data
-      // Front end -> Bankend API
+      // ! Front-End -> Back-End API
       List<Person> newPersons = new ArrayList<>(
           Arrays.asList(new Person(3, "Vincent"), new Person(4, "Lucas")));
       for (Person p : newPersons) {
