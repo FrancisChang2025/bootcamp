@@ -39,7 +39,7 @@ public class DemoString {
     System.out.println(s4.equals("hello")); // ture, asking if s4 equals to "hello"
     System.out.println(s4.equals("male")); // false, asking if s4 equals to "male"
 
-    System.out.println(1 + 1); //2
+    System.out.println(1 + 1); // 2
     int r2 = 1 + 1;
 
     boolean result = s4.equals("hello");
@@ -61,12 +61,23 @@ public class DemoString {
     double d1 = s4.length(); // ! why OK?
     // short s10 = s4.length(); // ! why NOT OK?
 
-
     // ! String Method 3: charAt()
     // 1 is an index, which always start with 0,1,2,3 to court ()words/figures
      System.out.println(s4.charAt(1)); // e    "Hello", 2 digial
      System.out.println(s4.charAt(0)); // h    "Hello", 1 digial
-    
-    
+
+     char letter = 'A';
+     char digit = '5';
+     
+     System.out.println("Character: " + letter);  // Character: A
+     System.out.println("Unicode of '" + letter + "' is: " + (int) letter); // Unicode of 'A' is: 65
+     // Working with a char in a string
+     String str = "Hello, World!";
+     char firstChar = str.charAt(0);  // Get the first character
+     System.out.println("First character of string: " + firstChar);  // First character of string: H
+     
+     // Character as part of arithmetic
+     char c = 'A';
+     System.out.println("Next character: " + (char) (c + 1)); // Outputs 'B' 👉 Next character: B
   }
 }
