@@ -1,4 +1,4 @@
-public class DemoIf {
+public class DemoIf3 {
   public static void main(String[] args) {
     // ! if, else if, else 組合
     int x = 9;  // value should be change
@@ -28,7 +28,7 @@ public class DemoIf {
       System.out.println("this is hello");
 
     } else if (s.equals("Hello")) {
-      System.out.println("this is hello");
+      System.out.println("this is Hello");
 
     } // else   <- in this, if add 'else',this else is very important to change result
 
@@ -51,30 +51,32 @@ public class DemoIf {
     // 2. Female 40 S -> 8 + 7
     // 3. Male 16 NS -> 3
     // 4. Male 16 S -> 3 + 7
+    // 5. Male 15 NS -> 0
+    // 6. Male 15 S -> 7
     // .....many case
 
-    double premium = 120.0;
-    double extraRate = 0.0;
-    if (isFemale) {
-      if (age >= 70){
-        extraRate += 0.02;
-      } else if (age >= 40) {
-          extraRate += 0.08;
-      } else    // male
+    // double premium = 120.0;
+    // double extraRate = 0.0;
+    // if (isFemale) {
+    //   if (age >= 70){
+    //     extraRate += 0.02;
+    //   } else if (age >= 40) {
+    //       extraRate += 0.08;
+    //   } else    // male
 
-      if (age >= 70) {
-        extraRate += 0.02;
-      } else if (age >= 16) {
-        extraRate += 0.03;
-      }
-    }
+    //   if (age >= 70) {
+    //     extraRate += 0.02;
+    //   } else if (age >= 16) {
+    //     extraRate += 0.03;
+    //   }
+    // }
     
-    if (isSmoker) {
-      extraRate += 0.07;
-    }
-    premium *= 1 + extraRate;
-    System.out.println(extraRate); // 0.27
-    System.out.println(premium); // 152.4
+    // if (isSmoker) {
+    //   extraRate += 0.07;
+    // }
+    // premium *= 1 + extraRate;
+    // System.out.println(extraRate); // 0.27
+    // System.out.println(premium); // 152.4
 
 
   }

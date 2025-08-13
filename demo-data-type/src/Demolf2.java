@@ -3,19 +3,21 @@ public class Demolf2 {
      // Question: Find the middle char of the string
      // i.e. abcde -> c
      String s3 = "abcde";
+     System.out.println(s3.length());  // 5
+     System.out.println(s3.length() - 1);  // 4
      if (s3.length() % 2 == 1) {    // true -> print  (5/2=2.5) 有餘數，是'1'
-       System.out.println(s3.charAt(s3.length() / 2)); // c  （5/2=2), position: 0,1,2
+       System.out.println(s3.charAt(s3.length() / 2)); // c  （5/2=2), position(Index): 0,1,2
      }    
-     // abcde -> c (5 / 2 -> 2)
-     // abcd -> b (4 / 2 -> 2)
-     // ab -> a (2 / 2 -> 1)
-     // a -> a (1 / 2 -> 0)
+     // abcde -> c (5 / 2 -> 2)  Vs  b (5 % 2 -> 1)
+     // abcd -> c (4 / 2 -> 2)  Vs  a (4 % 2 -> 0)
+     // ab -> b (2 / 2 -> 1)  Vs  a (2 % 2 -> 0)
+     // a -> a (1 / 2 -> 0)  Vs  b (1 % 2 -> 1)
      
-     // ! 以下情況，用 ODD/EVEN 去找答案。  即用 '%' 有冇餘數。  （除不盡，即等如'1'），(否則等'0' 除得盡，有冇餘數)
+     // ! 以下情況，用 ODD/EVEN 去找答案。  即用 '%' 有冇餘數。  （除不盡，即等如'1'），(否則等'0' 除得盡，冇餘數)
      
      s3 = "abcd";
      if (s3.length() % 2 == 1) { // odd length  
-       System.out.println(s3.charAt(s3.length() / 2));  // false  (4/2=2)冇餘數，除得盡，所以是雙數 go to step row 18
+       System.out.println(s3.charAt(s3.length() / 2));  // false  (4/2=2)冇餘數，除得盡，所以是雙數. 
      } else { // even length
        System.out.println(s3.charAt(s3.length() / 2 - 1)); // true (4/2 -1 = 1),Ans is '1',所以=true -> print
      }
@@ -23,12 +25,12 @@ public class Demolf2 {
 
      s3 = "abce";
      if (s3.length() % 2 == 1){  // false -> no print    冇餘數，不等如'1'     (4/2=2)
-      System.out.println(s3.charAt(s3.length()) /2);  //   
+      System.out.println(s3.charAt(s3.length()) /2);  //   skip code block
      }
 
      s3 = "ab";
      if (s3.length() % 2 == 1) {  // false -> no print    冇餘數，不等如'1'    (2/2=1)
-      System.out.println(s3.charAt(s3.length() / 2));  //  
+      System.out.println(s3.charAt(s3.length() / 2));  //  skip code block
      }
 
      s3 = "a";
@@ -103,6 +105,26 @@ public class Demolf2 {
        System.out.println("yes");   // yes
       }
 
+    // ! For Loop
+    // 3 statements (View R124)
+    // for (initialization; continue condition; )
+    // Step 1: int i = 0;
+    // Step 2: check if i < 3 -> true, next step
+    // Step 3: print hello
+    // Step 4: i = i + 1 -> 1
+    // Step 5: check if i < 3 -> true, next step
+    // Step 6: print hello
+    // Step 7: i = i + 1 -> 2
+    // Step 8: check if i < 3 -> true, next step
+    // Step 9: print hello
+    // Step 10: i = i + 1 -> 3
+    // Step 11: check if i < 3 -> false -> exit the loop
+
+    int count = 3;
+    for (int i = 0; i < count; i = i + 1) { // i=0,1,2
+      System.out.println("hello");
+      System.out.println("goodbye");
+    }
 
     // Question: Counting
     String s5 = "hello world";  // 11個 characters
@@ -116,6 +138,5 @@ public class Demolf2 {
     }    
     System.out.println("The no. of 'o' character= " + numCount);  // 2
    
-
  }
 }

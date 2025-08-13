@@ -9,7 +9,7 @@ public class DemoIf {
     boolean result2 = x >= 3;
     System.out.println(result2);  // ture
 
-    //  ! if conditionals 條件  （分差路，利用如果⋯⋯）
+    //  ! if conditionals 條件  （產生分差路，利用如果⋯⋯）
     if (x > 3) {  
       System.out.println("x is larger than 3"); // can't identify, not system error
     }   // false -> skip code block
@@ -20,7 +20,7 @@ public class DemoIf {
 
     if (x >= 3) {
       System.out.println("x is larger than or equal to 3"); 
-    }   // true, therefore -> "x is larger than 3"
+    }   // true, therefore -> output 👉 "x is larger than or equal to 3"
 
 
     // ! if + else  (else -> One conditional ONLY)
@@ -34,7 +34,7 @@ public class DemoIf {
 
     // ==
     // x = 3, "=" -> assignment (assign 3 to x)
-    // ! "==" -> "asking if" they are same value, it means that converted (Not equals)
+    // ! "==" -> "asking if" Checking they are same value, it means that converted (Not equals)
     char gender = 'F';
     if (gender == 'M'){   // false, whether equal to ....char gender 是男士？
       System.out.println("He is male.");
@@ -42,12 +42,12 @@ public class DemoIf {
       System.out.println("She is female."); // Ans: She is female.
     }
 
-    // !   "!=" -> asking if they are not equal, whether is not equal to ....
-    if (gender != 'M') {  // true    gender 不是男士 ?
+    // ! "!=" -> asking if they are not equal, whether is not equal to ....
+    if (gender != 'M') {  // true    gender 是否不是男士 ? 在此不是男士。所以 true.
       System.out.println("Not a Male.");  // Not a Male.
     }
 
-    // if (x = 10);  Is error 
+    // if (x = 10);  here Is error, checking the result "true/false", using "==" 
     if (x == 3) {
       System.out.println("Superman");  // Superman
     }
@@ -80,15 +80,15 @@ public class DemoIf {
 
    // Approach 2  ("!" right to left to read, not bootcamp situation and must do anything)
    // Step 1: s2.equals ("Bootcamp") -> true
-    // Step 2: !true == false      (恴即 是看右手邊後半部份, true 不等如 false,即表示結果是 true, 
-    //                                     前面加 '！' 表示反轉結果，即由 true 變成 false)
-    // Step 3: Skip code block
-    if (!s2.equals("Bootcamp")) {
-      System.out.println("23456"); // not print
+   // Step 2: !true == false      (恴即 是看右手邊後半部份, true 不等如 false,即表示結果是 true, 
+   //                                     前面加 '！' 表示反轉結果，即由 true 變成 false)
+   // Step 3: Skip code block
+   if (!s2.equals("Bootcamp")) {
+     System.out.println("23456"); // not print
   }
 
-  boolean r3 = !(x > 3);  // !false  x等如3，不是大過，所以就是錯 -> 前面加'！'即表示反轉結果，就是 true
-  System.out.println(r3); // true   (x不是大過3，因為 x 本身是等如 3，所以 r3 = 3)
+  boolean r3 = !(x > 3);  // !false  x等如3，不是大過，所以就是錯 -> 前面加'！'即表示反轉結果，在此表示 x <=3, 就是 true
+  System.out.println(r3); // true   (x不是大過3，因為 x 本身是等如 3, 且 R90 有 '!'，所以 r3 <= (x = 3)
 
   // ! Raining now, is wrongly when add "!", because raining, therefore "I am running..."
   boolean isRaining = true;     // 題目提供情景，現在是下雨中。  所以下雨中 = true
@@ -102,7 +102,7 @@ public class DemoIf {
   }
 
 
-  // if + length(), charAt()
+  // ! if + length(), charAt()
   // "s2.length() >= 3 -> true / false"
   if (s2.length() >= 3){         // s2 = bootcamp, "bootcamp" 有8個位，所以 >3 -> true -> print
     System.out.println("hello");  // print -> 'hello'
@@ -113,7 +113,7 @@ public class DemoIf {
   // Question: check if the last character of s2 equals to 'a',
   // if yes, print "yes", if no, print "no"
   // s2 = Bootcamp
-  // ! charAt() + length()
+  // charAt() + length()
 
   // Step 1: from inside to outside s2.length() -> 8
   // Step 2: 8 - 1 -> 7
@@ -121,7 +121,7 @@ public class DemoIf {
   // Step 4: 'p' == 'a' -> false, go to Step 5
   // Step 5: print "no"
 
-  // s2 = "";  // String is no limit
+  // s2 = "";  // String length() is 21憶左右位，等如 no limit. But 唔可以是吉，會💥
 
   if (s2.charAt(s2.length() - 1) == 'a') {   // 由內至外睇 8-1=7,所以 position: 0,1,2,3,4,5,6,7
     System.out.println("yes");
@@ -129,7 +129,7 @@ public class DemoIf {
     System.out.println("no");  // no
   }
 
-  // 但 charAt() 不可以 over 字的長度 或 長度是0 -> OK, 但運算 0 - 1 ＝ 結果是 -1， 因為變成 false, 會💥 爆炸
+  // 但 charAt() 不可以 over 字的長度 或 長度是0 -> OK, 但運算 0 - 1 ＝ 結果是 -1， 因此變成 false, 會💥 爆炸
   s2 = "abcd";
   // 如果 charAt(4) 會爆炸💥，因為 position: 0,1,2,3 🙅‍♂️ 冇第4個位出現，所以 Index < 4 才可行 / (4-1=3)
   if (s2.charAt(s2.length() - 1) == 'a') {
@@ -137,7 +137,5 @@ public class DemoIf {
   } else {
     System.out.println("no");  // no
   }
-  
-  
  }
 }

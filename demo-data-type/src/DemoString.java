@@ -50,7 +50,7 @@ public class DemoString {
     // ! String Method 2: length ()
     // Reference = parameter 參數
     // length() has no parameters, ()沒有參數
-    System.out.println(s4.length());  // 5  (Where house)
+    System.out.println(s4.length());  // 5  (Where house, how many no. of index)
     System.out.println(s4); // hello
 
     // Ans:

@@ -14,6 +14,4 @@ import lombok.ToString;
 
 public abstract class SuperAnimal {
   private double superpower;
-
-  
 }

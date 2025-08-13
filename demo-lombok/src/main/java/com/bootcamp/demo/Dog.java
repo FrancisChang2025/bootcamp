@@ -55,7 +55,7 @@ public class Dog extends SuperAnimal{
     Dog d1 = new Dog();
     d1.setAge(13);
     d1.setName("Peter");
-    System.err.println(d1);  // Dog(name=Peter, weight=0.0, age=13)
+    System.out.println(d1);  // Dog(name=Peter, weight=0.0, age=13)
     Dog d2 = new Dog("John", 3.76, 10);
     System.out.println(d2);  // Dog(name=John, weight=3.76, age=10)
     Dog d3 = new Dog("John", 3.76, 10);  // generated

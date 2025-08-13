@@ -6,17 +6,28 @@ public class DemoForLoop {
         x = x * 2;
         System.out.println(x);  // 16
 
-        // int base = 2;
+        int base = 2;
         int value = 2;
-        for (int i = 0; i < 3; i++) {     // Index: 0,1,2
-            value *= value;    //value = value * base;
+        for (int i = 0; i < 3; i++) {
+            value = value * base;
         }
-        System.out.println(value); // 256  
+        System.out.println(value);  // 16
+        // Index: 0, Round 1 of i: 2 * 2 = 4
+        // Index: 1, Round 2 of i: 4 * 2 = 8
+        // Index: 2, Round 3 of i: 8 * 2 = 16
+
+
+        // int base = 2;
+        int value1 = 2;
+        for (int i = 0; i < 3; i++) {     // Index: 0,1,2
+            value1 *= value1;    //value = value * base;
+        }
+        System.out.println(value1); // 256  
         // Index: 0, Round 1 of i: 2 * 2 = 4
         // Index: 1, Round 2 of i: 4 * 4 = 16
         // Index: 2, Round 3 of i: 16 * 16 = 256
 
-        // n = ?, + 8 (10 times)
+        // n (base) = ?, + 8 (10 times)
 
         // Find Max number 
         int num1 = 9;
@@ -73,14 +84,14 @@ public class DemoForLoop {
         // ! Searching
         String s1 = "welcome to bootcamp.";
         // 1. Find the number of 'o'
-        // tips: charAt()
+        // tips: for + charAt()
         int count = 0;
         for (int i = 0; i < s1.length(); i++){
-            if (s1.charAt(i) == 'o') {  // adding range location (length), then count
+            if (s1.charAt(i) == 'o') {
                 count++;
             }
         }
-        System.out.println("No. of 'o' are: " + count);  // 4
+        System.out.println("No. of 'o' are: " + count);  // No. of 'o' are: 4
 
         // ! break & continue, same result
 

@@ -11,35 +11,35 @@ public class DemoPrimitive {
     byte b2 = -128;
     byte b3 = 127;
     // byte b4 = 128;
-    System.out.println(b1);
+    System.out.println(b1); // 10
 
     // -32xxx to 32xxx
     // View notes table
     short s1 = 10;
     short s2 = -32768;
     short s3 = 32767;
-    System.out.println(s2);
+    System.out.println(s2); // -32768
 
     // int (2.1b)
     int x1 = 1_1000_1000;
     int x2 = 10;
     // int x3 = -2147483648;
     int x3 = -21474648;
-    System.out.println(x1);
+    System.out.println(x1);  // 110001000
 
     // long
     // 10 is an int value
     // Assign int value to long value (NOT OK)
-    // ! -2147483649 -> illegal int value
+    // ! -2147483649  -> illegal int value
     // ! -2147483649L -> long value (See right hand side)
 
     long l1 = 10;
     long l2 = -2147483649L;
-    System.out.println(l2);
+    System.out.println(l2);  // -2147483649
 
     // long + int -> long
     l1 = l1 + 100;
-    System.out.println(l1);
+    System.out.println(l1); // 110
 
     x3 = x3 + 1;
     System.out.println(x3); // -2147483648 (overflow)
@@ -63,7 +63,7 @@ public class DemoPrimitive {
     // byte + int -> int
     // assign int to byte (Java: unsafe -> not allow for assignment)
     b4 = (byte) (b4 + i10);
-    System.out.println(b4); //2
+    System.out.println(b4); // 2
 
     // double, float
     // ! 9.5 is a double value
@@ -84,7 +84,7 @@ public class DemoPrimitive {
     // boolean
     boolean b10 = true;
     b10 = false;
-    System.out.println(b10);
+    System.out.println(b10);  // false
 
     int age = 66;
     // "age > 65" -> comparison
@@ -97,15 +97,17 @@ public class DemoPrimitive {
     // c1 -> char variable
     char c1 = 'a';
     int a = 5;
-    System.out.println(a);
+    System.out.println(a);  // 5
+    System.out.println(c1);  // a
 
     char c2 = '#';
+    System.out.println(c2);  // #
     char c3 = 'a';
+    System.out.println(c3);  // a
     char c4 = '2';
-    System.out.println(c4); // 2
+    System.out.println(c4);  // 2
     char c5 = 'A';
-    System.out.println(c5);
-
+    System.out.println(c5);  // A
 
   }
 }
