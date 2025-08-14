@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class DemoGuessingGame {     //GAME： 開口中 （2人玩家）
   public static void main(String[] args) {
     // 1 - 100
-    // Bomb = 67
+    // Bomb 💣 = 67 💥
 
     // User A: 93 (1-100)
     // User B: 49 (1 - 92)
@@ -22,18 +22,18 @@ public class DemoGuessingGame {     //GAME： 開口中 （2人玩家）
     int input = -1;
     int min = 1;
     int max = 100;
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);   // 👈 Request User to provide
     int round = 0;
     char user = 'A';
 
-    while (input != bomb) {
+    while (input != bomb) {   // " != " 一定是不等如符號，因為等如就 💥
       if (round % 2 == 0) {   // 設單數，雙數 round, 單是A，雙是B
         user = 'A';
       } else {
         user = 'B';
       }
       System.out.println("User " + user + ", Please input a number between " + min + "-" + max);
-      input = scanner.nextInt();
+      input = scanner.nextInt();     // 👈 if not bingo, next user goto R25
       // Validate input if it is valid  e.g. Input 93 -> compara with Bomb 67
       // Adjust the range of numbers      from 1-100 to 1-92 
 
@@ -61,7 +61,7 @@ public class DemoGuessingGame {     //GAME： 開口中 （2人玩家）
       user = 'A';
     }
     System.out.println("Game end. User " + user + " win.");
-    scanner.close(); // Close the scanner
+    scanner.close(); // Close the scanner  (Leave RAM)
 
     // ! How about 3 Users?
   }

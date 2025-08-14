@@ -6,28 +6,20 @@ public class JavaQuest4 {
    * 
    * Expected Output: 6 12 18 24 30 36 42 48 54 60
    */
-   int counter = 10;
-   for (int i=0; i < 10; i++) {
-    for (int j=0; j < 100; i++) {
-      if (i % 2 == 0 && i > 0 && i % 2 == 1 && i % 3 == 1){
-        System.out.println(i);
-        
-       }
-       
-    }
-   }
 
-
-
-   }
-  }
-
-  public static void main(String[] args) {
     // Print first ten numbers, which fulfill the followings criteria:
     // 1. Even numbers
-    // 2. Divisible by 3
+    // 2. Divisible by 2 and 3
     // 3. > 0
+    int j = 0;
     for (int i = 0; i < 100; i++) {
-      // code here ...
+      if (i % 2 == 0 && i % 3 == 0 && i > 0) { 
+        while (j < 10) {
+          System.out.println(i);
+          j++;
+          break;
+        }
+      }
+    }
   }
 }

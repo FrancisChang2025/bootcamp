@@ -5,16 +5,16 @@ public class DemoIf3 {
 
     // 1. if + else if + else
     if (x < 10){
-      System.out.println("x < 10");  // ! print
+      System.out.println("x < 10");  // ! print (Range x: negative to 9)
 
     } else if (x < 15) {
-      System.out.println("x < 15");  // not print
+      System.out.println("x < 15");  // not print (Range x: 10 to 14)
 
     } else if (x >= 20) {
-      System.out.println("x >= 20");  // not print
+      System.out.println("x >= 20");  // not print (Range x: 20 to limit positive)
 
     } else {  // 10 - 19
-      System.out.println("10 - 91");  // not print
+      System.out.println("10 - 91");  // not print (Range x: 10 to 19)
 
     }
 
@@ -25,7 +25,7 @@ public class DemoIf3 {
     // 4. if + else if    (Sample: different type 'hello or Hello', Ans accept too.)
     String s = "hello";
     if (s.equals("hello")) {
-      System.out.println("this is hello");
+      System.out.println("this is hello");  // true, print and exit. Ignore below code.
 
     } else if (s.equals("Hello")) {
       System.out.println("this is Hello");

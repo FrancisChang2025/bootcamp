@@ -95,33 +95,40 @@ public class DemoForLoop {
 
         // ! break & continue, same result
 
-        // ! for + continue
-        // Approach 1: break (simple if)  'when touch break will be exit loop'
-        // Before filter
+        // Before filter  (Without use break or contiue)
         for (int i = 0; i < 3; i++){
             System.out.println(i); // 0,1,2
         }
 
+        // ! for + continue
+        // Approach 1: continue (simple if) (When touch continue, directly go to i++, ignore next remainder rows)
+        for (int i = 0; i < 3; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i);  // 0,2 (Ans index are EVEN only)
+            }
+        }
+
         // Approach 2: continue  (If ture, 就繼續做 next step, Else, false 見到 continue 回到 for...)
         // After filter, may be more conditions 攔韱條件有多項 (Select this Approach)
-        // ! For + continue
-        // e.g. Even number ONLY.
+        // e.g. Even number ONLY.  (Skip Odd number)
         for (int i = 0; i < 3; i++){
             if (i % 2 == 1){
-                continue; // skip the rest of code, goes to i++ 'when touch continue will be stop'
+                continue; // skip the rest 餘下 of code, goes to i++ 'when touch continue will be stop'
             }
             System.out.println(i); // 0,2   (true,才入這裡， false touch continue, skip 這裡，回到 i++)
         }
 
         // ! for + break
-        // Approach 1: simple if
-        for (int i = 0; i < 3; i++){
-            System.out.println(i); // 0,1
+        // Approach 1: break (simple if)  'when touch break will be exit loop'
+        for (int i = 0; i < 3; i++) {
+            if (i < 2) {
+                System.out.println(i); // 0,1
+            }
         }
 
-        // Approach 2: break    (Target 一出現結果就停止 Loop, 繼續 next step)
+        // Approach 2: break    (Target 一出現結果就停止 Loop, 跳離成個 ForLoop (包括 i++), 繼續 next step)
         for (int i = 0; i < 3; i++){
-            if (i >= 2){
+            if (i >= 2) {
                 break; // skip the rest of code, goes to i++
             }
             System.out.println(i); // 0,1

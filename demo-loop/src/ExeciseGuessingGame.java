@@ -4,7 +4,7 @@ public class ExeciseGuessingGame {      //GAME： 開口中 （3人玩家）
   public static void main(String[] args) {
     // ! How about 3 Users?
     // 1 - 100
-    // Bomb = 67
+    // Bomb 💣 = 67 💥
 
     // User A: 93 (1-100)
     // User B: 49 (1 - 92)
@@ -14,10 +14,11 @@ public class ExeciseGuessingGame {      //GAME： 開口中 （3人玩家）
     // User C: 67 (67 - 67) -> User C Loser.
 
     int bomb = 67; // random number
-    // while loop
+    // while loop  (Consider use tools. e.g. For Loop / While Loop)
     // Scanner (Collect user input)
+    // ! User A, B and C ? counter -> User A / B / C
     // Adjust the range of numbers
-    // Prompt Question: "Please input a number:"
+    // Prompt Question: "Please input a number:" (Asking which User?)
     // continue condition
 
     int input = -1;
@@ -58,8 +59,5 @@ public class ExeciseGuessingGame {      //GAME： 開口中 （3人玩家）
     }
     System.out.println("Game end. User " + user + " Loser.");
     scanner.close();
-
-
-
   }
 }
