@@ -40,24 +40,35 @@ public class ExeciseGuessingGame {      //GAME： 開口中 （3人玩家）
       }
       System.out.println("User " + user + ", Please input a number between " + min + "-" + max);
       input = scanner.nextInt();
+      
       // Validate input if it is valid
+      if (input < min || input > max) {
+        System.out.println("Invalid Input.");
+        continue;
+      } 
       // Adjust the range of numbers
-      for (int i = 0; i < 101; i++) {
-        if (input < min || input > max) {
-          continue;
+      if (input >= min && input <= max) {
+        if (input > bomb) {
+          max = input - 1;
+        } else {
+          min = input + 1;
         }
       }
       round++;
-      }
-    // User A, round 1, lose
-    if (round % 3 == 0) {
-      user = 'A';
-    } else if (round % 3 == 1) {
-      user = 'B';
-    } else if (round % 3 == 2) {
-      user = 'C';
     }
-    System.out.println("Game end. User " + user + " Loser.");
+
+    while (input == bomb) {
+      if (user == 0) {
+        user = 'A';
+      } else if (user == 1) {
+        user = 'B';
+      } else if (user == 2) {
+        user = 'C';
+      }
+    System.out.println("💥 Game end. User " + user + " Loser.");
     scanner.close();
+    break;
+    }
+    
   }
 }
