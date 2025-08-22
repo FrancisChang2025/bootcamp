@@ -36,48 +36,46 @@ public class DemoIf3 {
 
 
     // ! Date: 20250411 Insurance Sample
-    boolean isFemale = true;   // char gender = 'F';
+    boolean isFemale = true;   // char gender 性别 = 'F';
     boolean isSmoker = true;   // = char smoker = 'Y'; (true / false)
     int age = 80;  // byte age = 45 (consideration risk write code)
 
     // Female 40 or above, premium 8% more
     // Male 16 or above, premium 3% more
     // Male and Smoker -> 7% more
-    // age 70 or above -> 20% more
+    // age 70 or above -> 20% more   // if age less than will be ignore this
 
     // base premium = 120
 
-    // 1. Female 40 NS (NonSmoker) -> 8
-    // 2. Female 40 S -> 8 + 7
+    // 1. Female 40 NS (NonSmoker) -> 8%
+    // 2. Female 40 S -> 8 + 7 = 15% premium for Age: 40 - 69 with Smoker
     // 3. Male 16 NS -> 3
     // 4. Male 16 S -> 3 + 7
     // 5. Male 15 NS -> 0
     // 6. Male 15 S -> 7
     // .....many case
 
-    // double premium = 120.0;
-    // double extraRate = 0.0;
-    // if (isFemale) {
-    //   if (age >= 70){
-    //     extraRate += 0.02;
-    //   } else if (age >= 40) {
-    //       extraRate += 0.08;
-    //   } else    // male
+    double premium = 120.0;
+    double extraRate = 0.0;
+    if (isFemale) {
+      if (age >= 70){    // Age range: >= 70
+        extraRate += 0.2;
+      } else if (age >= 40) {  // Age range: 40 - 69
+          extraRate += 0.08;
+      } else    // male
 
-    //   if (age >= 70) {
-    //     extraRate += 0.02;
-    //   } else if (age >= 16) {
-    //     extraRate += 0.03;
-    //   }
-    // }
+      if (age >= 70) {
+        extraRate += 0.2;
+      } else if (age >= 16) {   // Age range: 16 - 69
+        extraRate += 0.03;
+      }
+    }
     
-    // if (isSmoker) {
-    //   extraRate += 0.07;
-    // }
-    // premium *= 1 + extraRate;
-    // System.out.println(extraRate); // 0.27
-    // System.out.println(premium); // 152.4
-
-
+    if (isSmoker) {
+      extraRate += 0.07;
+    }
+    premium *= 1 + extraRate;    // 👈 120.0 * (1 + 0.27)
+    System.out.println(extraRate); // 0.27  👈 Female, >70 age, Smoker = 0.2 + 0.07
+    System.out.println(premium); // 152.4
   }
 }

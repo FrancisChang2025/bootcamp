@@ -153,7 +153,6 @@ public class DemoForLoop {
      System.out.println("Product 16-20 = " + product);  // 1860480
 
 
-
      for (int i = 10; i >= 0; i--) {
         System.out.println(i);  // 10,9,8,7,6,5,4,3,2,1,0 (Round 11 次, 除非中間改為 i>0 就 round 10 次)
      }
@@ -164,11 +163,8 @@ public class DemoForLoop {
      // i=2, j=0,1
      for (int i = 0; i < 3; i++){  // run 0,1,2  (3 times)
         for (int j = 0; j < 2; j++) {   // run 0,1, (2 times)
-            System.out.println("hello");  // 6 times
-            System.out.println("i=" + i + "j=" + j);
+            System.out.println("hello ** " + "i=" + i + ", j=" + j);  // 6 times
         }
      }
-
-
     }
 }

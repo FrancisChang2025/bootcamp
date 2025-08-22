@@ -16,7 +16,7 @@ public class DemoOperator {
     int y = 2;
     x = ++y + 1;
     System.out.println(x);  // 4  (3+1)
-    System.out.println(y);  // 3  (2+1)
+    System.out.println(y);  // 3  (2+1)  前置，所以 y 先 +1 👉 3
 
     x = y++ + 1;
     System.out.println(x);  // 4  (3+1)
@@ -27,9 +27,9 @@ public class DemoOperator {
       System.out.println("hello");
     }
     // * While -> same with "For...Loop", Auto-Run until "while loop" completed to STOP.
-    // Round 1: k=0 後置++ 不用理會，所以 Index = 0
-    // Round 2: k=1 (0+1)
-    // Round 3: k=2 (1+1)
+    // Round 1: k=0 後置++ 不用理會，所以 Index = 0 , therefore print "hello"
+    // Round 2: k=1 (0+1) , print "hello"
+    // Round 3: k=2 (1+1) , print "hello"
     
     y = 8;
     x = ++y + ++y + 2;    // 21  (9+10+2)
@@ -46,8 +46,5 @@ public class DemoOperator {
     // Step3: 8 + 9 + 2
     System.out.println(x);  // 19
     System.out.println(y);  // 10
-
-
-
   }
 }
